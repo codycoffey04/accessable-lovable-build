@@ -145,9 +145,24 @@ export default function FAQ() {
   })).filter(category => category.questions.length > 0);
 
   return (
-    <div className="min-h-screen">
-      {/* Breadcrumbs */}
-      <nav className="container mx-auto px-4 py-4" aria-label="Breadcrumb">
+    <div className="min-h-screen bg-background">
+      {/* Schema Markup */}
+      <Schema schema={generateFAQSchema(
+        faqs.flatMap(category => 
+          category.questions.map(q => ({
+            question: q.q,
+            answer: q.a
+          }))
+        )
+      )} />
+      <Schema schema={generateBreadcrumbSchema([
+        { name: 'Home', url: window.location.origin },
+        { name: 'FAQ', url: window.location.href }
+      ])} />
+
+      <div className="container mx-auto px-4 py-8 max-w-4xl">
+        {/* Breadcrumbs */}
+        <nav className="mb-6" aria-label="Breadcrumb">
         <ol className="flex items-center space-x-2 text-sm">
           <li><Link to="/" className="hover:text-primary">Home</Link></li>
           <li>/</li>
@@ -218,6 +233,7 @@ export default function FAQ() {
           </div>
         </div>
       </main>
+      </div>
     </div>
   );
 }

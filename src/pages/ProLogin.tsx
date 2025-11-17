@@ -1,3 +1,8 @@
+/**
+ * FORM ACCESSIBILITY: Visible labels | aria-required | aria-invalid | Error messages
+ * TODO: Test keyboard navigation and screen reader announcements
+ */
+
 import { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '@/contexts/AuthContext';
