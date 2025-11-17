@@ -1,0 +1,282 @@
+import { useState, useEffect } from "react";
+import { useParams, Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Label } from "@/components/ui/label";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+import { SlidersHorizontal, Heart, ShoppingCart } from "lucide-react";
+import { getProducts, ShopifyProduct } from "@/lib/shopify";
+import { useCartStore } from "@/stores/cartStore";
+import { toast } from "sonner";
+
+const collectionData: Record<string, { title: string; description: string; isCondition?: boolean }> = {
+  'all': { title: 'All Products', description: 'Browse our complete collection of adaptive compression solutions.' },
+  'compression-socks': { title: 'Compression Socks', description: 'Graduated compression technology for all-day comfort.' },
+  'donning-aids': { title: 'Donning Aids', description: 'Tools designed to make getting dressed easier and more independent.' },
+  'bundles': { title: 'Bundles', description: 'Complete kits with everything you need. Save 20% vs. buying separately.' },
+  'arthritis': { title: 'Adaptive Solutions for Arthritis', description: 'Designed for comfort and ease with limited hand dexterity.', isCondition: true },
+  'diabetes': { title: 'Adaptive Solutions for Diabetes', description: 'Built for all-day comfort and foot health.', isCondition: true },
+  'limited-mobility': { title: 'Adaptive Solutions for Limited Mobility', description: 'Independence-focused designs for daily living.', isCondition: true },
+  'post-surgery': { title: 'Adaptive Solutions for Post-Surgery', description: 'Comfortable recovery support.', isCondition: true },
+  'travel': { title: 'Travel & Circulation', description: 'Comfort for long journeys and active lifestyles.', isCondition: false },
+};
+
+const ProductCard = ({ product }: { product: ShopifyProduct }) => {
+  const addItem = useCartStore(state => state.addItem);
+  const variant = product.node.variants.edges[0]?.node;
+
+  const handleAddToCart = () => {
+    if (!variant) return;
+    
+    addItem({
+      product,
+      variantId: variant.id,
+      variantTitle: variant.title,
+      price: variant.price,
+      quantity: 1,
+      selectedOptions: variant.selectedOptions
+    });
+    
+    toast.success('Added to cart', {
+      description: `${product.node.title} has been added to your cart.`
+    });
+  };
+
+  return (
+    <Card className="overflow-hidden group">
+      <Link to={`/products/${product.node.handle}`}>
+        <div className="aspect-square overflow-hidden bg-muted">
+          {product.node.images.edges[0]?.node && (
+            <img
+              src={product.node.images.edges[0].node.url}
+              alt={product.node.images.edges[0].node.altText || product.node.title}
+              className="object-cover w-full h-full group-hover:scale-105 transition-transform"
+            />
+          )}
+        </div>
+      </Link>
+      <CardContent className="p-4">
+        <Link to={`/products/${product.node.handle}`}>
+          <h3 className="font-medium mb-2 hover:text-primary transition-colors line-clamp-2">
+            {product.node.title}
+          </h3>
+        </Link>
+        <div className="flex items-center justify-between">
+          <p className="font-bold">
+            ${parseFloat(product.node.priceRange.minVariantPrice.amount).toFixed(2)}
+          </p>
+          <div className="flex gap-2">
+            <Button size="icon" variant="ghost" aria-label="Add to wishlist">
+              <Heart className="h-4 w-4" />
+            </Button>
+            <Button 
+              size="icon" 
+              onClick={handleAddToCart}
+              aria-label="Add to cart"
+            >
+              <ShoppingCart className="h-4 w-4" />
+            </Button>
+          </div>
+        </div>
+      </CardContent>
+    </Card>
+  );
+};
+
+export default function Collection() {
+  const { collection } = useParams();
+  const [products, setProducts] = useState<ShopifyProduct[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [sortBy, setSortBy] = useState('featured');
+
+  const collectionInfo = collection ? collectionData[collection] : collectionData['all'];
+
+  useEffect(() => {
+    getProducts(50).then(data => {
+      setProducts(data);
+      setLoading(false);
+    }).catch(error => {
+      console.error('Error fetching products:', error);
+      setLoading(false);
+    });
+  }, [collection]);
+
+  return (
+    <div className="min-h-screen">
+      {/* Breadcrumbs */}
+      <nav className="container mx-auto px-4 py-4" aria-label="Breadcrumb">
+        <ol className="flex items-center space-x-2 text-sm">
+          <li><Link to="/" className="hover:text-primary">Home</Link></li>
+          <li>/</li>
+          <li><Link to="/collections/all" className="hover:text-primary">Collections</Link></li>
+          <li>/</li>
+          <li aria-current="page" className="text-muted-foreground">{collectionInfo?.title || 'Products'}</li>
+        </ol>
+      </nav>
+
+      <main id="main-content" className="container mx-auto px-4 py-8">
+        {/* Collection Header */}
+        <div className="mb-8">
+          <h1 className="text-4xl font-bold mb-4">{collectionInfo?.title || 'Products'}</h1>
+          <p className="text-xl text-muted-foreground mb-4">{collectionInfo?.description}</p>
+          
+          {/* FDA Disclaimer for condition-specific collections */}
+          {collectionInfo?.isCondition && (
+            <div className="p-4 bg-muted/50 rounded-lg border mb-4">
+              <p className="text-sm font-medium">
+                <strong>Important:</strong> These statements have not been evaluated by the FDA. This product is not intended to diagnose, treat, cure, or prevent any disease.
+              </p>
+            </div>
+          )}
+        </div>
+
+        {/* Filters and Sort */}
+        <div className="flex items-center justify-between mb-6 gap-4">
+          <Sheet>
+            <SheetTrigger asChild>
+              <Button variant="outline" className="lg:hidden">
+                <SlidersHorizontal className="h-4 w-4 mr-2" />
+                Filters
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="left">
+              <SheetHeader>
+                <SheetTitle>Filters</SheetTitle>
+              </SheetHeader>
+              <div className="mt-6 space-y-6">
+                <div>
+                  <h3 className="font-semibold mb-3">Compression Level</h3>
+                  <div className="space-y-2">
+                    <div className="flex items-center space-x-2">
+                      <Checkbox id="15-20" />
+                      <Label htmlFor="15-20">15-20 mmHg</Label>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <Checkbox id="20-30" />
+                      <Label htmlFor="20-30">20-30 mmHg</Label>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <h3 className="font-semibold mb-3">Size</h3>
+                  <div className="space-y-2">
+                    {['S', 'M', 'L', 'XL', 'XXL'].map(size => (
+                      <div key={size} className="flex items-center space-x-2">
+                        <Checkbox id={size} />
+                        <Label htmlFor={size}>{size}</Label>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </SheetContent>
+          </Sheet>
+
+          <Select value={sortBy} onValueChange={setSortBy}>
+            <SelectTrigger className="w-[200px]" aria-label="Sort products">
+              <SelectValue placeholder="Sort by" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="featured">Featured</SelectItem>
+              <SelectItem value="price-low">Price: Low to High</SelectItem>
+              <SelectItem value="price-high">Price: High to Low</SelectItem>
+              <SelectItem value="newest">Newest</SelectItem>
+              <SelectItem value="best-selling">Best Selling</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
+
+        <div className="flex gap-6">
+          {/* Desktop Filters */}
+          <aside className="hidden lg:block w-64 flex-shrink-0">
+            <div className="sticky top-24 space-y-6">
+              <div>
+                <h3 className="font-semibold mb-3">Compression Level</h3>
+                <div className="space-y-2">
+                  <div className="flex items-center space-x-2">
+                    <Checkbox id="desktop-15-20" />
+                    <Label htmlFor="desktop-15-20">15-20 mmHg</Label>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <Checkbox id="desktop-20-30" />
+                    <Label htmlFor="desktop-20-30">20-30 mmHg</Label>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <h3 className="font-semibold mb-3">Size</h3>
+                <div className="space-y-2">
+                  {['S', 'M', 'L', 'XL', 'XXL'].map(size => (
+                    <div key={`desktop-${size}`} className="flex items-center space-x-2">
+                      <Checkbox id={`desktop-${size}`} />
+                      <Label htmlFor={`desktop-${size}`}>{size}</Label>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </aside>
+
+          {/* Products Grid */}
+          <div className="flex-1" aria-live="polite" aria-atomic="false">
+            {loading ? (
+              <div className="text-center py-12">Loading products...</div>
+            ) : products.length === 0 ? (
+              <div className="text-center py-12">
+                <p className="text-muted-foreground mb-4">No products found.</p>
+                <p className="text-sm">Try adjusting your filters or browse all products.</p>
+              </div>
+            ) : (
+              <>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {products.map((product) => (
+                    <ProductCard key={product.node.id} product={product} />
+                  ))}
+                </div>
+                
+                {/* Pagination */}
+                <nav className="mt-8 flex justify-center" aria-label="Pagination">
+                  <div className="flex gap-2">
+                    <Button variant="outline" disabled aria-label="Previous page">Previous</Button>
+                    <Button variant="outline" aria-current="page">1</Button>
+                    <Button variant="outline">2</Button>
+                    <Button variant="outline">3</Button>
+                    <Button variant="outline" aria-label="Next page">Next</Button>
+                  </div>
+                </nav>
+              </>
+            )}
+          </div>
+        </div>
+
+        {/* Educational Insert */}
+        {!loading && products.length > 0 && (
+          <div className="mt-16 bg-muted/40 rounded-lg p-8 text-center">
+            <h2 className="text-2xl font-bold mb-4">Not Sure Where to Start?</h2>
+            <p className="text-muted-foreground mb-6">
+              Explore our Compression Basics Guide to find the right fit for your needs.
+            </p>
+            <Button asChild>
+              <Link to="/learn/compression">Learn More</Link>
+            </Button>
+          </div>
+        )}
+      </main>
+    </div>
+  );
+}
