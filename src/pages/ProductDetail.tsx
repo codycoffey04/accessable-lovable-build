@@ -21,6 +21,12 @@ import { Star, Heart, ChevronLeft, ChevronRight } from "lucide-react";
 import { getProducts, ShopifyProduct } from "@/lib/shopify";
 import { useCartStore } from "@/stores/cartStore";
 import { toast } from "sonner";
+import { Schema } from "@/components/Schema";
+import { generateProductSchema, generateBreadcrumbSchema } from "@/lib/schema";
+import { StickyAddToCart } from "@/components/StickyAddToCart";
+import { CrossSellSection } from "@/components/CrossSellSection";
+import { FrequentlyBoughtTogether } from "@/components/FrequentlyBoughtTogether";
+import { ReviewsSection } from "@/components/ReviewsSection";
 
 export default function ProductDetail() {
   const { handle } = useParams();
@@ -83,9 +89,21 @@ export default function ProductDetail() {
   }
 
   const images = product.node.images.edges;
+  
+  // Generate schemas
+  const productSchema = generateProductSchema(product);
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', url: window.location.origin },
+    { name: 'Products', url: `${window.location.origin}/collections/all` },
+    { name: product.node.title, url: window.location.href }
+  ]);
 
   return (
     <div className="min-h-screen">
+      {/* Schema Markup */}
+      <Schema schema={productSchema} />
+      <Schema schema={breadcrumbSchema} />
+      
       {/* Breadcrumbs */}
       <nav className="container mx-auto px-4 py-4" aria-label="Breadcrumb">
         <ol className="flex items-center space-x-2 text-sm">
@@ -304,19 +322,41 @@ export default function ProductDetail() {
           </div>
         </div>
 
+        {/* Cross-Sell Section */}
+        <CrossSellSection product={product} />
+
+        {/* Frequently Bought Together */}
+        <FrequentlyBoughtTogether product={product} />
+
+        {/* Customer Reviews */}
+        <ReviewsSection product={product} />
+
         {/* Related Content */}
-        <div className="mt-16 pt-16 border-t">
-          <h2 className="text-2xl font-bold mb-4">Learn More</h2>
-          <div className="flex flex-wrap gap-4">
-            <Link to="/learn/compression" className="text-primary hover:underline">
-              Understanding Compression Levels →
+        <section className="mt-16 pt-16 border-t">
+          <h2 className="text-2xl font-bold mb-6">Related Guides</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            <Link to="/learn/compression-101" className="p-6 border rounded-lg hover:border-primary transition-colors">
+              <h3 className="font-semibold mb-2">Compression 101</h3>
+              <p className="text-sm text-muted-foreground">Everything you need to know about compression technology</p>
             </Link>
-            <Link to="/learn/mobility" className="text-primary hover:underline">
-              Mobility Aids & Sock Compatibility →
+            <Link to="/learn/mobility-aids" className="p-6 border rounded-lg hover:border-primary transition-colors">
+              <h3 className="font-semibold mb-2">Mobility Aids & Compatibility</h3>
+              <p className="text-sm text-muted-foreground">Using compression with wheelchairs and assistive devices</p>
+            </Link>
+            <Link to="/learn/how-to-put-on-socks" className="p-6 border rounded-lg hover:border-primary transition-colors">
+              <h3 className="font-semibold mb-2">How to Put On Compression Socks</h3>
+              <p className="text-sm text-muted-foreground">Step-by-step guide with adaptive techniques</p>
             </Link>
           </div>
-        </div>
+        </section>
       </main>
+
+      {/* Sticky Add-to-Cart Bar (Mobile Only) */}
+      <StickyAddToCart 
+        product={product} 
+        selectedVariant={selectedVariant} 
+        quantity={1} 
+      />
     </div>
   );
 }

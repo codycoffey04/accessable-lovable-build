@@ -5,6 +5,8 @@ import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import { Schema } from "@/components/Schema";
+import { generateOrganizationSchema, generateBreadcrumbSchema } from "@/lib/schema";
 import {
   Select,
   SelectContent,
@@ -15,8 +17,16 @@ import {
 import { Star, Check } from "lucide-react";
 
 export default function Pro() {
+  const organizationSchema = generateOrganizationSchema();
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', url: window.location.origin },
+    { name: 'AccessAble Pro', url: window.location.href }
+  ]);
+
   return (
     <div className="min-h-screen">
+      <Schema schema={organizationSchema} />
+      <Schema schema={breadcrumbSchema} />
       {/* Breadcrumbs */}
       <nav className="container mx-auto px-4 py-4" aria-label="Breadcrumb">
         <ol className="flex items-center space-x-2 text-sm">

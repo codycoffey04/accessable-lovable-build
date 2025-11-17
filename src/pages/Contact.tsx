@@ -4,6 +4,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import { Schema } from "@/components/Schema";
+import { generateBreadcrumbSchema } from "@/lib/schema";
 import {
   Select,
   SelectContent,
@@ -14,8 +16,14 @@ import {
 import { Mail, Phone, MessageCircle, Clock } from "lucide-react";
 
 export default function Contact() {
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', url: window.location.origin },
+    { name: 'Contact', url: window.location.href }
+  ]);
+
   return (
     <div className="min-h-screen">
+      <Schema schema={breadcrumbSchema} />
       {/* Breadcrumbs */}
       <nav className="container mx-auto px-4 py-4" aria-label="Breadcrumb">
         <ol className="flex items-center space-x-2 text-sm">

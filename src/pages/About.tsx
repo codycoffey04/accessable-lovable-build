@@ -2,10 +2,23 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Star } from "lucide-react";
+import { Schema } from "@/components/Schema";
+import { generateOrganizationSchema, generateBreadcrumbSchema } from "@/lib/schema";
 
 export default function About() {
+  // Generate schemas
+  const organizationSchema = generateOrganizationSchema();
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', url: window.location.origin },
+    { name: 'About', url: window.location.href }
+  ]);
+
   return (
     <div className="min-h-screen">
+      {/* Schema Markup */}
+      <Schema schema={organizationSchema} />
+      <Schema schema={breadcrumbSchema} />
+      
       {/* Breadcrumbs */}
       <nav className="container mx-auto px-4 py-4" aria-label="Breadcrumb">
         <ol className="flex items-center space-x-2 text-sm">

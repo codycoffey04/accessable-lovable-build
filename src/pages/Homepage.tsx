@@ -9,6 +9,8 @@ import { getProducts, ShopifyProduct } from "@/lib/shopify";
 import { useCartStore } from "@/stores/cartStore";
 import { toast } from "sonner";
 import { ExitIntentModal } from "@/components/ExitIntentModal";
+import { Schema } from "@/components/Schema";
+import { generateOrganizationSchema, generateBreadcrumbSchema } from "@/lib/schema";
 
 const UserTypeModal = ({ open, onClose }: { open: boolean; onClose: () => void }) => {
   return (
@@ -143,8 +145,18 @@ export default function Homepage() {
     });
   }, []);
 
+  // Generate schemas
+  const organizationSchema = generateOrganizationSchema();
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', url: window.location.origin }
+  ]);
+
   return (
     <div className="min-h-screen">
+      {/* Schema Markup */}
+      <Schema schema={organizationSchema} />
+      <Schema schema={breadcrumbSchema} />
+      
       <ExitIntentModal />
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-primary/10 to-secondary/10 py-20 lg:py-32">

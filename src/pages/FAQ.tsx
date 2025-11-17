@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { Schema } from "@/components/Schema";
+import { generateFAQSchema, generateBreadcrumbSchema } from "@/lib/schema";
 import {
   Accordion,
   AccordionContent,
