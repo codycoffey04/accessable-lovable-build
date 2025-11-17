@@ -23,6 +23,14 @@ import { SlidersHorizontal, Heart, ShoppingCart } from "lucide-react";
 import { getProducts, ShopifyProduct } from "@/lib/shopify";
 import { useCartStore } from "@/stores/cartStore";
 import { toast } from "sonner";
+import { Schema } from "@/components/Schema";
+import { generateCollectionSchema, generateBreadcrumbSchema } from "@/lib/schema";
+import { ConditionEducation } from "@/components/ConditionEducation";
+import { ConditionRecommendations } from "@/components/ConditionRecommendations";
+import { ConditionRelatedGuides } from "@/components/ConditionRelatedGuides";
+import { ConditionCustomerStories } from "@/components/ConditionCustomerStories";
+
+type ConditionType = 'arthritis' | 'diabetes' | 'limited-mobility' | 'post-surgery' | 'wheelchair-users';
 
 const collectionData: Record<string, { title: string; description: string; isCondition?: boolean }> = {
   'all': { title: 'All Products', description: 'Browse our complete collection of adaptive compression solutions.' },
@@ -105,6 +113,7 @@ export default function Collection() {
   const [sortBy, setSortBy] = useState('featured');
 
   const collectionInfo = collection ? collectionData[collection] : collectionData['all'];
+  const isCondition = collectionInfo?.isCondition && collection && ['arthritis', 'diabetes', 'limited-mobility', 'post-surgery', 'wheelchair-users'].includes(collection);
 
   useEffect(() => {
     getProducts(50).then(data => {
@@ -116,8 +125,25 @@ export default function Collection() {
     });
   }, [collection]);
 
+  // Generate schemas
+  const collectionSchema = collectionInfo ? generateCollectionSchema({
+    name: collectionInfo.title,
+    description: collectionInfo.description,
+    url: window.location.href
+  }) : null;
+  
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', url: window.location.origin },
+    { name: 'Collections', url: `${window.location.origin}/collections/all` },
+    { name: collectionInfo?.title || 'Products', url: window.location.href }
+  ]);
+
   return (
     <div className="min-h-screen">
+      {/* Schema Markup */}
+      {collectionSchema && <Schema schema={collectionSchema} />}
+      <Schema schema={breadcrumbSchema} />
+      
       {/* Breadcrumbs */}
       <nav className="container mx-auto px-4 py-4" aria-label="Breadcrumb">
         <ol className="flex items-center space-x-2 text-sm">
@@ -136,7 +162,7 @@ export default function Collection() {
           <p className="text-xl text-muted-foreground mb-4">{collectionInfo?.description}</p>
           
           {/* FDA Disclaimer for condition-specific collections */}
-          {collectionInfo?.isCondition && (
+          {isCondition && (
             <div className="p-4 bg-muted/50 rounded-lg border mb-4">
               <p className="text-sm font-medium">
                 <strong>Important:</strong> These statements have not been evaluated by the FDA. This product is not intended to diagnose, treat, cure, or prevent any disease.
@@ -144,6 +170,16 @@ export default function Collection() {
             </div>
           )}
         </div>
+
+        {/* Condition-Specific Educational Sections */}
+        {isCondition && (
+          <>
+            <ConditionEducation condition={collection as ConditionType} />
+            <ConditionRecommendations condition={collection} />
+            <ConditionRelatedGuides condition={collection} />
+            <ConditionCustomerStories condition={collection} />
+          </>
+        )}
 
         {/* Filters and Sort */}
         <div className="flex items-center justify-between mb-6 gap-4">
