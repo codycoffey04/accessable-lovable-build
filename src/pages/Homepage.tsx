@@ -8,6 +8,7 @@ import { Star, ShoppingCart, Heart } from "lucide-react";
 import { getProducts, ShopifyProduct } from "@/lib/shopify";
 import { useCartStore } from "@/stores/cartStore";
 import { toast } from "sonner";
+import { ExitIntentModal } from "@/components/ExitIntentModal";
 
 const UserTypeModal = ({ open, onClose }: { open: boolean; onClose: () => void }) => {
   return (
@@ -144,6 +145,7 @@ export default function Homepage() {
 
   return (
     <div className="min-h-screen">
+      <ExitIntentModal />
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-primary/10 to-secondary/10 py-20 lg:py-32">
         <div className="container mx-auto px-4">
