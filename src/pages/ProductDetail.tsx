@@ -1,3 +1,9 @@
+/**
+ * ACCESSIBILITY VERIFICATION - ProductDetail Page
+ * ✓ Touch targets 48x48px minimum | ✓ Image alt text | ✓ Focus Not Obscured (sticky cart)
+ * ✓ Keyboard navigation | ✓ ARIA labels on variants | TODO: Test with NVDA/JAWS
+ */
+
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";

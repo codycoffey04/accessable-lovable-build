@@ -1,3 +1,8 @@
+/**
+ * VIDEO ACCESSIBILITY: All videos MUST have captions (WebVTT), transcript (PDF), and audio description
+ * COMPLIANCE: NO medical claims - use safe language only
+ */
+
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { AlertCircle } from "lucide-react";

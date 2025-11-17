@@ -12,6 +12,8 @@ import { Clock, Share2, Facebook, Twitter, Mail } from "lucide-react";
 import { ShopifyProduct } from "@/lib/shopify";
 import { useCartStore } from "@/stores/cartStore";
 import { toast } from "sonner";
+import { Schema } from "@/components/Schema";
+import { generateArticleSchema, generateBreadcrumbSchema, generateVideoSchema, generateFAQSchema } from "@/lib/schema";
 
 const articles: Record<string, any> = {
   "compression-101": {
@@ -99,8 +101,47 @@ export default function LearnArticle() {
     );
   }
 
+  // Generate schemas
+  const articleSchema = generateArticleSchema({
+    headline: article.title,
+    author: 'AccessAble Team',
+    datePublished: article.datePublished,
+    image: article.featuredImage || '/placeholder.svg',
+    description: article.content.find((c: any) => c.type === 'paragraph')?.text || article.title
+  });
+
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', url: window.location.origin },
+    { name: 'Learn Hub', url: `${window.location.origin}/learn` },
+    { name: article.title, url: window.location.href }
+  ]);
+
+  // Video schema (if video present)
+  const hasVideo = article.content.some((section: any) => section.type === 'video');
+  const videoSchema = hasVideo ? generateVideoSchema({
+    name: `Video: ${article.title}`,
+    description: article.title,
+    thumbnailUrl: article.featuredImage || '/placeholder.svg',
+    uploadDate: article.datePublished,
+    duration: 'PT5M', // Placeholder duration
+  }) : null;
+
+  // FAQ schema (if FAQs present)
+  const faqSchema = article.faqs && article.faqs.length > 0 
+    ? generateFAQSchema(article.faqs.map((faq: any) => ({
+        question: faq.question,
+        answer: faq.answer
+      })))
+    : null;
+
   return (
     <div className="min-h-screen">
+      {/* Schema Markup */}
+      <Schema schema={articleSchema} />
+      <Schema schema={breadcrumbSchema} />
+      {videoSchema && <Schema schema={videoSchema} />}
+      {faqSchema && <Schema schema={faqSchema} />}
+
       {/* Breadcrumbs */}
       <nav className="container mx-auto px-4 py-4" aria-label="Breadcrumb">
         <ol className="flex items-center space-x-2 text-sm">
