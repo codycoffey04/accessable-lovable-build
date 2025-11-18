@@ -23,14 +23,14 @@ const customerStories: Record<string, Array<{
     {
       name: '{CustomerName}',
       userType: 'Post-Hip Replacement',
-      quote: 'Having two pairs meant I didn't have to stress about laundry during recovery. I could focus on physical therapy instead of worrying about clean compression socks.',
+      quote: 'Having two pairs meant I did not have to stress about laundry during recovery. I could focus on physical therapy instead of worrying about clean compression socks.',
       rating: 5,
       imageAlt: 'Post-hip replacement user'
     },
     {
       name: '{CustomerName}',
       userType: 'Post-Ankle Surgery',
-      quote: 'The wide opening made it possible to get the sock over my surgical boot. I didn't think that would work, but it did.',
+      quote: 'The wide opening made it possible to get the sock over my surgical boot. I did not think that would work, but it did.',
       rating: 5,
       imageAlt: 'Post-ankle surgery user'
     }
@@ -53,7 +53,7 @@ const customerStories: Record<string, Array<{
     {
       name: '{CustomerName}',
       userType: 'Essential Tremor',
-      quote: 'My hands shake. The wide opening means I don't have to thread my foot through a tiny hole. That was my biggest problem with regular compression socks.',
+      quote: 'My hands shake. The wide opening means I do not have to thread my foot through a tiny hole. That was my biggest problem with regular compression socks.',
       rating: 5,
       imageAlt: 'User with essential tremor'
     }
@@ -69,7 +69,7 @@ const customerStories: Record<string, Array<{
     {
       name: '{CustomerName}',
       userType: 'Limited Hip Flexion',
-      quote: 'My hips don't bend like they used to. Reaching my feet was impossible. This tool brought the sock to me instead of making me bend down to it.',
+      quote: 'My hips do not bend like they used to. Reaching my feet was impossible. This tool brought the sock to me instead of making me bend down to it.',
       rating: 5,
       imageAlt: 'User with limited hip flexion'
     },
