@@ -182,7 +182,7 @@ export default function Collection() {
           {isCondition && (
             <div className="p-4 bg-muted/50 rounded-lg border mb-4">
               <p className="text-sm font-medium">
-                <strong>Important:</strong> These statements have not been evaluated by the FDA. This product is not intended to diagnose, treat, cure, or prevent any disease.
+                <strong>Important:</strong> These statements have not been evaluated by the FDA. This product is not intended to diagnose, treat, cure, or prevent any disease. Follow your healthcare provider's guidance. <Link to="/policies/fda-disclaimer" className="text-primary underline">Full Policy →</Link>
               </p>
             </div>
           )}
