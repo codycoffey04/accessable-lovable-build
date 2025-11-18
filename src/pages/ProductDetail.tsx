@@ -165,6 +165,260 @@ const PRODUCT_COPY_CONFIG: any = {
       { question: "What if it doesn't work for me?", answer: "We offer a 30-day satisfaction guarantee. If the donning aid doesn't meet your needs, return it for a full refund. Contact our team if you'd like help troubleshooting before returning." },
       { question: "Can I travel with it?", answer: "Yes. It's lightweight and TSA-friendly. Fits easily in checked luggage or a carry-on bag." }
     ]
+  },
+  'Bundle': {
+    subheadline: "Complete kits designed for mobility and dexterity challenges. Medical-grade compression with adaptive features—bundled for convenience and value.",
+    keyBenefits: [
+      { icon: Package, text: "Pre-coordinated solutions – No guessing which products work together" },
+      { icon: CheckCircle2, text: "Always have a clean pair – Multiple socks mean continuous wear during laundry" },
+      { icon: Award, text: "Better value – Save up to 25% vs. buying items separately" },
+      { icon: Hand, text: "Independent donning – Wide-mouth compression socks + ergonomic donning aid" },
+      { icon: Ruler, text: "Extended sizing included – S through XXL, wide-calf options available" }
+    ],
+    supportingDescription: "Get started with everything you need in one order. Adaptive compression socks designed for limited hand strength, plus the donning aid that makes them even easier. No separate trips. No wondering if you bought the right combination. Just independence, delivered.",
+    bundles: {
+      'easy-start-bundle-compression-socks-donning-aid-1': {
+        name: "Easy Start Bundle",
+        savingsCallout: "Save 15% vs. buying separately",
+        whatsIncluded: [
+          "1 pair AccessAble Compression Socks – 20-30 mmHg Knee-High (you select size/color)",
+          "1 AccessAble Sock Donning Aid",
+          "Digital Care Guide – How to care for compression socks and donning aids"
+        ],
+        bestFor: [
+          "First-time compression sock users",
+          "Testing if adaptive compression works for you",
+          "Single-person use with frequent laundry access"
+        ],
+        price: "$69",
+        originalPrice: "$81",
+        savings: "$12 (15%)"
+      },
+      'everyday-independence-bundle-complete-rotation-kit': {
+        name: "Everyday Independence Bundle",
+        savingsCallout: "Save 20% vs. buying separately",
+        badge: "Most Popular",
+        whatsIncluded: [
+          "2 pairs AccessAble Compression Socks – 20-30 mmHg Knee-High (you select sizes/colors for each pair)",
+          "1 AccessAble Sock Donning Aid",
+          "Digital Care Guide – Washing, drying, and maintenance instructions"
+        ],
+        customizationNote: "Each pair can be a different size and color",
+        bestFor: [
+          "Daily compression wear",
+          "Having a backup pair during laundry",
+          "Households with one primary user",
+          "Gift-giving (caregiver to family member)"
+        ],
+        price: "$99",
+        originalPrice: "$124",
+        savings: "$25 (20%)"
+      },
+      'total-freedom-kit-complete-independence-system': {
+        name: "Total Freedom Kit",
+        savingsCallout: "Save 25% vs. buying separately",
+        badge: "Best Value",
+        whatsIncluded: [
+          "3 pairs AccessAble Compression Socks – 20-30 mmHg Knee-High (you select sizes/colors for each pair)",
+          "2 AccessAble Sock Donning Aids (one for home, one for travel or backup)",
+          "Digital Care Guide – Complete maintenance and usage instructions",
+          "Priority support access – Direct line to our team for sizing or usage questions"
+        ],
+        customizationNote: "Each pair can be a different size and color. All selectors keyboard-navigable with clear ARIA labels.",
+        bestFor: [
+          "Extended wear schedules (daily compression)",
+          "Minimizing laundry frequency",
+          "Households with multiple users",
+          "Travel + home setup (keep one donning aid in each location)",
+          "Maximum independence and flexibility"
+        ],
+        price: "$139",
+        originalPrice: "$186",
+        savings: "$47 (25%)"
+      }
+    },
+    whyBundle: {
+      title: "Why Bundle?",
+      benefits: [
+        {
+          icon: Package,
+          title: "Convenience",
+          description: "Everything coordinated in one order. No guessing which products work together. Start using them the day they arrive."
+        },
+        {
+          icon: CheckCircle2,
+          title: "Rotation",
+          description: "Multiple pairs mean you always have clean socks ready. Wash one pair while wearing another. No gaps in your compression routine."
+        },
+        {
+          icon: Award,
+          title: "Better Value",
+          description: "Save 15-25% compared to buying items separately. Better price per pair, plus you get the donning aid at a discount."
+        },
+        {
+          icon: Hand,
+          title: "Independence",
+          description: "The combination of adaptive compression socks + ergonomic donning aid = maximum independent use. Designed to work together."
+        },
+        {
+          icon: Shield,
+          title: "Backup Coverage",
+          description: "Extra pairs mean you're not stuck if one pair is in the wash, lost, or needs replacement. Continuity matters."
+        },
+        {
+          icon: Heart,
+          title: "Gift-Ready",
+          description: "Pre-coordinated kits make thoughtful, practical gifts for family members who need compression. Everything they need to get started."
+        }
+      ]
+    },
+    comparisonTable: {
+      title: "Bundles vs. Buying Separately",
+      headers: ["What You Get", "Buy Separately", "Easy Start Bundle", "Everyday Independence", "Total Freedom Kit"],
+      rows: [
+        ["Compression Socks (pairs)", "1 pair: ${XX}", "1 pair", "2 pairs", "3 pairs"],
+        ["Donning Aid", "1 aid: ${XX}", "1 aid", "1 aid", "2 aids"],
+        ["Care Guide", "Not included", "Included", "Included", "Included"],
+        ["Priority Support", "Standard", "Standard", "Standard", "Included"],
+        ["Total Separate Price", "${XXX}", "$81", "$124", "$186"],
+        ["Bundle Price", "—", "$69", "$99", "$139"],
+        ["You Save", "—", "$12 (15%)", "$25 (20%)", "$47 (25%)"]
+      ],
+      bottomLine: "The more you bundle, the more you save—and the more flexibility you have for daily wear."
+    },
+    whyBundlesExist: {
+      title: "Independence + Rotation Logic",
+      problem: {
+        title: "The Independence Problem:",
+        description: "Medical-grade compression socks are often prescribed for daily wear. But if you only have one pair and it's in the wash, you're stuck. If putting them on is difficult, you might skip days—which defeats the purpose."
+      },
+      solution: {
+        title: "The Rotation Solution:",
+        description: "Multiple pairs mean continuous wear. One pair on your legs. One pair in the laundry. One pair clean and ready. No gaps. No excuses."
+      },
+      bridge: {
+        title: "The Donning Aid Bridge:",
+        description: "Even with our adaptive wide-mouth design, some users find a donning aid helpful—especially with higher compression levels (20-30 mmHg). The bundles include both, so you have maximum flexibility in how you put them on."
+      },
+      reasons: [
+        "You don't have to calculate which combination makes sense",
+        "Better value than buying items one at a time",
+        "Everything arrives together—you're set up from day one",
+        "Removes decision fatigue when you're already dealing with mobility challenges"
+      ],
+      closing: "This isn't about selling you more. It's about making sure you have what you need to actually use compression independently and consistently."
+    },
+    bundleFeatures: {
+      title: "What Makes These Bundles Work",
+      features: [
+        {
+          icon: Activity,
+          title: "Adaptive Compression Design",
+          description: "All socks feature 3x wider opening, integrated pull-tabs, and graduated 20-30 mmHg compression. Medical-grade performance with ease-of-use features built in."
+        },
+        {
+          icon: Hand,
+          title: "Ergonomic Donning Aid",
+          description: "Wide-grip handle designed for arthritis. Non-slip surface keeps socks in place during donning. Works while seated—no bending or balance required."
+        },
+        {
+          icon: Ruler,
+          title: "Mix-and-Match Sizing",
+          description: "Each pair in multi-pair bundles can be a different size or color. Useful if your legs are different sizes, or if you're sharing with someone else."
+        },
+        {
+          icon: Package,
+          title: "Coordinated Care",
+          description: "Socks and donning aid are designed to work together. The aid's frame fits the sock's wide opening perfectly. No compatibility guessing."
+        },
+        {
+          icon: Users,
+          title: "Digital Care Guide Included",
+          description: "Step-by-step washing instructions, replacement timeline guidance, troubleshooting tips. Delivered as downloadable PDF—accessible format included."
+        },
+        {
+          icon: CreditCard,
+          title: "FSA/HSA Eligible",
+          description: "Entire bundle qualifies for FSA/HSA reimbursement. Keep your receipt for submission."
+        }
+      ]
+    },
+    howToUse: {
+      title: "Getting Started with Your Bundle",
+      steps: [
+        {
+          number: 1,
+          title: "Unpack and Organize",
+          description: "You'll receive your compression socks and donning aid in one shipment. Download the digital care guide from your order confirmation email."
+        },
+        {
+          number: 2,
+          title: "Try the Socks First",
+          description: "Start by putting on the compression socks using just the wide-mouth opening and pull-tabs. See how they feel. Many users find this sufficient."
+        },
+        {
+          number: 3,
+          title: "Add the Donning Aid if Needed",
+          description: "If you want even less effort, use the donning aid. Place the sock on the frame, slide your foot in, and pull up using the handle. Full instructions in the care guide."
+        },
+        {
+          number: 4,
+          title: "Establish Your Rotation",
+          description: "If you have multiple pairs, wear one while the other is in the wash. Mark your laundry day so you always have clean socks ready."
+        },
+        {
+          number: 5,
+          title: "Replace as Needed",
+          description: "Compression socks maintain effectiveness for 3-6 months with daily wear. When you need replacements, reorder individual pairs or another bundle."
+        }
+      ],
+      videoLink: {
+        text: "Watch our bundle setup video – Complete walkthrough with captions and transcript.",
+        url: "#"
+      }
+    },
+    proofAndTrust: {
+      title: "What Bundle Users Are Saying",
+      testimonials: [
+        {
+          quote: "Having two pairs changed everything. I'm not panicking on laundry day anymore. One pair is always clean and ready.",
+          author: "{CustomerName}",
+          context: "Everyday Independence Bundle"
+        },
+        {
+          quote: "I bought the Total Freedom Kit because I travel a lot. Having a donning aid at home and one in my travel bag is perfect.",
+          author: "{CustomerName}",
+          context: "Total Freedom Kit"
+        },
+        {
+          quote: "My physical therapist recommended compression after my knee replacement. This bundle had everything I needed to start following their guidance independently.",
+          author: "{CustomerName}",
+          context: "Easy Start Bundle"
+        },
+        {
+          quote: "I bought this for my father. The fact that it came with the donning aid and multiple pairs meant he didn't have to ask me for help every morning. That independence matters to him.",
+          author: "{CaregiverName}",
+          context: "Caregiver"
+        }
+      ],
+      ratings: {
+        'easy-start-bundle-compression-socks-donning-aid-1': "{X.X} stars ({XXX} reviews)",
+        'everyday-independence-bundle-complete-rotation-kit': "{X.X} stars ({XXX} reviews) – Most Reviewed",
+        'total-freedom-kit-complete-independence-system': "{X.X} stars ({XXX} reviews)"
+      }
+    },
+    faqs: [
+      { question: "Can I choose different sizes for each pair of socks?", answer: "Yes. Each pair has its own size and color selector. Useful if your legs are different sizes, or if you're sharing the bundle with someone else." },
+      { question: "Can I mix compression levels (15-20 and 20-30)?", answer: "Bundles come with one compression level per bundle. If you want both levels, add individual pairs at checkout or contact us for a custom bundle." },
+      { question: "Do all bundles include the same donning aid?", answer: "Yes—Easy Start and Everyday Independence include one donning aid. Total Freedom Kit includes two aids (same model)." },
+      { question: "Can I return or exchange bundle items separately?", answer: "You can exchange sock sizes within 30 days at no charge. If you're not satisfied with the bundle overall, you can return the entire bundle for a refund. We don't break up bundles for partial returns." },
+      { question: "Are bundles FSA/HSA eligible?", answer: "Yes. The entire bundle purchase qualifies. Keep your receipt for reimbursement submission." },
+      { question: "How often should I replace compression socks?", answer: "With daily wear, compression socks maintain effectiveness for 3-6 months. Having multiple pairs extends the life of each individual pair since you rotate wear." },
+      { question: "What if I only need one donning aid but want three pairs of socks?", answer: "Choose the Everyday Independence Bundle (2 pairs + 1 aid), then add a third pair as a separate item. Or contact us—we can create a custom bundle for you." },
+      { question: "Can I gift this to someone?", answer: "Yes. Bundles make excellent gifts. You can enter the recipient's shipping address at checkout. We include a packing slip without pricing if you note it's a gift in the order comments." },
+      { question: "What's in the digital care guide?", answer: "The care guide includes: washing and drying instructions, sock replacement timeline, donning aid cleaning tips, troubleshooting for common fit issues, and video tutorial links." },
+      { question: "Do you offer larger bundles for facilities or multiple users?", answer: "For bulk orders (5+ bundles), see our AccessAble Pro page. We offer volume pricing and custom assortments for clinics, facilities, and medical suppliers." }
+    ]
   }
 };
 
@@ -232,6 +486,12 @@ export default function ProductDetail() {
   
   // Get product-specific copy or fallback to compression socks
   const productCopy = PRODUCT_COPY_CONFIG[product.node.productType as keyof typeof PRODUCT_COPY_CONFIG] || PRODUCT_COPY_CONFIG['Compression Socks'];
+  
+  // For bundles, get bundle-specific configuration
+  const isBundle = product.node.productType === 'Bundle';
+  const bundleConfig = isBundle && productCopy.bundles 
+    ? productCopy.bundles[product.node.handle as keyof typeof productCopy.bundles]
+    : null;
   
   // Generate schemas
   const productSchema = generateProductSchema(product);
@@ -416,6 +676,28 @@ export default function ProductDetail() {
               </div>
             </div>
 
+            {/* Bundle Customization Note Field */}
+            {isBundle && bundleConfig && (
+              <div className="mt-6 p-4 bg-secondary/10 rounded-lg border">
+                <Label htmlFor="bundle-customization" className="text-base font-semibold mb-2 block">
+                  Customize Your Bundle (Optional)
+                </Label>
+                <p className="text-sm text-muted-foreground mb-3">
+                  Specify size and color preferences for each pair of socks.<br />
+                  Example: "Pair 1: Large, Black | Pair 2: Medium, Beige"
+                </p>
+                <textarea
+                  id="bundle-customization"
+                  className="w-full border rounded-md p-3 min-h-[80px] text-sm resize-none"
+                  placeholder="Leave blank for default (Medium, Black)"
+                  aria-describedby="bundle-customization-help"
+                />
+                <p id="bundle-customization-help" className="text-xs text-muted-foreground mt-2">
+                  We'll contact you to confirm sizing before shipping.
+                </p>
+              </div>
+            )}
+
             {/* Accordions */}
             <Accordion type="single" collapsible className="w-full">
               {productCopy.faqs ? productCopy.faqs.map((faq: any, index: number) => (
@@ -514,8 +796,208 @@ export default function ProductDetail() {
           </div>
         </div>
 
-        {/* Why It's Designed This Way */}
-        <section className="py-16">
+        {/* Bundle-Specific Sections */}
+        {isBundle && bundleConfig && (
+          <>
+            {/* What's Included Section */}
+            <section className="py-12 bg-secondary/5">
+              <div className="max-w-7xl mx-auto px-4">
+                <div className="flex items-center justify-center gap-3 mb-6">
+                  <h2 className="text-3xl font-bold">{bundleConfig.name}</h2>
+                  {bundleConfig.badge && (
+                    <Badge className="bg-primary text-primary-foreground text-base px-3 py-1">
+                      {bundleConfig.badge}
+                    </Badge>
+                  )}
+                </div>
+                
+                <div className="grid md:grid-cols-2 gap-8">
+                  <div>
+                    <h3 className="text-xl font-semibold mb-4">What's Included:</h3>
+                    <ul className="space-y-2">
+                      {bundleConfig.whatsIncluded.map((item: string, index: number) => (
+                        <li key={index} className="flex items-start gap-2">
+                          <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                          <span className="text-muted-foreground">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    {bundleConfig.customizationNote && (
+                      <p className="mt-4 text-sm text-muted-foreground italic">
+                        {bundleConfig.customizationNote}
+                      </p>
+                    )}
+                  </div>
+                  
+                  <div>
+                    <h3 className="text-xl font-semibold mb-4">Best for:</h3>
+                    <ul className="space-y-2">
+                      {bundleConfig.bestFor.map((item: string, index: number) => (
+                        <li key={index} className="flex items-start gap-2">
+                          <span className="text-muted-foreground">• {item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    
+                    <div className="mt-6 p-4 bg-primary/5 rounded-lg border border-primary/20">
+                      <div className="flex justify-between items-baseline mb-2">
+                        <span className="text-sm line-through text-muted-foreground">
+                          Separately: {bundleConfig.originalPrice}
+                        </span>
+                        <span className="text-2xl font-bold text-primary">
+                          {bundleConfig.price}
+                        </span>
+                      </div>
+                      <p className="text-sm text-primary font-medium">
+                        {bundleConfig.savingsCallout}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* Why Bundle? Benefits Grid */}
+            <section className="py-16">
+              <div className="max-w-7xl mx-auto px-4">
+                <h2 className="text-3xl font-bold mb-12 text-center">
+                  {productCopy.whyBundle.title}
+                </h2>
+                
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  {productCopy.whyBundle.benefits.map((benefit: any, index: number) => {
+                    const Icon = benefit.icon;
+                    return (
+                      <div key={index} className="p-6 bg-secondary/5 rounded-lg border">
+                        <Icon className="w-10 h-10 text-primary mb-4" />
+                        <h3 className="font-semibold text-lg mb-2">{benefit.title}</h3>
+                        <p className="text-muted-foreground text-sm">{benefit.description}</p>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            </section>
+
+            {/* Comparison Table */}
+            <section className="py-16 bg-muted/30">
+              <div className="max-w-7xl mx-auto px-4">
+                <h2 className="text-3xl font-bold mb-8 text-center">
+                  {productCopy.comparisonTable.title}
+                </h2>
+                
+                <div className="overflow-x-auto">
+                  <table className="w-full border-collapse bg-background rounded-lg">
+                    <thead>
+                      <tr className="border-b-2">
+                        {productCopy.comparisonTable.headers.map((header: string, index: number) => (
+                          <th key={index} className="p-4 text-left font-semibold">
+                            {header}
+                          </th>
+                        ))}
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {productCopy.comparisonTable.rows.map((row: string[], rowIndex: number) => (
+                        <tr key={rowIndex} className="border-b">
+                          {row.map((cell: string, cellIndex: number) => (
+                            <td key={cellIndex} className={`p-4 ${cellIndex === 0 ? 'font-medium' : 'text-muted-foreground'}`}>
+                              {cell}
+                            </td>
+                          ))}
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                
+                <p className="text-center text-muted-foreground italic mt-6 max-w-2xl mx-auto">
+                  {productCopy.comparisonTable.bottomLine}
+                </p>
+              </div>
+            </section>
+
+            {/* Independence + Rotation Logic */}
+            <section className="py-16">
+              <div className="max-w-4xl mx-auto px-4">
+                <h2 className="text-3xl font-bold mb-8 text-center">
+                  {productCopy.whyBundlesExist.title}
+                </h2>
+                
+                <div className="space-y-8">
+                  <div className="p-6 bg-red-50 border border-red-200 rounded-lg">
+                    <h3 className="font-semibold text-lg mb-2 text-red-900">
+                      {productCopy.whyBundlesExist.problem.title}
+                    </h3>
+                    <p className="text-red-800">
+                      {productCopy.whyBundlesExist.problem.description}
+                    </p>
+                  </div>
+                  
+                  <div className="p-6 bg-green-50 border border-green-200 rounded-lg">
+                    <h3 className="font-semibold text-lg mb-2 text-green-900">
+                      {productCopy.whyBundlesExist.solution.title}
+                    </h3>
+                    <p className="text-green-800">
+                      {productCopy.whyBundlesExist.solution.description}
+                    </p>
+                  </div>
+                  
+                  <div className="p-6 bg-blue-50 border border-blue-200 rounded-lg">
+                    <h3 className="font-semibold text-lg mb-2 text-blue-900">
+                      {productCopy.whyBundlesExist.bridge.title}
+                    </h3>
+                    <p className="text-blue-800">
+                      {productCopy.whyBundlesExist.bridge.description}
+                    </p>
+                  </div>
+                  
+                  <div className="p-6 bg-secondary/5 rounded-lg border">
+                    <h3 className="font-semibold text-lg mb-4">Why we created pre-built bundles:</h3>
+                    <ul className="space-y-2">
+                      {productCopy.whyBundlesExist.reasons.map((reason: string, index: number) => (
+                        <li key={index} className="flex items-start gap-2">
+                          <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                          <span className="text-muted-foreground">{reason}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    
+                    <p className="mt-6 text-center text-muted-foreground italic">
+                      {productCopy.whyBundlesExist.closing}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* Bundle-Specific Features */}
+            <section className="py-16 bg-muted/30">
+              <div className="max-w-7xl mx-auto px-4">
+                <h2 className="text-3xl font-bold mb-12 text-center">
+                  {productCopy.bundleFeatures.title}
+                </h2>
+                
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  {productCopy.bundleFeatures.features.map((feature: any, index: number) => {
+                    const Icon = feature.icon;
+                    return (
+                      <div key={index} className="p-6 bg-background rounded-lg border">
+                        <Icon className="w-10 h-10 text-primary mb-4" />
+                        <h3 className="font-semibold text-lg mb-2">{feature.title}</h3>
+                        <p className="text-muted-foreground text-sm">{feature.description}</p>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            </section>
+          </>
+        )}
+
+        {/* Why It's Designed This Way - Skip for Bundles */}
+        {!isBundle && (
+          <section className="py-16">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-3xl font-bold mb-4 text-center">
               {product.node.productType === 'Donning Aid' && productCopy.whyItsNeeded ? productCopy.whyItsNeeded.title : "Adaptive Features That Restore Independence"}
@@ -601,6 +1083,7 @@ export default function ProductDetail() {
             </p>
           </div>
         </section>
+        )}
 
         {/* Proof & Trust */}
         <section className="py-16 bg-muted/30">
@@ -608,14 +1091,19 @@ export default function ProductDetail() {
             <h2 className="text-3xl font-bold mb-12 text-center">
               {productCopy.proofAndTrust ? productCopy.proofAndTrust.title : "What People Are Saying"}
             </h2>
-            <div className="grid md:grid-cols-3 gap-8 mb-12">
+            <div className={`grid ${isBundle ? 'md:grid-cols-2 lg:grid-cols-4' : 'md:grid-cols-3'} gap-8 mb-12`}>
               {productCopy.proofAndTrust ? productCopy.proofAndTrust.testimonials.map((testimonial: any, index: number) => (
                 <figure key={index} className="bg-background p-6 rounded-lg border">
                   <blockquote className="text-muted-foreground mb-4">
                     "{testimonial.quote}"
                   </blockquote>
-                  <figcaption className="font-medium">
-                    — {testimonial.author}{testimonial.context && `, ${testimonial.context}`}
+                  <figcaption className="text-sm">
+                    <strong>{testimonial.author}</strong>
+                    {testimonial.context && (
+                      <span className="text-muted-foreground block mt-1">
+                        {testimonial.context}
+                      </span>
+                    )}
                   </figcaption>
                 </figure>
               )) : (
@@ -641,6 +1129,16 @@ export default function ProductDetail() {
                 </>
               )}
             </div>
+            
+            {isBundle && productCopy.proofAndTrust?.ratings && bundleConfig && (
+              <div className="text-center mb-8">
+                <h3 className="font-semibold mb-2">Bundle Ratings</h3>
+                <p className="text-muted-foreground">
+                  {productCopy.proofAndTrust.ratings[product.node.handle as keyof typeof productCopy.proofAndTrust.ratings]}
+                </p>
+              </div>
+            )}
+            
             <div className="bg-primary/5 p-8 rounded-lg border border-primary/20 mb-8">
               <h3 className="text-xl font-semibold mb-3 text-center">
                 {product.node.productType === 'Donning Aid' ? 'Built on Clinical Input' : 'Designed With Clinical Input'}
@@ -797,8 +1295,8 @@ export default function ProductDetail() {
           </div>
         </section>
 
-        {/* How to Use - Donning Aid Only */}
-        {product.node.productType === 'Donning Aid' && productCopy.howToUse && (
+        {/* How to Use - Donning Aid and Bundles */}
+        {(product.node.productType === 'Donning Aid' || isBundle) && productCopy.howToUse && (
           <section className="py-16 bg-gradient-to-b from-background to-secondary/5">
             <div className="container mx-auto px-4">
               <h2 className="text-3xl font-bold mb-8 text-center">{productCopy.howToUse.title}</h2>
