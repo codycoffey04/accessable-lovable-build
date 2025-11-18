@@ -8,24 +8,64 @@ interface ConditionRelatedGuidesProps {
 }
 
 const relatedArticles: Record<string, Array<{ title: string; slug: string; excerpt: string; readTime: string }>> = {
-  'arthritis': [
+  'post-surgery': [
     {
-      title: 'Compression 101: What You Need to Know',
-      slug: 'compression-101',
-      excerpt: 'Understanding compression technology and how it supports daily comfort',
+      title: 'Compression After Surgery – What to Expect',
+      slug: 'compression-after-surgery',
+      excerpt: 'Common questions about post-surgical compression use, duration, and daily management.',
+      readTime: '8 min'
+    },
+    {
+      title: 'How to Use a Sock Donning Aid',
+      slug: 'how-to-use-donning-aid',
+      excerpt: 'Step-by-step instructions with video demonstration for seated donning.',
       readTime: '5 min'
     },
     {
-      title: 'How to Put On Compression Socks',
-      slug: 'how-to-put-on-socks',
-      excerpt: 'Step-by-step guide with adaptive techniques for limited hand dexterity',
-      readTime: '4 min'
+      title: 'Hip Precautions and Compression Socks',
+      slug: 'hip-precautions-compression',
+      excerpt: 'Specific strategies for donning socks while respecting 90-degree hip restrictions.',
+      readTime: '6 min'
+    }
+  ],
+  'arthritis': [
+    {
+      title: 'Adaptive Dressing With Arthritis',
+      slug: 'adaptive-dressing-arthritis',
+      excerpt: 'Techniques for putting on socks, shoes, and other clothing when your hands have limited strength.',
+      readTime: '7 min'
     },
     {
-      title: 'Mobility Aids & Sock Compatibility',
-      slug: 'mobility-aids',
-      excerpt: 'Using compression products with assistive devices and mobility equipment',
+      title: 'One-Handed Donning Techniques',
+      slug: 'one-handed-donning',
+      excerpt: 'Strategies for putting on compression socks when one hand is weaker or non-functional.',
+      readTime: '6 min'
+    },
+    {
+      title: 'Morning Stiffness and Compression',
+      slug: 'morning-stiffness',
+      excerpt: 'Timing strategies for putting on compression socks when your hands are stiffest in the morning.',
+      readTime: '5 min'
+    }
+  ],
+  'limited-mobility': [
+    {
+      title: 'Seated Donning Techniques',
+      slug: 'seated-donning',
+      excerpt: 'Step-by-step strategies for putting on compression socks entirely from a seated position.',
       readTime: '7 min'
+    },
+    {
+      title: 'Compression for Wheelchair Users',
+      slug: 'wheelchair-compression',
+      excerpt: 'Specific guidance for putting on and wearing compression socks when you use a wheelchair.',
+      readTime: '8 min'
+    },
+    {
+      title: 'Adapting Compression to Limited Reach',
+      slug: 'limited-reach-compression',
+      excerpt: 'Creative positioning and tool use for people who cannot reach their feet.',
+      readTime: '6 min'
     }
   ],
   'diabetes': [
@@ -46,46 +86,6 @@ const relatedArticles: Record<string, Array<{ title: string; slug: string; excer
       slug: 'how-to-put-on-socks',
       excerpt: 'Gentle techniques for putting on socks with foot sensitivity',
       readTime: '4 min'
-    }
-  ],
-  'limited-mobility': [
-    {
-      title: 'Mobility Aids & Sock Compatibility',
-      slug: 'mobility-aids',
-      excerpt: 'Using compression with wheelchairs, walkers, and other assistive devices',
-      readTime: '7 min'
-    },
-    {
-      title: 'How to Put On Compression Socks',
-      slug: 'how-to-put-on-socks',
-      excerpt: 'Adaptive techniques and tools for easier dressing',
-      readTime: '4 min'
-    },
-    {
-      title: 'Compression 101: What You Need to Know',
-      slug: 'compression-101',
-      excerpt: 'Understanding how compression supports independent living',
-      readTime: '5 min'
-    }
-  ],
-  'post-surgery': [
-    {
-      title: 'Compression 101: What You Need to Know',
-      slug: 'compression-101',
-      excerpt: 'How compression supports recovery and comfort',
-      readTime: '5 min'
-    },
-    {
-      title: 'How to Put On Compression Socks',
-      slug: 'how-to-put-on-socks',
-      excerpt: 'Gentle techniques for post-surgical application',
-      readTime: '4 min'
-    },
-    {
-      title: 'Mobility Aids & Sock Compatibility',
-      slug: 'mobility-aids',
-      excerpt: 'Using compression during recovery with assistive devices',
-      readTime: '7 min'
     }
   ],
   'wheelchair-users': [

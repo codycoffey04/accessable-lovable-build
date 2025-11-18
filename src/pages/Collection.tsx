@@ -45,10 +45,10 @@ const collectionData: Record<string, { title: string; description: string; isCon
   'compression-socks': { title: 'Compression Socks', description: 'Graduated compression technology for all-day comfort.' },
   'donning-aids': { title: 'Donning Aids', description: 'Tools designed to make getting dressed easier and more independent.' },
   'bundles': { title: 'Bundles', description: 'Complete kits with everything you need. Save 20% vs. buying separately.' },
-  'arthritis': { title: 'Adaptive Solutions for Arthritis', description: 'Designed for comfort and ease with limited hand dexterity.', isCondition: true },
+  'arthritis': { title: 'Adaptive Solutions for Limited Hand Strength', description: 'Designed for comfort and ease with limited hand dexterity and grip strength.', isCondition: true },
   'diabetes': { title: 'Adaptive Solutions for Diabetes', description: 'Built for all-day comfort and foot health.', isCondition: true },
-  'limited-mobility': { title: 'Adaptive Solutions for Limited Mobility', description: 'Independence-focused designs for daily living.', isCondition: true },
-  'post-surgery': { title: 'Adaptive Solutions for Post-Surgery', description: 'Comfortable recovery support.', isCondition: true },
+  'limited-mobility': { title: 'Adaptive Solutions for Limited Mobility & Flexibility', description: 'Designed for comfort and independence when bending, reaching, or balance is challenging.', isCondition: true },
+  'post-surgery': { title: 'Adaptive Solutions for Post-Surgical Recovery', description: 'Designed for comfort and independence when bending and reaching are restricted.', isCondition: true },
   'travel': { title: 'Travel & Circulation', description: 'Comfort for long journeys and active lifestyles.', isCondition: false },
 };
 
