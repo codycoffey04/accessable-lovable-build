@@ -23,7 +23,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Star, Heart, ChevronLeft, ChevronRight, CheckCircle2, Shield, Maximize, Hand, Activity, Ruler, Award, Package, CreditCard, Users } from "lucide-react";
+import { Star, Heart, ChevronLeft, ChevronRight, CheckCircle2, Shield, Maximize, Hand, Activity, Ruler, Award, Package, CreditCard, Users, Play, CheckCircle, Feather, Zap } from "lucide-react";
 import { getProducts, ShopifyProduct } from "@/lib/shopify";
 import { useCartStore } from "@/stores/cartStore";
 import { toast } from "sonner";
@@ -33,6 +33,29 @@ import { StickyAddToCart } from "@/components/StickyAddToCart";
 import { CrossSellSection } from "@/components/CrossSellSection";
 import { FrequentlyBoughtTogether } from "@/components/FrequentlyBoughtTogether";
 import { ReviewsSection } from "@/components/ReviewsSection";
+
+// Product-specific copy configuration
+const PRODUCT_COPY_CONFIG = {
+  'Compression Socks': {
+    subheadline: "Medical-grade graduated compression with adaptive features for independent use.",
+    keyBenefits: [
+      { icon: Maximize, text: "Wide-Toe Design – Extra room at toes means you don't need to stretch the opening as far. Less grip strength required." },
+      { icon: Hand, text: "Pull-Tab System – Integrated fabric loops let you pull the sock on without gripping slippery compression fabric." },
+      { icon: Activity, text: "20-30 mmHg Graduated Compression – Medical-grade support for circulation. Same compression level providers recommend, easier to put on." },
+      { icon: Ruler, text: "S-XXL Sizing with Wide-Calf Options – Designed to accommodate different body types and mobility needs. No 'one-size' compromises." }
+    ]
+  },
+  'Donning Aid': {
+    subheadline: "Ergonomic tool designed for hands with limited strength or flexibility.",
+    keyBenefits: [
+      { icon: Hand, text: "Ergonomic handle – Designed for limited grip strength and arthritis" },
+      { icon: Shield, text: "Non-slip surface – Keeps socks in place while you pull them on" },
+      { icon: Package, text: "Works with all sock types – Compression, athletic, dress, and everyday socks" },
+      { icon: Feather, text: "Lightweight design – Easy to hold, position, and use seated or standing" },
+      { icon: Zap, text: "No assembly required – Ready to use out of the box" }
+    ]
+  }
+};
 
 export default function ProductDetail() {
   const { handle } = useParams();
@@ -95,6 +118,9 @@ export default function ProductDetail() {
   }
 
   const images = product.node.images.edges;
+  
+  // Get product-specific copy or fallback to compression socks
+  const productCopy = PRODUCT_COPY_CONFIG[product.node.productType as keyof typeof PRODUCT_COPY_CONFIG] || PRODUCT_COPY_CONFIG['Compression Socks'];
   
   // Generate schemas
   const productSchema = generateProductSchema(product);
@@ -187,7 +213,7 @@ export default function ProductDetail() {
             <div>
               <h1 className="text-3xl font-bold mb-2">{product.node.title}</h1>
               <p className="text-lg text-muted-foreground mb-4">
-                Medical-grade graduated compression with adaptive features for independent use.
+                {productCopy.subheadline}
               </p>
               <div className="flex items-center gap-4 mb-4">
                 <div className="flex items-center">
