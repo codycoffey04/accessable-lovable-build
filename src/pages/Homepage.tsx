@@ -20,7 +20,8 @@ import {
   Award,
   Users,
   Lock,
-  Zap
+  Zap,
+  X
 } from "lucide-react";
 import { getProducts, ShopifyProduct } from "@/lib/shopify";
 import { useCartStore } from "@/stores/cartStore";
@@ -321,6 +322,97 @@ export default function Homepage() {
         </div>
       </section>
 
+      {/* Feature Highlights Icon Grid */}
+      <section className="py-16 bg-muted/40">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+            <div className="text-center">
+              <div className="flex justify-center mb-4">
+                <Shield className="h-12 w-12 text-primary" />
+              </div>
+              <h3 className="text-lg font-bold mb-2">Medical-Grade Compression</h3>
+              <p className="text-sm text-muted-foreground">
+                Graduated compression technology built to professional standards. FDA-registered manufacturing.
+              </p>
+            </div>
+            
+            <div className="text-center">
+              <div className="flex justify-center mb-4">
+                <Wrench className="h-12 w-12 text-primary" />
+              </div>
+              <h3 className="text-lg font-bold mb-2">Adaptive Design</h3>
+              <p className="text-sm text-muted-foreground">
+                Wide-mouth opening and integrated pull-tabs. Put them on yourself in under 60 seconds.
+              </p>
+            </div>
+            
+            <div className="text-center">
+              <div className="flex justify-center mb-4">
+                <Clock className="h-12 w-12 text-primary" />
+              </div>
+              <h3 className="text-lg font-bold mb-2">All-Day Comfort</h3>
+              <p className="text-sm text-muted-foreground">
+                Moisture-wicking bamboo-blend fabric. Reinforced construction. Designed for 12+ hour wear.
+              </p>
+            </div>
+            
+            <div className="text-center">
+              <div className="flex justify-center mb-4">
+                <Ruler className="h-12 w-12 text-primary" />
+              </div>
+              <h3 className="text-lg font-bold mb-2">Extended Sizing</h3>
+              <p className="text-sm text-muted-foreground">
+                S through XXL. Built for real bodies, not just averages.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works */}
+      <section className="py-16 bg-background">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold mb-12 text-center">Independent Comfort in Three Steps</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <div className="text-center">
+              <div className="w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-xl font-bold mx-auto mb-4">
+                1
+              </div>
+              <h3 className="text-xl font-bold mb-3">Choose Your Compression Level</h3>
+              <p className="text-muted-foreground mb-4">
+                15-20 mmHg for daily support. 20-30 mmHg for post-surgical or as directed by your provider. Unsure?
+              </p>
+              <Button variant="link" className="p-0 h-auto" asChild>
+                <Link to="/learn">See our Compression Guide →</Link>
+              </Button>
+            </div>
+            
+            <div className="text-center">
+              <div className="w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-xl font-bold mx-auto mb-4">
+                2
+              </div>
+              <h3 className="text-xl font-bold mb-3">Find Your Size</h3>
+              <p className="text-muted-foreground mb-4">
+                Measure your calf and ankle circumference. Use our sizing chart for the best fit.
+              </p>
+              <Button variant="link" className="p-0 h-auto" asChild>
+                <Link to="/size-guide">Watch our sizing video →</Link>
+              </Button>
+            </div>
+            
+            <div className="text-center">
+              <div className="w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-xl font-bold mx-auto mb-4">
+                3
+              </div>
+              <h3 className="text-xl font-bold mb-3">Experience the Difference</h3>
+              <p className="text-muted-foreground">
+                Wide opening. Pull-tab system. Comfort that lasts all day.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Social Proof */}
       <section className="py-16 bg-muted/40">
         <div className="container mx-auto px-4">
@@ -390,11 +482,76 @@ export default function Homepage() {
         </div>
       </section>
 
+      {/* Educational Content Preview */}
+      <section className="py-16 bg-background">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold mb-12 text-center">Learn What Works for You</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <Card>
+              <CardContent className="p-6">
+                <h3 className="text-lg font-bold mb-3">Compression 101: What You Need to Know</h3>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Understanding compression levels, sizing, and when to wear them.
+                </p>
+                <Button variant="link" className="p-0 h-auto" asChild>
+                  <Link to="/learn">{'{X}'} min read →</Link>
+                </Button>
+              </CardContent>
+            </Card>
+            
+            <Card>
+              <CardContent className="p-6">
+                <h3 className="text-lg font-bold mb-3">Putting On Compression Socks: A Step-by-Step Guide</h3>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Video tutorial with adaptive techniques for limited mobility.
+                </p>
+                <Button variant="link" className="p-0 h-auto" asChild>
+                  <Link to="/learn">Watch now →</Link>
+                </Button>
+              </CardContent>
+            </Card>
+            
+            <Card>
+              <CardContent className="p-6">
+                <h3 className="text-lg font-bold mb-3">Choosing the Right Compression Level</h3>
+                <p className="text-sm text-muted-foreground mb-4">
+                  15-20 vs. 20-30 mmHg—what's right for your situation?
+                </p>
+                <Button variant="link" className="p-0 h-auto" asChild>
+                  <Link to="/learn">{'{X}'} min read →</Link>
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Founder Story */}
+      <section className="py-16 bg-muted/40">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-3xl font-bold mb-6">Innovated for Independence</h2>
+            <p className="text-lg text-muted-foreground mb-6">
+              After years in adaptive equipment design, we saw a persistent gap: compression products were either clinically effective but impossible to use independently, or easy to put on but lacked real medical-grade performance.
+            </p>
+            <p className="text-lg text-muted-foreground mb-6">
+              AccessAble bridges that gap. Graduated compression technology with adaptive features built in—not added on. Designed with physical therapists. Tested with the people who'll actually wear them.
+            </p>
+            <p className="text-lg font-semibold mb-8">
+              Independence shouldn't require choosing between efficacy and ease.
+            </p>
+            <Button size="lg" asChild>
+              <Link to="/about">Our Story →</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* Condition-Specific Callouts */}
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-12 text-center">Designed for Your Needs</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <h2 className="text-3xl font-bold mb-12 text-center">Designed for Your Situation</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <Card>
               <CardContent className="p-6">
                 <h3 className="text-lg font-bold mb-2">Post-Surgical Recovery</h3>
@@ -446,24 +603,18 @@ export default function Homepage() {
         </div>
       </section>
 
-      {/* Founder Story */}
+      {/* Sizing Quiz Section */}
       <section className="py-16 bg-muted/40">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-6">Innovated for Independence</h2>
-            <p className="text-lg text-muted-foreground mb-6">
-              After years in adaptive equipment design, we saw a persistent gap: compression products were either clinically effective but impossible to use independently, or easy to put on but lacked real medical-grade performance.
+          <div className="max-w-4xl mx-auto text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Not Sure Where to Start?
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              Answer three questions to find your ideal compression solution.
             </p>
-            <p className="text-lg text-muted-foreground mb-6">
-              AccessAble bridges that gap. Graduated compression technology with adaptive features built in—not added on. Designed with physical therapists. Tested with the people who'll actually wear them.
-            </p>
-            <p className="text-lg font-semibold mb-8">
-              Independence shouldn't require choosing between efficacy and ease.
-            </p>
-            <Button size="lg" asChild>
-              <Link to="/about">Our Story →</Link>
-            </Button>
           </div>
+          <SizingQuiz />
         </div>
       </section>
 
