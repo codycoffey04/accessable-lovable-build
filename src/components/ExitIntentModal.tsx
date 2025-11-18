@@ -52,7 +52,7 @@ export const ExitIntentModal = () => {
         <DialogHeader>
           <DialogTitle className="text-2xl">Get 10% Off Your First Order</DialogTitle>
           <DialogDescription id="exit-intent-description">
-            Join our community and receive exclusive offers, mobility tips, and product updates.
+            Expert guides, new products, and adaptive living tips—delivered to your inbox.
           </DialogDescription>
         </DialogHeader>
 
@@ -75,26 +75,26 @@ export const ExitIntentModal = () => {
               <div className="flex items-center space-x-2">
                 <Checkbox id="pref-mobility" />
                 <Label htmlFor="pref-mobility" className="font-normal cursor-pointer">
-                  Mobility Tips & Guides
+                  Mobility tips and guides
                 </Label>
               </div>
               <div className="flex items-center space-x-2">
                 <Checkbox id="pref-products" />
                 <Label htmlFor="pref-products" className="font-normal cursor-pointer">
-                  New Product Announcements
+                  New product announcements
                 </Label>
               </div>
               <div className="flex items-center space-x-2">
                 <Checkbox id="pref-pro" />
                 <Label htmlFor="pref-pro" className="font-normal cursor-pointer">
-                  Pro Services Updates
+                  AccessAble Pro updates
                 </Label>
               </div>
             </div>
           </div>
 
           <Button type="submit" className="w-full h-12 text-lg">
-            Get My 10% Off
+            Get My Discount
           </Button>
 
           <p className="text-xs text-center text-muted-foreground">
