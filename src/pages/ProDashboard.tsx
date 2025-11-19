@@ -17,6 +17,15 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import { Checkbox } from '@/components/ui/checkbox';
+import { 
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
+import { Textarea } from '@/components/ui/textarea';
+import { MessageSquare } from 'lucide-react';
 import {
   Home,
   ShoppingBag,
@@ -60,6 +69,9 @@ export default function ProDashboard() {
     invoiceNotifications: true,
     productUpdates: false,
   });
+  // Support form state
+  const [supportSubject, setSupportSubject] = useState('');
+  const [supportMessage, setSupportMessage] = useState('');
 
   useEffect(() => {
     if (user) {
@@ -135,6 +147,24 @@ export default function ProDashboard() {
     });
     // TODO: Implement save logic to Supabase
     // Update pro_users table with addresses and preferences
+  };
+
+  const handleStartLiveChat = () => {
+    console.log('Starting live chat support');
+    // TODO: Implement live chat integration (e.g., Intercom, Zendesk, or custom chat)
+    // For now, this is a placeholder that logs to console
+  };
+
+  const handleSubmitSupport = () => {
+    console.log('Submitting support request:', {
+      subject: supportSubject,
+      message: supportMessage,
+    });
+    // TODO: Implement support ticket creation
+    // This could send to an edge function that creates a ticket or sends email
+    // After successful submission, clear the form:
+    // setSupportSubject('');
+    // setSupportMessage('');
   };
 
   const navItems = [
@@ -691,19 +721,134 @@ export default function ProDashboard() {
               </div>
             )}
 
-            {/* Support Tab Placeholder */}
-            {activeTab === 'support' && (
-              <div className="space-y-6">
-                <h2 className="text-3xl font-bold">Support</h2>
-                <Card>
-                  <CardContent className="pt-6">
-                    <p className="text-center text-muted-foreground py-8">
-                      Support feature coming soon.
-                    </p>
-                  </CardContent>
-                </Card>
-              </div>
-            )}
+        {/* Support Tab */}
+        {activeTab === 'support' && (
+          <div className="space-y-6">
+            <h2 className="text-3xl font-bold">Support</h2>
+
+            {/* Section 1: Live Chat Support */}
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <MessageSquare className="h-5 w-5" />
+                  24/7 Live Chat Support
+                </CardTitle>
+                <CardDescription>
+                  Get instant help from our support team
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Our support team is available 24/7 to help you with any questions or issues.
+                  Start a live chat to get immediate assistance.
+                </p>
+                <Button onClick={handleStartLiveChat} size="lg" className="w-full sm:w-auto">
+                  <MessageSquare className="h-4 w-4 mr-2" />
+                  Start Live Chat
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Section 2: Email Contact Form */}
+            <Card>
+              <CardHeader>
+                <CardTitle>Contact Support</CardTitle>
+                <CardDescription>
+                  Send us a message and we'll get back to you within 24 hours
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="space-y-2">
+                  <Label htmlFor="support-subject">Subject</Label>
+                  <Select value={supportSubject} onValueChange={setSupportSubject}>
+                    <SelectTrigger id="support-subject">
+                      <SelectValue placeholder="Select a subject" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="technical">Technical Issue</SelectItem>
+                      <SelectItem value="billing">Billing Question</SelectItem>
+                      <SelectItem value="product">Product Inquiry</SelectItem>
+                      <SelectItem value="other">Other</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="support-message">Message</Label>
+                  <Textarea
+                    id="support-message"
+                    value={supportMessage}
+                    onChange={(e) => setSupportMessage(e.target.value)}
+                    placeholder="Describe your issue or question in detail..."
+                    rows={6}
+                    className="resize-none"
+                  />
+                </div>
+                <Button 
+                  onClick={handleSubmitSupport} 
+                  size="lg"
+                  disabled={!supportSubject || !supportMessage.trim()}
+                  className="w-full sm:w-auto"
+                >
+                  Submit Support Request
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Section 3: Knowledge Base Links */}
+            <Card>
+              <CardHeader>
+                <CardTitle>Helpful Resources</CardTitle>
+                <CardDescription>
+                  Find answers to common questions and learn more about our products
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <Link to="/pro/resources">
+                    <Button variant="outline" className="w-full justify-start h-auto py-4">
+                      <div className="text-left">
+                        <div className="font-semibold">Professional Resources</div>
+                        <div className="text-sm text-muted-foreground">
+                          Access guides, tutorials, and documentation
+                        </div>
+                      </div>
+                    </Button>
+                  </Link>
+                  <Link to="/pro/bulk">
+                    <Button variant="outline" className="w-full justify-start h-auto py-4">
+                      <div className="text-left">
+                        <div className="font-semibold">Bulk Orders</div>
+                        <div className="text-sm text-muted-foreground">
+                          Learn about our bulk ordering options
+                        </div>
+                      </div>
+                    </Button>
+                  </Link>
+                  <Link to="/pro/starter-kits">
+                    <Button variant="outline" className="w-full justify-start h-auto py-4">
+                      <div className="text-left">
+                        <div className="font-semibold">Starter Kits</div>
+                        <div className="text-sm text-muted-foreground">
+                          Explore our professional starter kit packages
+                        </div>
+                      </div>
+                    </Button>
+                  </Link>
+                  <Link to="/pro/resources">
+                    <Button variant="outline" className="w-full justify-start h-auto py-4">
+                      <div className="text-left">
+                        <div className="font-semibold">View All Resources</div>
+                        <div className="text-sm text-muted-foreground">
+                          Browse our complete resource library
+                        </div>
+                      </div>
+                    </Button>
+                  </Link>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        )}
           </div>
         </main>
       </div>
