@@ -380,6 +380,7 @@ export default function ProDashboard() {
                             <TableHead scope="col">Order #</TableHead>
                             <TableHead scope="col">Date</TableHead>
                             <TableHead scope="col">Total</TableHead>
+                            <TableHead scope="col">Status</TableHead>
                             <TableHead scope="col">Invoice</TableHead>
                           </TableRow>
                         </TableHeader>
@@ -391,6 +392,11 @@ export default function ProDashboard() {
                                 {new Date(order.created_at).toLocaleDateString()}
                               </TableCell>
                               <TableCell>${order.total_amount}</TableCell>
+                              <TableCell>
+                                <Badge variant="outline" className={getStatusColor(order.status)}>
+                                  {order.status}
+                                </Badge>
+                              </TableCell>
                               <TableCell>
                                 <Button 
                                   size="sm" 
