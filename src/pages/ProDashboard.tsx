@@ -80,6 +80,13 @@ export default function ProDashboard() {
     return colors[status] || 'bg-gray-500';
   };
 
+  const handleDownloadInvoice = (orderId: string) => {
+    // Placeholder implementation
+    console.log('Downloading invoice for order:', orderId);
+    // TODO: Implement actual PDF generation/download logic
+    // This could call an edge function or use a PDF library
+  };
+
   const navItems = [
     { id: 'overview', label: 'Overview', icon: Home },
     { id: 'orders', label: 'Order History', icon: ShoppingBag },
@@ -360,8 +367,56 @@ export default function ProDashboard() {
               </div>
             )}
 
+            {/* Invoices Tab */}
+            {activeTab === 'invoices' && (
+              <div className="space-y-6">
+                <h2 className="text-3xl font-bold">Invoices</h2>
+                <Card>
+                  <CardContent className="pt-6">
+                    {orders.length > 0 ? (
+                      <Table>
+                        <TableHeader>
+                          <TableRow>
+                            <TableHead scope="col">Order #</TableHead>
+                            <TableHead scope="col">Date</TableHead>
+                            <TableHead scope="col">Total</TableHead>
+                            <TableHead scope="col">Invoice</TableHead>
+                          </TableRow>
+                        </TableHeader>
+                        <TableBody>
+                          {orders.map((order) => (
+                            <TableRow key={order.id}>
+                              <TableCell>{order.order_number}</TableCell>
+                              <TableCell>
+                                {new Date(order.created_at).toLocaleDateString()}
+                              </TableCell>
+                              <TableCell>${order.total_amount}</TableCell>
+                              <TableCell>
+                                <Button 
+                                  size="sm" 
+                                  variant="outline"
+                                  onClick={() => handleDownloadInvoice(order.id)}
+                                >
+                                  <Download className="h-4 w-4 mr-2" />
+                                  Download
+                                </Button>
+                              </TableCell>
+                            </TableRow>
+                          ))}
+                        </TableBody>
+                      </Table>
+                    ) : (
+                      <p className="text-center text-muted-foreground py-8">
+                        No invoices available. Place an order to see invoices here.
+                      </p>
+                    )}
+                  </CardContent>
+                </Card>
+              </div>
+            )}
+
             {/* Other tabs placeholder */}
-            {(activeTab === 'invoices' || activeTab === 'settings' || activeTab === 'support') && (
+            {(activeTab === 'settings' || activeTab === 'support') && (
               <div className="space-y-6">
                 <h2 className="text-3xl font-bold capitalize">{activeTab}</h2>
                 <Card>
