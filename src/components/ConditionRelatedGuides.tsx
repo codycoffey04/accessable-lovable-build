@@ -10,22 +10,22 @@ interface ConditionRelatedGuidesProps {
 const relatedArticles: Record<string, Array<{ title: string; slug: string; excerpt: string; readTime: string }>> = {
   'arthritis': [
     {
-      title: 'Compression 101: What You Need to Know',
-      slug: 'compression-101',
-      excerpt: 'Understanding compression technology and how it supports daily comfort',
+      title: 'Adaptive Dressing With Arthritis',
+      slug: 'adaptive-dressing-arthritis',
+      excerpt: 'Techniques for putting on socks, shoes, and other clothing when your hands have limited strength.',
+      readTime: '6 min'
+    },
+    {
+      title: 'One-Handed Donning Techniques',
+      slug: 'one-handed-donning',
+      excerpt: 'Strategies for putting on compression socks when one hand is weaker or non-functional.',
       readTime: '5 min'
     },
     {
-      title: 'How to Put On Compression Socks',
-      slug: 'how-to-put-on-socks',
-      excerpt: 'Step-by-step guide with adaptive techniques for limited hand dexterity',
+      title: 'Morning Stiffness and Compression',
+      slug: 'morning-stiffness-compression',
+      excerpt: 'Timing strategies for putting on compression socks when your hands are stiffest in the morning.',
       readTime: '4 min'
-    },
-    {
-      title: 'Mobility Aids & Sock Compatibility',
-      slug: 'mobility-aids',
-      excerpt: 'Using compression products with assistive devices and mobility equipment',
-      readTime: '7 min'
     }
   ],
   'diabetes': [
@@ -50,42 +50,42 @@ const relatedArticles: Record<string, Array<{ title: string; slug: string; excer
   ],
   'limited-mobility': [
     {
-      title: 'Mobility Aids & Sock Compatibility',
-      slug: 'mobility-aids',
-      excerpt: 'Using compression with wheelchairs, walkers, and other assistive devices',
-      readTime: '7 min'
+      title: 'Seated Donning Techniques',
+      slug: 'seated-donning-techniques',
+      excerpt: 'Step-by-step strategies for putting on compression socks entirely from a seated position.',
+      readTime: '5 min'
     },
     {
-      title: 'How to Put On Compression Socks',
-      slug: 'how-to-put-on-socks',
-      excerpt: 'Adaptive techniques and tools for easier dressing',
-      readTime: '4 min'
+      title: 'Compression for Wheelchair Users',
+      slug: 'compression-wheelchair-users',
+      excerpt: 'Specific guidance for putting on and wearing compression socks when you use a wheelchair.',
+      readTime: '6 min'
     },
     {
-      title: 'Compression 101: What You Need to Know',
-      slug: 'compression-101',
-      excerpt: 'Understanding how compression supports independent living',
+      title: 'Adapting Compression to Limited Reach',
+      slug: 'adapting-compression-limited-reach',
+      excerpt: 'Creative positioning and tool use for people who cannot reach their feet.',
       readTime: '5 min'
     }
   ],
   'post-surgery': [
     {
-      title: 'Compression 101: What You Need to Know',
-      slug: 'compression-101',
-      excerpt: 'How compression supports recovery and comfort',
-      readTime: '5 min'
+      title: 'Compression After Surgery – What to Expect',
+      slug: 'compression-after-surgery',
+      excerpt: 'Common questions about post-surgical compression use, duration, and daily management.',
+      readTime: '6 min'
     },
     {
-      title: 'How to Put On Compression Socks',
-      slug: 'how-to-put-on-socks',
-      excerpt: 'Gentle techniques for post-surgical application',
+      title: 'How to Use a Sock Donning Aid',
+      slug: 'how-to-use-donning-aid',
+      excerpt: 'Step-by-step instructions with video demonstration for seated donning.',
       readTime: '4 min'
     },
     {
-      title: 'Mobility Aids & Sock Compatibility',
-      slug: 'mobility-aids',
-      excerpt: 'Using compression during recovery with assistive devices',
-      readTime: '7 min'
+      title: 'Hip Precautions and Compression Socks',
+      slug: 'hip-precautions-compression',
+      excerpt: 'Specific strategies for donning socks while respecting 90-degree hip restrictions.',
+      readTime: '5 min'
     }
   ],
   'wheelchair-users': [
