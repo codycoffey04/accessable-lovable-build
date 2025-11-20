@@ -71,6 +71,7 @@ const articles = [
 
 export default function Learn() {
   const [currentPage, setCurrentPage] = useState(1);
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const articlesPerPage = 9; // 3 columns × 3 rows
   
   const breadcrumbSchema = generateBreadcrumbSchema([
@@ -78,13 +79,17 @@ export default function Learn() {
     { name: 'Learn Hub', url: window.location.href }
   ]);
 
-  // Calculate pagination (exclude featured article)
+  // Filter articles by category (exclude featured article)
   const nonFeaturedArticles = articles.filter(a => !a.featured);
-  const totalArticles = nonFeaturedArticles.length;
+  const filteredArticles = selectedCategory 
+    ? nonFeaturedArticles.filter(a => a.category === selectedCategory)
+    : nonFeaturedArticles;
+  
+  const totalArticles = filteredArticles.length;
   const totalPages = Math.ceil(totalArticles / articlesPerPage);
   const startIndex = (currentPage - 1) * articlesPerPage;
   const endIndex = startIndex + articlesPerPage;
-  const paginatedArticles = nonFeaturedArticles.slice(startIndex, endIndex);
+  const paginatedArticles = filteredArticles.slice(startIndex, endIndex);
 
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
@@ -93,6 +98,18 @@ export default function Learn() {
     if (articleGrid) {
       articleGrid.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
+  };
+
+  const handleCategoryFilter = (category: string | null) => {
+    setSelectedCategory(category);
+    setCurrentPage(1); // Reset to first page when filter changes
+    // Scroll to article grid
+    setTimeout(() => {
+      const articleGrid = document.getElementById('article-grid');
+      if (articleGrid) {
+        articleGrid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 100);
   };
 
   const blogSchema = generateBlogSchema();
@@ -146,12 +163,42 @@ export default function Learn() {
           </p>
         </div>
         <div className="flex flex-wrap gap-2 mb-12 justify-center">
-          <Button variant="default">All Articles</Button>
-          <Button variant="outline">Mobility & Independence</Button>
-          <Button variant="outline">Compression Basics</Button>
-          <Button variant="outline">Condition-Specific</Button>
-          <Button variant="outline">How-To Videos</Button>
-          <Button variant="outline">Lifestyle & Travel</Button>
+          <Button 
+            variant={selectedCategory === null ? "default" : "outline"}
+            onClick={() => handleCategoryFilter(null)}
+          >
+            All Articles
+          </Button>
+          <Button 
+            variant={selectedCategory === "Mobility & Independence" ? "default" : "outline"}
+            onClick={() => handleCategoryFilter("Mobility & Independence")}
+          >
+            Mobility & Independence
+          </Button>
+          <Button 
+            variant={selectedCategory === "Compression Basics" ? "default" : "outline"}
+            onClick={() => handleCategoryFilter("Compression Basics")}
+          >
+            Compression Basics
+          </Button>
+          <Button 
+            variant={selectedCategory === "Condition-Specific" ? "default" : "outline"}
+            onClick={() => handleCategoryFilter("Condition-Specific")}
+          >
+            Condition-Specific
+          </Button>
+          <Button 
+            variant={selectedCategory === "How-To Videos" ? "default" : "outline"}
+            onClick={() => handleCategoryFilter("How-To Videos")}
+          >
+            How-To Videos
+          </Button>
+          <Button 
+            variant={selectedCategory === "Lifestyle & Travel" ? "default" : "outline"}
+            onClick={() => handleCategoryFilter("Lifestyle & Travel")}
+          >
+            Lifestyle & Travel
+          </Button>
         </div>
 
         {/* Where Should I Start? Section */}
