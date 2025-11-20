@@ -22,7 +22,7 @@ const articles: Record<string, any> = {
     readTime: "5 min",
     datePublished: "2024-01-15",
     isHealthRelated: true,
-    featuredImage: "/placeholder.svg",
+    featuredImage: "/images/learn-compression-101.jpg",
     content: [
       { type: "heading", text: "What is Graduated Compression?" },
       { type: "paragraph", text: "[CONTENT PLACEHOLDER - Explanation of graduated compression technology and how it works]" },
@@ -56,7 +56,7 @@ const articles: Record<string, any> = {
     readTime: "7 min",
     datePublished: "2024-01-20",
     isHealthRelated: false,
-    featuredImage: "/placeholder.svg",
+    featuredImage: "/images/learn-mobility-independence.jpg",
     content: [
       { type: "heading", text: "Using Compression Socks with Mobility Aids" },
       { type: "paragraph", text: "[CONTENT PLACEHOLDER - How to use compression socks with wheelchairs, walkers, and canes]" },
@@ -73,7 +73,7 @@ const articles: Record<string, any> = {
     readTime: "6 min",
     datePublished: "2024-02-01",
     isHealthRelated: true,
-    featuredImage: "/placeholder.svg",
+    featuredImage: "/images/learn-travel-tips.jpg",
     content: [
       { type: "heading", text: "Why Compression Matters During Travel" },
       { type: "paragraph", text: "[CONTENT PLACEHOLDER - Explanation of circulation challenges during long flights/drives]" },
@@ -115,7 +115,7 @@ export default function LearnArticle() {
     headline: article.title,
     author: 'AccessAble Team',
     datePublished: article.datePublished,
-    image: article.featuredImage || '/placeholder.svg',
+    image: article.featuredImage || '/images/learn-default.jpg',
     description: article.content.find((c: any) => c.type === 'paragraph')?.text || article.title
   });
 
@@ -130,7 +130,7 @@ export default function LearnArticle() {
   const videoSchema = hasVideo ? generateVideoSchema({
     name: `Video: ${article.title}`,
     description: article.title,
-    thumbnailUrl: article.featuredImage || '/placeholder.svg',
+    thumbnailUrl: article.featuredImage || '/images/learn-default.jpg',
     uploadDate: article.datePublished,
     duration: 'PT5M', // Placeholder duration
   }) : null;

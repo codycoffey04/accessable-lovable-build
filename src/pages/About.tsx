@@ -33,11 +33,22 @@ export default function About() {
       <main id="main-content">
         {/* Hero Section */}
         <section className="bg-gradient-to-br from-primary/10 to-secondary/10 py-20">
-          <div className="container mx-auto px-4 text-center">
-            <h1 className="text-4xl lg:text-5xl font-bold mb-6">Innovated for Independence</h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Purpose-built adaptive compression for real-world needs.
-            </p>
+          <div className="container mx-auto px-4">
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div className="text-center md:text-left">
+                <h1 className="text-4xl lg:text-5xl font-bold mb-6">Innovated for Independence</h1>
+                <p className="text-xl text-muted-foreground max-w-3xl">
+                  Purpose-built adaptive compression for real-world needs.
+                </p>
+              </div>
+              <div>
+                <img 
+                  src="/images/about-hero.jpg" 
+                  alt="AccessAble product lineup showing compression socks with pull-tabs" 
+                  className="rounded-lg shadow-lg w-full h-auto"
+                />
+              </div>
+            </div>
           </div>
         </section>
 
@@ -90,10 +101,11 @@ export default function About() {
               <p className="text-lg text-muted-foreground mb-6">
                 We focus on design process, user testing with mobility-challenged individuals, and responsible material sourcing. Our commitment is to create products that genuinely serve their purpose.
               </p>
-              <div className="aspect-video bg-muted rounded-lg mb-6"></div>
-              <p className="text-sm text-muted-foreground text-center">
-                [Behind-the-scenes product development image placeholder - diverse testers with mobility aids]
-              </p>
+              <img 
+                src="/images/about-product-story.jpg" 
+                alt="Diverse testers with mobility aids testing AccessAble products" 
+                className="aspect-video object-cover rounded-lg mb-6 w-full"
+              />
             </div>
           </div>
         </section>

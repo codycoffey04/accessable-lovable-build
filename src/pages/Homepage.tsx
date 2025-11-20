@@ -279,20 +279,29 @@ export default function Homepage() {
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-primary/10 to-secondary/10 py-20 lg:py-32">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl lg:text-6xl font-bold mb-6">
-              Designed for Independence. Built for Comfort.
-            </h1>
-            <p className="text-xl text-muted-foreground mb-8">
-              Adaptive compression solutions for active, dignified living.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="h-12 px-8" onClick={() => setModalOpen(true)}>
-                Find Your Fit
-              </Button>
-              <Button size="lg" variant="outline" className="h-12 px-8" asChild>
-                <Link to="/collections/all">Shop All Products</Link>
-              </Button>
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div>
+              <h1 className="text-4xl lg:text-6xl font-bold mb-6">
+                Designed for Independence. Built for Comfort.
+              </h1>
+              <p className="text-xl text-muted-foreground mb-8">
+                Adaptive compression solutions for active, dignified living.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button size="lg" className="h-12 px-8" onClick={() => setModalOpen(true)}>
+                  Find Your Fit
+                </Button>
+                <Button size="lg" variant="outline" className="h-12 px-8" asChild>
+                  <Link to="/collections/all">Shop All Products</Link>
+                </Button>
+              </div>
+            </div>
+            <div>
+              <img 
+                src="/images/homepage-hero.jpg" 
+                alt="Woman wearing AccessAble compression socks with mobility aid visible" 
+                className="rounded-lg shadow-lg w-full h-auto"
+              />
             </div>
           </div>
         </div>
@@ -530,20 +539,31 @@ export default function Homepage() {
       {/* Founder Story */}
       <section className="py-16 bg-muted/40">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-6">Innovated for Independence</h2>
-            <p className="text-lg text-muted-foreground mb-6">
-              After years in adaptive equipment design, we saw a persistent gap: compression products were either clinically effective but impossible to use independently, or easy to put on but lacked real medical-grade performance.
-            </p>
-            <p className="text-lg text-muted-foreground mb-6">
-              AccessAble bridges that gap. Graduated compression technology with adaptive features built in—not added on. Designed with physical therapists. Tested with the people who'll actually wear them.
-            </p>
-            <p className="text-lg font-semibold mb-8">
-              Independence shouldn't require choosing between efficacy and ease.
-            </p>
-            <Button size="lg" asChild>
-              <Link to="/about">Our Story →</Link>
-            </Button>
+          <div className="max-w-6xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div>
+                <img 
+                  src="/images/homepage-founder-story.jpg" 
+                  alt="AccessAble product lineup showing compression socks with pull-tabs" 
+                  className="rounded-lg shadow-lg w-full h-auto"
+                />
+              </div>
+              <div className="text-center md:text-left">
+                <h2 className="text-3xl font-bold mb-6">Innovated for Independence</h2>
+                <p className="text-lg text-muted-foreground mb-6">
+                  After years in adaptive equipment design, we saw a persistent gap: compression products were either clinically effective but impossible to use independently, or easy to put on but lacked real medical-grade performance.
+                </p>
+                <p className="text-lg text-muted-foreground mb-6">
+                  AccessAble bridges that gap. Graduated compression technology with adaptive features built in—not added on. Designed with physical therapists. Tested with the people who'll actually wear them.
+                </p>
+                <p className="text-lg font-semibold mb-8">
+                  Independence shouldn't require choosing between efficacy and ease.
+                </p>
+                <Button size="lg" asChild>
+                  <Link to="/about">Our Story →</Link>
+                </Button>
+              </div>
+            </div>
           </div>
         </div>
       </section>

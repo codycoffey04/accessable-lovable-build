@@ -24,42 +24,48 @@ const articles = [
     category: "Compression Basics",
     excerpt: "Graduated compression, mmHg ratings, sizing basics—everything you need to understand compression socks before you buy or use them. No medical degree required.",
     readTime: "5 min",
-    featured: true
+    featured: true,
+    featuredImage: "/images/learn-compression-101.jpg"
   },
   {
     title: "How to Put On Compression Socks With Limited Hand Strength",
     slug: "limited-hand-strength",
     category: "Mobility & Independence",
     excerpt: "Adaptive techniques for donning compression when your hands don't cooperate. Covers wide-mouth designs, pull-tab methods, and when a donning aid helps most.",
-    readTime: "7 min"
+    readTime: "7 min",
+    featuredImage: "/images/learn-mobility-independence.jpg"
   },
   {
     title: "Travel Tips for Compression Users",
     slug: "travel-tips",
     category: "Lifestyle & Travel",
     excerpt: "Making compression work with your daily life—whether you're traveling, working on your feet all day, or managing compression alongside an active routine.",
-    readTime: "6 min"
+    readTime: "6 min",
+    featuredImage: "/images/learn-travel-tips.jpg"
   },
   {
     title: "Compression After Joint Replacement",
     slug: "compression-after-surgery",
     category: "Condition-Specific",
     excerpt: "Common questions about post-surgical compression use. Covers typical recommendations, duration of wear, and what to do if donning is difficult during recovery.",
-    readTime: "8 min"
+    readTime: "8 min",
+    featuredImage: "/images/learn-default.jpg"
   },
   {
     title: "Using a Sock Donning Aid (Video Guide)",
     slug: "how-to-use-donning-aid",
     category: "How-To Videos",
     excerpt: "Step-by-step visual demonstration with captions and transcripts. Watch real techniques for using a donning aid to make putting on compression socks easier.",
-    readTime: "4 min"
+    readTime: "4 min",
+    featuredImage: "/images/learn-default.jpg"
   },
   {
     title: "Arthritis and Compression Socks",
     slug: "arthritis-compression",
     category: "Condition-Specific",
     excerpt: "Educational resources for people managing arthritis, post-surgical recovery, and other conditions where compression and adaptive tools may be helpful.",
-    readTime: "7 min"
+    readTime: "7 min",
+    featuredImage: "/images/learn-default.jpg"
   }
 ];
 
@@ -303,7 +309,11 @@ export default function Learn() {
         {/* Featured Article */}
         <Card className="mb-12 overflow-hidden">
           <div className="grid md:grid-cols-2 gap-0">
-            <div className="aspect-video md:aspect-auto bg-muted"></div>
+            <img 
+              src={articles[0].featuredImage || "/images/learn-default.jpg"} 
+              alt={articles[0].title}
+              className="aspect-video md:aspect-auto object-cover w-full h-full"
+            />
             <CardContent className="p-8 flex flex-col justify-center">
               <Badge className="w-fit mb-3">Featured Guide</Badge>
               <h2 className="text-3xl font-bold mb-4">{articles[0].title}</h2>
@@ -329,7 +339,11 @@ export default function Learn() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* Guide 1 */}
             <Card className="overflow-hidden hover:shadow-lg transition-shadow">
-              <div className="aspect-video bg-muted"></div>
+              <img 
+                src="/images/learn-compression-101.jpg" 
+                alt="Compression 101 Guide"
+                className="aspect-video object-cover w-full"
+              />
               <CardContent className="p-6">
                 <Badge variant="outline" className="mb-3">Compression Basics</Badge>
                 <h3 className="text-lg font-bold mb-2">
@@ -354,7 +368,11 @@ export default function Learn() {
             
             {/* Guide 2 */}
             <Card className="overflow-hidden hover:shadow-lg transition-shadow">
-              <div className="aspect-video bg-muted"></div>
+              <img 
+                src="/images/learn-mobility-independence.jpg" 
+                alt="How to Put On Compression Socks With Limited Hand Strength"
+                className="aspect-video object-cover w-full"
+              />
               <CardContent className="p-6">
                 <Badge variant="outline" className="mb-3">Mobility & Independence</Badge>
                 <h3 className="text-lg font-bold mb-2">
@@ -379,7 +397,11 @@ export default function Learn() {
             
             {/* Guide 3 */}
             <Card className="overflow-hidden hover:shadow-lg transition-shadow">
-              <div className="aspect-video bg-muted"></div>
+              <img 
+                src="/images/learn-default.jpg" 
+                alt="Measuring for Compression Socks"
+                className="aspect-video object-cover w-full"
+              />
               <CardContent className="p-6">
                 <Badge variant="outline" className="mb-3">Compression Basics</Badge>
                 <h3 className="text-lg font-bold mb-2">
@@ -404,7 +426,11 @@ export default function Learn() {
             
             {/* Guide 4 */}
             <Card className="overflow-hidden hover:shadow-lg transition-shadow">
-              <div className="aspect-video bg-muted"></div>
+              <img 
+                src="/images/learn-default.jpg" 
+                alt="Compression After Joint Replacement"
+                className="aspect-video object-cover w-full"
+              />
               <CardContent className="p-6">
                 <Badge variant="outline" className="mb-3">Condition-Specific</Badge>
                 <h3 className="text-lg font-bold mb-2">
@@ -446,7 +472,11 @@ export default function Learn() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
             {paginatedArticles.map((article) => (
               <Card key={article.slug} className="overflow-hidden">
-                <div className="aspect-video bg-muted"></div>
+                <img 
+                  src={article.featuredImage || "/images/learn-default.jpg"} 
+                  alt={article.title}
+                  className="aspect-video object-cover w-full"
+                />
                 <CardContent className="p-6">
                   <Badge variant="outline" className="mb-3">{article.category}</Badge>
                   <h3 className="text-xl font-semibold mb-2">
