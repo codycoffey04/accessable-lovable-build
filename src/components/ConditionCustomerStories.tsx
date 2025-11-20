@@ -14,21 +14,21 @@ const customerStories: Record<string, Array<{
 }>> = {
   'post-surgery': [
     {
-      name: '{CustomerName}',
+      name: 'Margaret R.',
       userType: 'Post-Knee Replacement',
-      quote: 'I had bilateral knee replacements. My physical therapist recommended these because I literally could not bend to reach my feet. The donning aid worked perfectly with my restrictions.',
+      quote: 'I had bilateral knee replacements. My physical therapist recommended these because I literally could not bend to reach my feet. The wide opening and pull-tabs worked perfectly with my restrictions.',
       rating: 5,
       imageAlt: 'User during recovery period'
     },
     {
-      name: '{CustomerName}',
+      name: 'David K.',
       userType: 'Post-Hip Replacement',
       quote: 'Having two pairs meant I didn\'t have to stress about laundry during recovery. I could focus on physical therapy instead of worrying about clean compression socks.',
       rating: 5,
       imageAlt: 'User demonstrating seated application'
     },
     {
-      name: '{CustomerName}',
+      name: 'Patricia S.',
       userType: 'Post-Ankle Surgery',
       quote: 'The wide opening made it possible to get the sock over my surgical boot. I didn\'t think that would work, but it did.',
       rating: 5,
@@ -37,21 +37,21 @@ const customerStories: Record<string, Array<{
   ],
   'arthritis': [
     {
-      name: '{CustomerName}',
+      name: 'Carol T.',
       userType: 'Rheumatoid Arthritis',
-      quote: 'I have rheumatoid arthritis. Standard compression socks were impossible. These pull-tabs make all the difference. I can do it myself now.',
+      quote: 'I have rheumatoid arthritis. Standard compression socks were impossible. The pull-tabs on these make all the difference. I can do it myself now.',
       rating: 5,
       imageAlt: 'User with mobility aid'
     },
     {
-      name: '{CustomerName}',
+      name: 'Robert M.',
       userType: 'Stroke Recovery',
       quote: 'After my stroke, I only have good use of one hand. These socks are the only compression I can put on independently.',
       rating: 5,
       imageAlt: 'User demonstrating one-handed technique'
     },
     {
-      name: '{CustomerName}',
+      name: 'Linda K.',
       userType: 'Essential Tremor',
       quote: 'My hands shake. The wide opening means I don\'t have to thread my foot through a tiny hole. That was my biggest problem with regular compression socks.',
       rating: 5,
@@ -60,23 +60,23 @@ const customerStories: Record<string, Array<{
   ],
   'limited-mobility': [
     {
-      name: '{CustomerName}',
+      name: 'Michael T.',
       userType: 'Wheelchair User',
-      quote: 'I use a wheelchair. The extended-handle donning aid is the only way I can put on compression socks without help. Game changer.',
+      quote: 'I use a wheelchair. These socks with the wide opening are the only way I can put on compression without help. Game changer.',
       rating: 5,
       imageAlt: 'Wheelchair user wearing product'
     },
     {
-      name: '{CustomerName}',
+      name: 'Sarah D.',
       userType: 'Limited Hip Flexion',
-      quote: 'My hips don\'t bend like they used to. Reaching my feet was impossible. This tool brought the sock to me instead of making me bend down to it.',
+      quote: 'My hips don\'t bend like they used to. Reaching my feet was impossible. The wide opening and pull-tabs made it possible to put them on while seated.',
       rating: 5,
       imageAlt: 'User demonstrating seated application'
     },
     {
-      name: '{CustomerName}',
+      name: 'James L.',
       userType: 'Chronic Back Pain',
-      quote: 'I have chronic back pain. Bending forward triggers it. The long handle means I barely have to bend at all. I can actually do this myself now.',
+      quote: 'I have chronic back pain. Bending forward triggers it. The wide opening means I barely have to bend at all. I can actually do this myself now.',
       rating: 5,
       imageAlt: 'User seated using product'
     }

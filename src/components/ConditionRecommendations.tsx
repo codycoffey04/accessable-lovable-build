@@ -41,24 +41,24 @@ interface ProductRecommendation {
 const conditionRecommendations: Record<string, ProductRecommendation> = {
   'post-surgery': {
     primary: {
-      title: 'Sock Donning Aid',
-      whyHelps: 'The extended handle reduces how far you need to bend. You can position the sock on the frame, place it on a low surface or the floor, and slide your foot in while seated. Respects 90-degree hip precautions and other bending restrictions.',
+      title: 'Donning Sock (Adaptive Compression)',
+      whyHelps: 'The wide-mouth opening reduces the flexibility needed to get your foot in. Integrated pull-tabs require less grip strength than pulling bare compression fabric. Designed to be put on while seated, respecting post-surgical bending restrictions.',
       keyFeatures: [
-        'Ergonomic handle designed for reduced grip strength',
-        'Non-slip surface keeps sock stable during donning',
-        'Works while seated—no standing balance required',
-        'Lightweight, easy to position'
+        'Wide-mouth opening (3x standard width)',
+        'Integrated pull-tabs for easier grip',
+        'Graduated 20-30 mmHg compression (medical-grade)',
+        'Seated-friendly design—no standing balance required'
       ],
-      ctaText: 'Shop Donning Sock',
+      ctaText: 'Shop Donning Socks',
       ctaLink: '/collections/donning-aids'
     },
     secondary: {
-      title: 'Compression Socks (20-30 mmHg)',
-      whyDifferent: '3x wider opening than standard compression socks. Integrated pull-tabs. Designed for people who need medical-grade compression but have limited hand strength or flexibility.',
+      title: 'Compression Socks (Standard Premium)',
+      whyDifferent: 'Our standard Compression Socks offer premium bamboo-blend comfort with medical-grade 20-30 mmHg compression. No adaptive features, but some users prefer them once post-surgical restrictions are lifted.',
       keyFeatures: [
-        'Wide-mouth opening reduces flexibility needed',
-        'Pull-tabs require less grip strength than pulling bare fabric',
-        'Graduated 20-30 mmHg compression (follow your provider\'s specified level)',
+        'Premium bamboo-blend, moisture-wicking',
+        'Graduated 20-30 mmHg compression',
+        'Reinforced construction',
         'Extended sizing with wide-calf options'
       ],
       ctaText: 'Shop Compression Socks',
@@ -67,11 +67,11 @@ const conditionRecommendations: Record<string, ProductRecommendation> = {
     completeSolution: {
       title: 'Post-Surgical Recovery Bundle',
       whatsIncluded: [
-        '2 pairs compression socks (20-30 mmHg, you select sizes/colors)',
-        '1 sock donning aid',
+        '2 pairs Donning Socks (adaptive features for post-surgical restrictions)',
+        '1 pair Compression Socks (standard for later recovery)',
         'Digital care guide'
       ],
-      whyBundle: 'You need continuous compression during recovery. Having two pairs means one is always clean while the other is in the wash. Bundle saves 20% vs. buying separately.',
+      whyBundle: 'Start with Donning Socks during early recovery when bending restrictions apply. Transition to standard Compression Socks as mobility improves. Having multiple pairs means continuous compression during laundry. Bundle saves 20% vs. buying separately.',
       savings: 'Save 20%',
       ctaText: 'Shop Recovery Bundle',
       ctaLink: '/collections/bundles'
@@ -79,37 +79,37 @@ const conditionRecommendations: Record<string, ProductRecommendation> = {
   },
   'arthritis': {
     primary: {
-      title: 'Compression Socks with Wide Opening',
-      whyHelps: 'The opening is 3x wider than standard compression socks. Your foot slides in with less resistance. Integrated pull-tabs give you thick fabric loops to grip—much easier than trying to pinch and pull slippery compression fabric.',
+      title: 'Donning Sock (Adaptive Compression)',
+      whyHelps: 'The wide-mouth opening reduces the pulling force needed from your hands. Integrated pull-tabs give you thick fabric loops to grip instead of slippery compression material. Designed for hands that hurt.',
       keyFeatures: [
-        'Wide-mouth opening reduces force needed',
-        'Pull-tabs designed for limited grip strength',
-        'Graduated 20-30 mmHg compression (medical-grade)',
-        'Extended sizing, including wide-calf options'
+        'Wide-mouth opening reduces hand strain',
+        'Integrated pull-tabs with thick fabric loops',
+        'Graduated 20-30 mmHg compression',
+        'Designed for limited grip strength'
+      ],
+      ctaText: 'Shop Donning Socks',
+      ctaLink: '/collections/donning-aids'
+    },
+    secondary: {
+      title: 'Compression Socks (Standard Premium)',
+      whyDifferent: 'Standard Compression Socks without adaptive features. Some users with mild arthritis can manage these, but most find Donning Socks significantly easier.',
+      keyFeatures: [
+        'Premium bamboo-blend fabric',
+        'Graduated 20-30 mmHg compression',
+        'Moisture-wicking and breathable',
+        'Extended sizing options'
       ],
       ctaText: 'Shop Compression Socks',
       ctaLink: '/collections/compression-socks'
     },
-    secondary: {
-      title: 'Ergonomic Donning Aid',
-      whyDifferent: 'The wide handle is designed for arthritic hands. You hold the handle (which requires less grip strength than holding sock fabric) and pull upward using your arm muscles. Your fingers don\'t do the heavy lifting.',
-      keyFeatures: [
-        'Wide-grip handle with textured surface',
-        'Non-slip frame holds sock stable',
-        'Works while seated',
-        'Lightweight, easy to position'
-      ],
-      ctaText: 'Shop Donning Sock',
-      ctaLink: '/collections/donning-aids'
-    },
     completeSolution: {
       title: 'Independence Bundle',
       whatsIncluded: [
-        '2 pairs adaptive compression socks (you select sizes/colors)',
-        '1 ergonomic donning aid',
+        '2 pairs Donning Socks (adaptive features for arthritic hands)',
+        '1 pair Compression Socks (standard for comparison)',
         'Digital care guide'
       ],
-      whyBundle: 'The socks are easier to put on than standard compression. The donning aid makes them even easier. Having two pairs means you can rotate during laundry. Bundle saves 20% vs. buying separately.',
+      whyBundle: 'Two pairs of Donning Socks ensure you always have adaptive compression available. One standard pair lets you compare or use on better hand days. Bundle saves 20% vs. buying separately.',
       savings: 'Save 20%',
       ctaText: 'Shop Independence Bundle',
       ctaLink: '/collections/bundles'
@@ -117,25 +117,25 @@ const conditionRecommendations: Record<string, ProductRecommendation> = {
   },
   'limited-mobility': {
     primary: {
-      title: 'Extended-Handle Donning Aid',
-      whyHelps: 'The long handle reduces how far forward you need to bend. Place the sock-loaded aid on the floor (or low surface), slide your foot in while seated, and pull upward using the handle. Works for wheelchair users, people with back pain, and anyone who can\'t reach their feet.',
+      title: 'Donning Sock (Adaptive Compression)',
+      whyHelps: 'The wide-mouth opening reduces how much you need to bend forward to reach your feet. Put them on while seated using the integrated pull-tabs. Works for wheelchair users, people with back pain, and anyone who can\'t reach their feet easily.',
       keyFeatures: [
-        'Extended handle (adds {X} inches of reach)',
-        'Ergonomic grip designed for limited hand strength',
-        'Non-slip surface holds sock stable',
+        'Wide-mouth opening reduces forward bend needed',
+        'Integrated pull-tabs for seated donning',
+        'Graduated 20-30 mmHg compression',
         'Works entirely from seated position'
       ],
-      ctaText: 'Shop Extended-Handle Donning Aid',
+      ctaText: 'Shop Donning Socks',
       ctaLink: '/collections/donning-aids'
     },
     secondary: {
-      title: 'Compression Socks with Wide Opening',
-      whyDifferent: 'The 3x wider opening means your foot slides in with less resistance. Less ankle flexibility required. Integrated pull-tabs give you something to grip when you can\'t reach the body of the sock.',
+      title: 'Compression Socks (Standard Premium)',
+      whyDifferent: 'Standard Compression Socks without adaptive features. Designed for users who can reach their feet comfortably and have full hand dexterity.',
       keyFeatures: [
-        'Wide-mouth opening reduces flexibility needed',
-        'Pull-tabs for grip when reach is limited',
+        'Premium materials and construction',
         'Graduated 20-30 mmHg compression',
-        'Extended sizing, including wide-calf options'
+        'All-day comfort',
+        'Extended sizing'
       ],
       ctaText: 'Shop Compression Socks',
       ctaLink: '/collections/compression-socks'
@@ -143,11 +143,12 @@ const conditionRecommendations: Record<string, ProductRecommendation> = {
     completeSolution: {
       title: 'Total Freedom Kit',
       whatsIncluded: [
-        '3 pairs adaptive compression socks (you select sizes/colors)',
-        '2 donning aids (standard + extended handle options)',
-        'Digital care guide with seated donning techniques'
+        '3 pairs Donning Socks (adaptive features for limited mobility)',
+        '2 pairs Compression Socks (standard for variety)',
+        'Digital care guide with seated donning techniques',
+        'Priority support access'
       ],
-      whyBundle: 'Maximum flexibility for different situations. Use the standard aid on better mobility days. Use the extended-handle aid when bending is harder. Three pairs mean continuous wear. Bundle saves 25% vs. buying separately.',
+      whyBundle: 'Three pairs of Donning Socks provide maximum rotation flexibility for daily wear. Two standard Compression Socks for comparison or variety. Never worry about laundry gaps. Bundle saves 25% vs. buying separately.',
       savings: 'Save 25%',
       ctaText: 'Shop Total Freedom Kit',
       ctaLink: '/collections/bundles'

@@ -56,75 +56,75 @@ const PRODUCT_COPY_CONFIG: any = {
     supportingDescription: "Designed for hands with limited strength or flexibility. Graduated compression technology that actually works with your body, not against it. From hospital discharge to daily routine."
   },
   'Donning Sock': {
-    subheadline: "Ergonomic tool designed for hands with limited strength or flexibility.",
+    subheadline: "Compression sock designed for easier independent donning with limited hand strength or flexibility.",
     keyBenefits: [
-      { icon: Hand, text: "Ergonomic handle – Designed for limited grip strength and arthritis" },
-      { icon: Shield, text: "Non-slip surface – Keeps socks in place while you pull them on" },
-      { icon: Package, text: "Works with all sock types – Compression, athletic, dress, and everyday socks" },
-      { icon: Feather, text: "Lightweight design – Easy to hold, position, and use seated or standing" },
-      { icon: Zap, text: "No assembly required – Ready to use out of the box" }
+      { icon: Hand, text: "Wide-mouth opening – 3x wider than standard compression for easier foot entry" },
+      { icon: Shield, text: "Integrated pull-tabs – Thick fabric loops for better grip with limited hand strength" },
+      { icon: Package, text: "20-30 mmHg graduated compression – Medical-grade performance with adaptive features" },
+      { icon: Feather, text: "Seated-friendly design – Put on while seated, no standing balance required" },
+      { icon: Zap, text: "No separate tools needed – Adaptive features built into the sock itself" }
     ],
-    supportingDescription: "Put on your socks yourself without bending, reaching, or asking for help. Designed for anyone who finds traditional sock donning difficult due to limited mobility, flexibility, or hand strength.",
+    supportingDescription: "Put on compression socks yourself without separate devices, excessive bending, or asking for help. Designed for anyone who finds traditional compression sock donning difficult due to limited mobility, flexibility, or hand strength.",
     whyItsNeeded: {
       title: "Designed to Restore Independence",
-      intro: "Putting on socks—especially compression socks—shouldn't require maximum flexibility, grip strength, or help from someone else.",
+      intro: "Medical-grade compression socks are often recommended by healthcare providers, but traditional compression requires grip strength and flexibility many people don't have.",
       challenge: [
-        "Bending to reach your feet puts strain on your back, hips, or knees",
-        "Gripping tight fabric requires hand strength you may not have",
-        "Limited shoulder or hip mobility makes it hard to reach your feet",
-        "Post-surgical restrictions mean you can't bend past certain angles"
+        "Standard compression openings are too narrow for limited ankle flexibility",
+        "Tight compression fabric requires grip strength you may not have",
+        "Pulling socks up your leg strains hands with arthritis or reduced dexterity",
+        "Separate donning devices are clunky, clinical-looking, and require storage"
       ],
       howItHelps: [
-        "Reduces how far you need to bend or reach",
-        "Holds the sock open and in position while you slide your foot in",
-        "Requires minimal grip strength to hold the handle",
-        "Works while seated—no standing balance needed"
+        "Wide-mouth opening (3x standard width) reduces force needed to stretch sock over foot",
+        "Integrated pull-tabs give you thick fabric loops to grip instead of slippery compression material",
+        "Designed to be put on while seated—no standing balance needed",
+        "No separate tools to buy, store, or learn to use"
       ],
-      goal: "Put on your socks yourself, on your schedule, without strain."
+      goal: "Put on medical-grade compression yourself, on your schedule, without separate devices."
     },
     whoItsFor: {
       title: "Designed for Real-World Mobility Needs",
-      intro: "Many people use sock donning aids for different reasons:",
+      intro: "Many people use Donning Socks for different reasons:",
       useCases: [
-        { title: "Limited Hip or Knee Flexibility", description: "If bending to reach your feet is uncomfortable or restricted, the extended handle brings the sock closer to you. Less bending, less strain." },
-        { title: "Arthritis or Limited Grip Strength", description: "The ergonomic handle requires less grip force than pulling socks on by hand. Wider grip surface, less hand fatigue." },
-        { title: "Post-Surgical Recovery", description: "When you're not cleared to bend past 90 degrees (common after hip or knee replacement), the donning aid lets you follow your provider's restrictions while staying independent." },
-        { title: "Stroke or Neurological Conditions", description: "When one-handed dressing is necessary or coordination is affected, the non-slip surface keeps the sock stable while you work with one hand." },
-        { title: "Wheelchair Users", description: "Put on socks before transferring, or while seated in your chair. Works from a seated position without needing to bend forward significantly." },
-        { title: "Chronic Mobility Challenges", description: "For anyone who finds traditional sock donning physically difficult—regardless of the specific reason." },
-        { title: "Balance Concerns", description: "Stay seated. No standing on one foot required." }
+        { title: "Limited Hip or Knee Flexibility", description: "If bending to reach your feet is uncomfortable or restricted, the wide opening reduces how far you need to reach. Put them on while seated with less forward bending." },
+        { title: "Arthritis or Limited Grip Strength", description: "The integrated pull-tabs require less grip force than pulling bare compression fabric. Wider grip surface, less hand fatigue." },
+        { title: "Post-Surgical Recovery", description: "When you're not cleared to bend past 90 degrees (common after hip or knee replacement), the wide opening and pull-tabs let you follow your provider's restrictions while maintaining compression compliance." },
+        { title: "Stroke or Neurological Conditions", description: "When one-handed dressing is necessary or coordination is affected, the wide opening and pull-tabs make independent donning more accessible." },
+        { title: "Wheelchair Users", description: "Put on compression socks before transferring, or while seated in your chair. Wide opening works from seated position without needing significant forward bend." },
+        { title: "Chronic Mobility Challenges", description: "For anyone who finds traditional compression sock donning physically difficult—regardless of the specific reason." },
+        { title: "Balance Concerns", description: "Designed to be put on while seated. No standing on one foot required." }
       ],
-      closing: "This tool doesn't require a medical diagnosis. It's for anyone who wants an easier way to put on socks independently."
+      closing: "These socks don't require a medical diagnosis. They're for anyone who needs medical-grade compression but has limited hand strength or flexibility."
     },
     howToUse: {
       title: "Step-by-Step Instructions",
       steps: [
-        { number: 1, title: "Position the Sock", description: "Slide your sock onto the curved frame of the donning aid. Pull the sock down so the opening is stretched wide over the frame. The heel of the sock should face you." },
-        { number: 2, title: "Place on Floor", description: "Set the donning aid on the floor in front of you, or on a low footstool. The sock opening should face up, ready for your foot." },
-        { number: 3, title: "Insert Your Foot", description: "Slide your toes into the sock opening. Push your foot forward into the sock until your heel reaches the curved back of the frame." },
-        { number: 4, title: "Pull Up", description: "Hold the handle firmly. Pull the donning aid upward—the sock will slide onto your foot and ankle as you pull. The non-slip surface keeps the sock from bunching." },
-        { number: 5, title: "Remove the Aid", description: "Once the sock is on your ankle, pull the donning aid completely off. Adjust the sock to your comfort." }
+        { number: 1, title: "Start Seated", description: "Sit on the edge of your bed or a stable chair. You'll put the sock on from this seated position—no standing required." },
+        { number: 2, title: "Position the Sock Opening", description: "Hold the sock by the pull-tabs at the top. The wide-mouth opening should face you. Notice how much wider it is than standard compression socks." },
+        { number: 3, title: "Slide Your Foot In", description: "Guide your toes into the wide opening. The extra width means less ankle flexibility is needed. Push your foot forward until your heel is positioned correctly." },
+        { number: 4, title: "Pull Up Using the Tabs", description: "Grip the integrated pull-tabs (the thick fabric loops at the top edge). Pull upward—the sock will slide up your leg. The pull-tabs give you something substantial to grip instead of slippery compression fabric." },
+        { number: 5, title: "Adjust and Smooth", description: "Once the sock is up your leg, smooth any wrinkles and adjust for comfort. The pull-tabs fold down and stay in place during wear." }
       ],
       videoLink: { text: "Watch our video tutorial – Full demonstration with captions and transcript.", url: "#" },
       tips: [
-        "Start seated. A chair or bed edge works well. No standing balance needed.",
-        "Use long handles if needed. If you can't reach the floor comfortably, contact us about extended-handle options.",
-        "Practice with regular socks first. Get familiar with the motion before using with compression socks.",
-        "Position matters. Make sure the sock heel is facing you before inserting your foot."
+        "Always start seated. A chair or bed edge works well. No standing balance needed.",
+        "Use the pull-tabs for grip. They're designed for limited hand strength—thick fabric loops instead of bare compression material.",
+        "Practice with regular socks first if you want to get familiar with the motion, but most users don't need practice.",
+        "The wide opening is your advantage. Don't try to force your foot through like standard compression—it's designed to slide in easily."
       ]
     },
     whatMakesDifferent: {
-      title: "AccessAble Donning Aid vs. Standard Options",
-      tableHeaders: ["Feature", "Standard Donning Aids", "AccessAble Donning Aid"],
+      title: "AccessAble Donning Sock vs. Standard Compression",
+      tableHeaders: ["Feature", "Standard Compression Socks", "AccessAble Donning Sock"],
       rows: [
-        ["Handle Design", "Narrow grip, hard plastic", "Ergonomic wide-grip handle designed for arthritis"],
-        ["Surface Texture", "Smooth (socks slip easily)", "Non-slip textured surface holds sock in place"],
-        ["Weight", "Often heavy or awkward", "Lightweight, easy to position and hold"],
-        ["Compatibility", "May only work with specific sock types", "Works with compression, athletic, dress, and everyday socks"],
-        ["User Testing", "Generic design", "Tested with {XX}+ users with limited mobility"],
-        ["Grip Requirement", "Requires firm grip to control", "Minimal grip strength needed"]
+        ["Opening Width", "Narrow, requires significant ankle flexibility", "3x wider opening for easier foot entry"],
+        ["Grip Points", "Bare compression fabric (slippery, hard to grip)", "Integrated pull-tabs with thick fabric loops"],
+        ["Donning Method", "Often requires separate donning device or assistance", "Designed for independent donning, no separate tools needed"],
+        ["Seated Donning", "Difficult—requires significant forward bend", "Designed for seated use with less forward bend"],
+        ["Hand Strength Required", "High grip force needed to stretch fabric", "Reduced grip force—pull-tabs distribute effort"],
+        ["Compression Level", "20-30 mmHg (if medical-grade)", "20-30 mmHg graduated compression—same medical efficacy"]
       ],
-      closing: "Designed with feedback from occupational therapists and people who actually use donning aids daily."
+      closing: "Designed with feedback from occupational therapists and people who've struggled with traditional compression socks."
     },
     proofAndTrust: {
       title: "What People Are Saying",
@@ -144,35 +144,35 @@ const PRODUCT_COPY_CONFIG: any = {
     materialsAndCare: {
       title: "What It's Made Of",
       materials: [
-        { label: "Frame", description: "High-impact ABS plastic—lightweight, durable, and easy to clean." },
-        { label: "Handle", description: "Soft-touch TPE (thermoplastic elastomer) grip—ergonomic design with textured surface for better hold." },
-        { label: "Non-Slip Surface", description: "Textured inner surface prevents socks from sliding during use." },
-        { label: "Weight", description: "{XX} oz—light enough to hold with one hand, stable enough to control." },
-        { label: "Dimensions", description: "Length: {XX} inches | Width: {X} inches | Handle diameter: {X.X} inches" }
+        { label: "Fabric Blend", description: "Premium bamboo-blend with moisture-wicking properties. Soft, breathable, and comfortable for all-day wear." },
+        { label: "Compression Level", description: "20-30 mmHg graduated compression—medical-grade performance with adaptive features built in." },
+        { label: "Pull-Tabs", description: "Integrated thick fabric loops at the top edge. Reinforced construction for durability and easy grip." },
+        { label: "Wide Opening", description: "3x wider than standard compression socks. Reduces force needed to stretch sock over foot." },
+        { label: "Sizing", description: "Available in S through XXL with wide-calf options. Extended sizing for inclusive fit." }
       ],
       care: {
         cleaning: [
-          "Wipe down with mild soap and water after use",
-          "Dry completely before storing",
-          "Do not submerge in water for extended periods",
-          "Do not use harsh chemicals or abrasive cleaners"
+          "Machine wash cold on gentle cycle",
+          "Air dry or tumble dry low",
+          "Do not use bleach or fabric softener",
+          "The adaptive features (wide opening, pull-tabs) are part of the sock construction and don't require special care"
         ],
         storage: [
           "Store in a dry place",
-          "Lightweight enough to keep in a bedside drawer or bathroom cabinet"
+          "Keep pairs together for easy rotation"
         ],
-        durability: "Designed for daily use. Rigid frame won't bend or crack with normal use. Handle grip is fade-resistant and won't deteriorate over time."
+        durability: "With daily wear and proper care, compression socks typically maintain effectiveness for 3-6 months. The adaptive features are built into the construction and last as long as the sock itself."
       }
     },
     faqs: [
-      { question: "Will this work with compression socks?", answer: "Yes. The donning aid is designed to work with medical-grade compression socks (15-20 mmHg, 20-30 mmHg, and higher). The non-slip surface is especially helpful with tight compression fabric." },
-      { question: "Can I use this while seated in a wheelchair?", answer: "Yes. Many wheelchair users find it helpful for putting on socks before transferring or while seated in their chair. You may need to position your foot on a low surface or footrest depending on your reach." },
-      { question: "Do I need to be able to reach the floor?", answer: "Not necessarily. You can place the donning aid on a low footstool or step to reduce how far you need to reach. If you have significant reach limitations, contact us—we can discuss positioning strategies." },
-      { question: "Will this work with one hand?", answer: "It's designed to be easier with one hand than traditional donning methods. The non-slip surface keeps the sock stable. Some users find it helpful to stabilize the base with their foot while pulling with one hand." },
-      { question: "Is there a weight limit?", answer: "The donning aid itself has no weight limit—it's the user's tool, not a support device. It's designed to hold socks for feet of all sizes." },
-      { question: "How long will it last?", answer: "With normal daily use, the donning aid is designed to last for years. The plastic frame is impact-resistant, and the handle grip is fade- and wear-resistant." },
-      { question: "What if it doesn't work for me?", answer: "We offer a 30-day satisfaction guarantee. If the donning aid doesn't meet your needs, return it for a full refund. Contact our team if you'd like help troubleshooting before returning." },
-      { question: "Can I travel with it?", answer: "Yes. It's lightweight and TSA-friendly. Fits easily in checked luggage or a carry-on bag." }
+      { question: "Is this the same compression level as regular medical-grade socks?", answer: "Yes. Donning Socks provide 20-30 mmHg graduated compression—the same medical-grade level as prescription compression. The difference is in the adaptive features (wide opening, pull-tabs), not the compression efficacy." },
+      { question: "Can I use these while seated in a wheelchair?", answer: "Yes. Many wheelchair users find the wide opening and pull-tabs make it possible to put on compression socks before transferring or while seated. The design reduces the forward bend typically required." },
+      { question: "Do the pull-tabs stay in place or do I remove them?", answer: "The pull-tabs are integrated into the sock and stay in place during wear. They fold down once the sock is on and aren't visible or uncomfortable." },
+      { question: "Will this work with one hand?", answer: "The wide opening and pull-tabs make one-handed donning easier than standard compression socks, though some two-handed coordination may still be helpful depending on your specific limitations." },
+      { question: "Are these machine washable?", answer: "Yes. Machine wash cold on gentle cycle. The adaptive features (wide opening, pull-tabs) are part of the sock construction and don't require special care. Air dry or tumble dry low." },
+      { question: "How long do they last?", answer: "With daily wear and proper care, compression socks typically maintain effectiveness for 3-6 months. The adaptive features are built into the construction and last as long as the sock itself." },
+      { question: "What if they don't work for me?", answer: "We offer a 30-day fit guarantee. If the Donning Socks don't meet your needs, return them for a full refund or exchange. Contact our team if you'd like sizing help before returning." },
+      { question: "Do I need to buy anything else to use these?", answer: "No. The Donning Sock is designed to be used independently—no separate tools or devices required. The adaptive features are built into the sock itself." }
     ]
   },
   'Bundle': {
@@ -181,22 +181,22 @@ const PRODUCT_COPY_CONFIG: any = {
       { icon: Package, text: "Pre-coordinated solutions – No guessing which products work together" },
       { icon: CheckCircle2, text: "Always have a clean pair – Multiple socks mean continuous wear during laundry" },
       { icon: Award, text: "Better value – Save up to 25% vs. buying items separately" },
-      { icon: Hand, text: "Independent donning – Wide-mouth compression socks + ergonomic donning aid" },
+      { icon: Hand, text: "Independent donning – Donning Socks with adaptive features + standard Compression Socks" },
       { icon: Ruler, text: "Extended sizing included – S through XXL, wide-calf options available" }
     ],
-    supportingDescription: "Get started with everything you need in one order. Adaptive compression socks designed for limited hand strength, plus the donning aid that makes them even easier. No separate trips. No wondering if you bought the right combination. Just independence, delivered.",
+    supportingDescription: "Get started with everything you need in one order. Donning Socks with adaptive features for easier donning, plus standard Compression Socks for variety. No separate trips. No wondering if you bought the right combination. Just independence, delivered.",
     bundles: {
       'easy-start-bundle-compression-socks-donning-aid-1': {
         name: "Easy Start Bundle",
         savingsCallout: "Save 15% vs. buying separately",
         whatsIncluded: [
-          "1 pair AccessAble Compression Socks – 20-30 mmHg Knee-High (you select size/color)",
-          "1 AccessAble Sock Donning Aid",
-          "Digital Care Guide – How to care for compression socks and donning aids"
+          "1 pair Donning Socks (20-30 mmHg, you select size/color)",
+          "1 pair Compression Socks (20-30 mmHg, you select size/color)",
+          "Digital Care Guide – How to care for compression socks"
         ],
         bestFor: [
-          "First-time compression sock users",
-          "Testing if adaptive compression works for you",
+          "First-time adaptive compression users",
+          "Testing if wider opening and pull-tabs work for you",
           "Single-person use with frequent laundry access"
         ],
         price: "$69",
@@ -208,8 +208,8 @@ const PRODUCT_COPY_CONFIG: any = {
         savingsCallout: "Save 20% vs. buying separately",
         badge: "Most Popular",
         whatsIncluded: [
-          "2 pairs AccessAble Compression Socks – 20-30 mmHg Knee-High (you select sizes/colors for each pair)",
-          "1 AccessAble Sock Donning Aid",
+          "2 pairs Donning Socks (20-30 mmHg, you select sizes/colors)",
+          "1 pair Compression Socks (20-30 mmHg, you select size/color)",
           "Digital Care Guide – Washing, drying, and maintenance instructions"
         ],
         customizationNote: "Each pair can be a different size and color",
@@ -228,8 +228,8 @@ const PRODUCT_COPY_CONFIG: any = {
         savingsCallout: "Save 25% vs. buying separately",
         badge: "Best Value",
         whatsIncluded: [
-          "3 pairs AccessAble Compression Socks – 20-30 mmHg Knee-High (you select sizes/colors for each pair)",
-          "2 AccessAble Sock Donning Aids (one for home, one for travel or backup)",
+          "3 pairs Donning Socks (20-30 mmHg, you select sizes/colors)",
+          "2 pairs Compression Socks (20-30 mmHg, you select sizes/colors)",
           "Digital Care Guide – Complete maintenance and usage instructions",
           "Priority support access – Direct line to our team for sizing or usage questions"
         ],
@@ -238,8 +238,8 @@ const PRODUCT_COPY_CONFIG: any = {
           "Extended wear schedules (daily compression)",
           "Minimizing laundry frequency",
           "Households with multiple users",
-          "Travel + home setup (keep one donning aid in each location)",
-          "Maximum independence and flexibility"
+          "Maximum independence and flexibility",
+          "Comparing adaptive vs. standard compression features"
         ],
         price: "$139",
         originalPrice: "$186",
@@ -262,12 +262,12 @@ const PRODUCT_COPY_CONFIG: any = {
         {
           icon: Award,
           title: "Better Value",
-          description: "Save 15-25% compared to buying items separately. Better price per pair, plus you get the donning aid at a discount."
+          description: "Save 15-25% compared to buying items separately. Better price per pair, plus you get both Donning Socks and Compression Socks in one coordinated bundle."
         },
         {
           icon: Hand,
           title: "Independence",
-          description: "The combination of adaptive compression socks + ergonomic donning aid = maximum independent use. Designed to work together."
+          description: "The combination of Donning Socks (adaptive features) + Compression Socks (standard premium) = maximum flexibility. Try both to see which works best for your needs."
         },
         {
           icon: Shield,
@@ -286,7 +286,7 @@ const PRODUCT_COPY_CONFIG: any = {
       headers: ["What You Get", "Buy Separately", "Easy Start Bundle", "Everyday Independence", "Total Freedom Kit"],
       rows: [
         ["Compression Socks (pairs)", "1 pair: ${XX}", "1 pair", "2 pairs", "3 pairs"],
-        ["Donning Aid", "1 aid: ${XX}", "1 aid", "1 aid", "2 aids"],
+        ["Donning Socks", "1 pair: ${XX}", "1 pair", "2 pairs", "3 pairs"],
         ["Care Guide", "Not included", "Included", "Included", "Included"],
         ["Priority Support", "Standard", "Standard", "Standard", "Included"],
         ["Total Separate Price", "${XXX}", "$81", "$124", "$186"],
@@ -306,8 +306,8 @@ const PRODUCT_COPY_CONFIG: any = {
         description: "Multiple pairs mean continuous wear. One pair on your legs. One pair in the laundry. One pair clean and ready. No gaps. No excuses."
       },
       bridge: {
-        title: "The Donning Aid Bridge:",
-        description: "Even with our adaptive wide-mouth design, some users find a donning aid helpful—especially with higher compression levels (20-30 mmHg). The bundles include both, so you have maximum flexibility in how you put them on."
+        title: "The Donning Sock Advantage:",
+        description: "Donning Socks have adaptive features (wide opening, pull-tabs) built in. Bundles include both Donning Socks and standard Compression Socks, so you can try both and see which works best for your needs."
       },
       reasons: [
         "You don't have to calculate which combination makes sense",
@@ -327,8 +327,8 @@ const PRODUCT_COPY_CONFIG: any = {
         },
         {
           icon: Hand,
-          title: "Ergonomic Donning Aid",
-          description: "Wide-grip handle designed for arthritis. Non-slip surface keeps socks in place during donning. Works while seated—no bending or balance required."
+          title: "Integrated Pull-Tabs",
+          description: "Thick fabric loops integrated into the sock design. Designed for limited grip strength—no separate tools needed. Works while seated—no bending or balance required."
         },
         {
           icon: Ruler,
@@ -338,7 +338,7 @@ const PRODUCT_COPY_CONFIG: any = {
         {
           icon: Package,
           title: "Coordinated Care",
-          description: "Socks and donning aid are designed to work together. The aid's frame fits the sock's wide opening perfectly. No compatibility guessing."
+          description: "Donning Socks and Compression Socks are designed to work together. Both provide the same medical-grade compression, but Donning Socks have adaptive features built in. No compatibility guessing."
         },
         {
           icon: Users,
@@ -358,7 +358,7 @@ const PRODUCT_COPY_CONFIG: any = {
         {
           number: 1,
           title: "Unpack and Organize",
-          description: "You'll receive your compression socks and donning aid in one shipment. Download the digital care guide from your order confirmation email."
+          description: "You'll receive your Donning Socks and Compression Socks in one shipment. Download the digital care guide from your order confirmation email."
         },
         {
           number: 2,
@@ -367,8 +367,8 @@ const PRODUCT_COPY_CONFIG: any = {
         },
         {
           number: 3,
-          title: "Add the Donning Aid if Needed",
-          description: "If you want even less effort, use the donning aid. Place the sock on the frame, slide your foot in, and pull up using the handle. Full instructions in the care guide."
+          title: "Try Both Sock Types",
+          description: "Start with Donning Socks (adaptive features) to see how the wide opening and pull-tabs work for you. Then try standard Compression Socks for comparison. Both provide the same medical-grade compression."
         },
         {
           number: 4,
@@ -395,7 +395,7 @@ const PRODUCT_COPY_CONFIG: any = {
           context: "Everyday Independence Bundle"
         },
         {
-          quote: "I bought the Total Freedom Kit because I travel a lot. Having a donning aid at home and one in my travel bag is perfect.",
+          quote: "I bought the Total Freedom Kit because I travel a lot. Having multiple pairs of Donning Socks means I always have clean compression ready, whether I'm home or traveling.",
           author: "{CustomerName}",
           context: "Total Freedom Kit"
         },
@@ -405,7 +405,7 @@ const PRODUCT_COPY_CONFIG: any = {
           context: "Easy Start Bundle"
         },
         {
-          quote: "I bought this for my father. The fact that it came with the donning aid and multiple pairs meant he didn't have to ask me for help every morning. That independence matters to him.",
+          quote: "I bought this for my father. The fact that it came with Donning Socks (with the adaptive features) and multiple pairs meant he didn't have to ask me for help every morning. That independence matters to him.",
           author: "{CaregiverName}",
           context: "Caregiver"
         }
@@ -419,13 +419,13 @@ const PRODUCT_COPY_CONFIG: any = {
     faqs: [
       { question: "Can I choose different sizes for each pair of socks?", answer: "Yes. Each pair has its own size and color selector. Useful if your legs are different sizes, or if you're sharing the bundle with someone else." },
       { question: "Can I mix compression levels (15-20 and 20-30)?", answer: "Bundles come with one compression level per bundle. If you want both levels, add individual pairs at checkout or contact us for a custom bundle." },
-      { question: "Do all bundles include the same donning aid?", answer: "Yes—Easy Start and Everyday Independence include one donning aid. Total Freedom Kit includes two aids (same model)." },
+      { question: "Do all bundles include the same products?", answer: "Easy Start includes 1 pair Donning Socks + 1 pair Compression Socks. Everyday Independence includes 2 pairs Donning Socks + 1 pair Compression Socks. Total Freedom Kit includes 3 pairs Donning Socks + 2 pairs Compression Socks." },
       { question: "Can I return or exchange bundle items separately?", answer: "You can exchange sock sizes within 30 days at no charge. If you're not satisfied with the bundle overall, you can return the entire bundle for a refund. We don't break up bundles for partial returns." },
       { question: "Are bundles FSA/HSA eligible?", answer: "Yes. The entire bundle purchase qualifies. Keep your receipt for reimbursement submission." },
       { question: "How often should I replace compression socks?", answer: "With daily wear, compression socks maintain effectiveness for 3-6 months. Having multiple pairs extends the life of each individual pair since you rotate wear." },
-      { question: "What if I only need one donning aid but want three pairs of socks?", answer: "Choose the Everyday Independence Bundle (2 pairs + 1 aid), then add a third pair as a separate item. Or contact us—we can create a custom bundle for you." },
+      { question: "What if I only want Donning Socks, not Compression Socks?", answer: "You can purchase Donning Socks individually. Bundles include both types so you can try both and see which works best for your needs. Or contact us—we can create a custom bundle for you." },
       { question: "Can I gift this to someone?", answer: "Yes. Bundles make excellent gifts. You can enter the recipient's shipping address at checkout. We include a packing slip without pricing if you note it's a gift in the order comments." },
-      { question: "What's in the digital care guide?", answer: "The care guide includes: washing and drying instructions, sock replacement timeline, donning aid cleaning tips, troubleshooting for common fit issues, and video tutorial links." },
+      { question: "What's in the digital care guide?", answer: "The care guide includes: washing and drying instructions, sock replacement timeline, troubleshooting for common fit issues, and video tutorial links for putting on Donning Socks." },
       { question: "Do you offer larger bundles for facilities or multiple users?", answer: "For bulk orders (5+ bundles), see our AccessAble Pro page. We offer volume pricing and custom assortments for clinics, facilities, and medical suppliers." }
     ]
   },
