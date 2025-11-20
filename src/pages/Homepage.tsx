@@ -91,6 +91,21 @@ const ProductCard = ({ product, index }: { product: ShopifyProduct; index: numbe
   const addItem = useCartStore(state => state.addItem);
   const variant = product.node.variants.edges[0]?.node;
 
+  // Transform product title to replace "Donning Aid" with "Donning Sock"
+  const getDisplayTitle = (title: string) => {
+    // Map common variations of "Donning Aid" to "Donning Sock"
+    if (title.includes('Donning Aid') || title.includes('donning aid')) {
+      return title
+        .replace(/Sock Donning Aid/gi, 'Donning Sock')
+        .replace(/AccessAble Sock Donning Aid/gi, 'AccessAble Donning Sock')
+        .replace(/Donning Aid/gi, 'Donning Sock')
+        .replace(/donning aid/gi, 'Donning Sock');
+    }
+    return title;
+  };
+
+  const displayTitle = getDisplayTitle(product.node.title);
+
   const handleAddToCart = () => {
     if (!variant) return;
     
@@ -104,7 +119,7 @@ const ProductCard = ({ product, index }: { product: ShopifyProduct; index: numbe
     });
     
     toast.success('Added to cart', {
-      description: `${product.node.title} has been added to your cart.`
+      description: `${displayTitle} has been added to your cart.`
     });
   };
 
@@ -141,7 +156,7 @@ const ProductCard = ({ product, index }: { product: ShopifyProduct; index: numbe
             return (
               <img
                 src={imageUrl}
-                alt={productImage.altText || product.node.title}
+                alt={productImage.altText || displayTitle}
                 className="object-cover w-full h-full group-hover:scale-105 transition-transform"
                 onError={(e) => {
                   // Fallback if image fails to load
@@ -156,7 +171,7 @@ const ProductCard = ({ product, index }: { product: ShopifyProduct; index: numbe
       <CardContent className="p-4">
         <Link to={`/products/${product.node.handle}`}>
           <h3 className="font-medium mb-2 hover:text-primary transition-colors">
-            {product.node.title}
+            {displayTitle}
           </h3>
         </Link>
         <div className="flex items-center justify-between">
