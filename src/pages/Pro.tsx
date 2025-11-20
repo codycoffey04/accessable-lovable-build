@@ -417,14 +417,14 @@ export default function Pro() {
               <h2 className="text-3xl font-bold mb-12 text-center">What's Included</h2>
               
               <div className="grid md:grid-cols-2 gap-8 mb-12">
-                {/* Donning Aids (Bulk Options) */}
+                {/* Donning Sock (Bulk Options) */}
                 <Card>
                   <CardContent className="p-8">
-                    <h3 className="text-xl font-bold mb-6">Donning Aids (Bulk Options)</h3>
+                    <h3 className="text-xl font-bold mb-6">Donning Sock (Bulk Options)</h3>
                     
-                    {/* Standard Ergonomic Donning Aid */}
+                    {/* Standard Donning Sock */}
                     <div className="mb-6 pb-6 border-b">
-                      <h4 className="font-semibold mb-2">Standard Ergonomic Donning Aid</h4>
+                      <h4 className="font-semibold mb-2">Standard Donning Sock</h4>
                       <ul className="space-y-1 text-sm text-muted-foreground ml-4 mb-3">
                         <li>• Wide-grip handle designed for arthritic hands</li>
                         <li>• Non-slip frame surface</li>
@@ -436,18 +436,8 @@ export default function Pro() {
                       </p>
                     </div>
                     
-                    {/* Extended-Handle Donning Aid */}
-                    <div>
-                      <h4 className="font-semibold mb-2">Extended-Handle Donning Aid</h4>
-                      <ul className="space-y-1 text-sm text-muted-foreground ml-4 mb-3">
-                        <li>• Adds {'{'}X{'}'} inches of reach for limited hip flexion</li>
-                        <li>• Same ergonomic design as standard</li>
-                        <li>• Ideal for wheelchair users, post-surgical patients</li>
-                      </ul>
-                      <p className="text-sm">
-                        <strong>Available in bulk:</strong> {'{'}{5}{'}'}, {'{'}{10}{'}'}, {'{'}{25}{'}'} unit lots
-                      </p>
-                    </div>
+                    {/* Note: Extended-handle variant removed - not a separate product */}
+                    {/* This section removed as we don't sell separate donning aids */}
                   </CardContent>
                 </Card>
                 

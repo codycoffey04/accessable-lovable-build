@@ -17,7 +17,7 @@ import { Ruler, Play, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
 
 interface SizingModalProps {
-  productType?: 'compression-socks' | 'donning-aid';
+  productType?: 'compression-socks' | 'donning-sock';
 }
 
 export function SizingModal({ productType = 'compression-socks' }: SizingModalProps) {

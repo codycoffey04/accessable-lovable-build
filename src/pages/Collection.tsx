@@ -44,7 +44,7 @@ type ConditionType = 'arthritis' | 'diabetes' | 'limited-mobility' | 'post-surge
 const collectionData: Record<string, { title: string; description: string; isCondition?: boolean }> = {
   'all': { title: 'All Products', description: 'Browse our complete collection of adaptive compression solutions.' },
   'compression-socks': { title: 'Compression Socks', description: 'Graduated compression technology for all-day comfort.' },
-  'donning-aids': { title: 'Donning Aids', description: 'Tools designed to make getting dressed easier and more independent.' },
+  'donning-aids': { title: 'Donning Sock', description: 'Compression socks designed for easier donning—no separate device required.' },
   'bundles': { title: 'Bundles', description: 'Complete kits with everything you need. Save 20% vs. buying separately.' },
   'arthritis': { title: 'Adaptive Solutions for Limited Hand Strength', description: 'Designed for comfort and ease with limited hand dexterity and grip strength.', isCondition: true },
   'diabetes': { title: 'Adaptive Solutions for Diabetes', description: 'Built for all-day comfort and foot health.', isCondition: true },

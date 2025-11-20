@@ -67,7 +67,7 @@ export const Header = () => {
                         <li>
                           <NavigationMenuLink asChild>
                             <Link to="/collections/donning-aids" className="block px-3 py-2 rounded-md hover:bg-accent">
-                              Donning Aids
+                              Donning Sock
                             </Link>
                           </NavigationMenuLink>
                         </li>
@@ -187,7 +187,7 @@ export const Header = () => {
                     <h3 className="font-semibold">Shop</h3>
                     <ul className="ml-4 space-y-2">
                       <li><Link to="/collections/compression-socks" className="block py-2" onClick={() => setMobileMenuOpen(false)}>Compression Socks</Link></li>
-                      <li><Link to="/collections/donning-aids" className="block py-2" onClick={() => setMobileMenuOpen(false)}>Donning Aids</Link></li>
+                      <li><Link to="/collections/donning-aids" className="block py-2" onClick={() => setMobileMenuOpen(false)}>Donning Sock</Link></li>
                       <li><Link to="/collections/bundles" className="block py-2" onClick={() => setMobileMenuOpen(false)}>Bundles</Link></li>
                       <li><Link to="/collections/arthritis" className="block py-2" onClick={() => setMobileMenuOpen(false)}>Arthritis</Link></li>
                       <li><Link to="/collections/diabetes" className="block py-2" onClick={() => setMobileMenuOpen(false)}>Diabetes</Link></li>

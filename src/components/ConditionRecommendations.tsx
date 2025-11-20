@@ -49,7 +49,7 @@ const conditionRecommendations: Record<string, ProductRecommendation> = {
         'Works while seated—no standing balance required',
         'Lightweight, easy to position'
       ],
-      ctaText: 'Shop Donning Aid',
+      ctaText: 'Shop Donning Sock',
       ctaLink: '/collections/donning-aids'
     },
     secondary: {
@@ -99,7 +99,7 @@ const conditionRecommendations: Record<string, ProductRecommendation> = {
         'Works while seated',
         'Lightweight, easy to position'
       ],
-      ctaText: 'Shop Donning Aid',
+      ctaText: 'Shop Donning Sock',
       ctaLink: '/collections/donning-aids'
     },
     completeSolution: {

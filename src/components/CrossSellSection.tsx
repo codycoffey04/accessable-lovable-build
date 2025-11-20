@@ -22,11 +22,11 @@ export const CrossSellSection = ({ product }: CrossSellSectionProps) => {
       try {
         let query = '';
         
-        // Logic 1: If compression socks → Suggest donning aid
+        // Logic 1: If compression socks → Suggest donning sock
         if (product.node.title.toLowerCase().includes('compression')) {
-          query = 'product_type:Donning Aid';
+          query = 'product_type:Donning Sock';
         }
-        // Logic 2: If donning aid → Suggest compression socks
+        // Logic 2: If donning sock → Suggest compression socks
         else if (product.node.title.toLowerCase().includes('donning') || 
                  product.node.title.toLowerCase().includes('sock aid')) {
           query = 'product_type:Compression Socks';

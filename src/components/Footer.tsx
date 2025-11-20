@@ -34,7 +34,7 @@ export const Footer = () => {
             <h3 className="font-semibold text-lg mb-4">Shop</h3>
             <ul className="space-y-2">
               <li><Link to="/collections/compression-socks" className="text-muted-foreground hover:text-foreground transition-colors">Compression Socks</Link></li>
-              <li><Link to="/collections/donning-aids" className="text-muted-foreground hover:text-foreground transition-colors">Donning Aids</Link></li>
+              <li><Link to="/collections/donning-aids" className="text-muted-foreground hover:text-foreground transition-colors">Donning Sock</Link></li>
               <li><Link to="/collections/bundles" className="text-muted-foreground hover:text-foreground transition-colors">Bundles</Link></li>
               <li><Link to="/collections/all" className="text-muted-foreground hover:text-foreground transition-colors">All Products</Link></li>
             </ul>

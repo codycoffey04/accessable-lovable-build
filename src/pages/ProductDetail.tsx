@@ -55,7 +55,7 @@ const PRODUCT_COPY_CONFIG: any = {
     ],
     supportingDescription: "Designed for hands with limited strength or flexibility. Graduated compression technology that actually works with your body, not against it. From hospital discharge to daily routine."
   },
-  'Donning Aid': {
+  'Donning Sock': {
     subheadline: "Ergonomic tool designed for hands with limited strength or flexibility.",
     keyBenefits: [
       { icon: Hand, text: "Ergonomic handle – Designed for limited grip strength and arthritis" },
@@ -1410,7 +1410,7 @@ export default function ProductDetail() {
           <section className="py-16">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-3xl font-bold mb-4 text-center">
-              {product.node.productType === 'Donning Aid' && productCopy.whyItsNeeded ? productCopy.whyItsNeeded.title : "Adaptive Features That Restore Independence"}
+              {product.node.productType === 'Donning Sock' && productCopy.whyItsNeeded ? productCopy.whyItsNeeded.title : "Adaptive Features That Restore Independence"}
             </h2>
             
             {product.node.productType === 'Compression Socks' || !productCopy.whyItsNeeded ? (
@@ -1453,7 +1453,7 @@ export default function ProductDetail() {
                 </div>
               </div>
             ) : (
-              // Donning Aid layout
+              // Donning Sock layout
               <div className="max-w-3xl mx-auto mt-12 space-y-8">
                 <p className="text-lg text-center text-muted-foreground">
                   {productCopy.whyItsNeeded.intro}
@@ -1489,7 +1489,7 @@ export default function ProductDetail() {
             )}
             
             <p className="text-center text-lg mt-12 text-muted-foreground">
-              {product.node.productType === 'Donning Aid' ? '' : 'Every feature exists for one reason: making it easier to put these on yourself.'}
+              {product.node.productType === 'Donning Sock' ? '' : 'Every feature exists for one reason: making it easier to put these on yourself.'}
             </p>
           </div>
         </section>
@@ -1551,7 +1551,7 @@ export default function ProductDetail() {
             
             <div className="bg-primary/5 p-8 rounded-lg border border-primary/20 mb-8">
               <h3 className="text-xl font-semibold mb-3 text-center">
-                {product.node.productType === 'Donning Aid' ? 'Built on Clinical Input' : 'Designed With Clinical Input'}
+                {product.node.productType === 'Donning Sock' ? 'Built on Clinical Input' : 'Designed With Clinical Input'}
               </h3>
               <p className="text-muted-foreground text-center">
                 {productCopy.proofAndTrust?.clinicalInput || `Built with feedback from physical therapists, occupational therapists, and the people who'll actually wear them. Tested through {"{X}"} design iterations with {"{XX}"}+ users with limited hand mobility.`}
@@ -1706,7 +1706,7 @@ export default function ProductDetail() {
         </section>
 
         {/* How to Use - Donning Aid and Bundles */}
-        {(product.node.productType === 'Donning Aid' || isBundle) && productCopy.howToUse && (
+        {(product.node.productType === 'Donning Sock' || isBundle) && productCopy.howToUse && (
           <section className="py-16 bg-gradient-to-b from-background to-secondary/5">
             <div className="container mx-auto px-4">
               <h2 className="text-3xl font-bold mb-8 text-center">{productCopy.howToUse.title}</h2>
@@ -1752,7 +1752,7 @@ export default function ProductDetail() {
         )}
 
         {/* What Makes It Different - Donning Aid Only */}
-        {product.node.productType === 'Donning Aid' && productCopy.whatMakesDifferent && (
+        {product.node.productType === 'Donning Sock' && productCopy.whatMakesDifferent && (
           <section className="py-16 bg-muted/30">
             <div className="max-w-7xl mx-auto">
               <h2 className="text-3xl font-bold mb-8 text-center">
@@ -1859,7 +1859,7 @@ export default function ProductDetail() {
                 </div>
               </div>
             ) : (
-              // Donning Aid layout
+              // Donning Sock layout
               <div className="max-w-4xl mx-auto">
                 <div className="mb-12">
                   <h3 className="text-xl font-semibold mb-6">Materials</h3>
