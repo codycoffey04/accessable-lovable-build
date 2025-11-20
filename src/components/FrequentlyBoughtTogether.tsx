@@ -6,6 +6,7 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { useCartStore } from '@/stores/cartStore';
 import { toast } from 'sonner';
 import { Plus } from 'lucide-react';
+import { getProductImage } from '@/lib/productImages';
 
 interface FrequentlyBoughtTogetherProps {
   product: ShopifyProduct;
@@ -112,11 +113,25 @@ export const FrequentlyBoughtTogether = ({ product }: FrequentlyBoughtTogetherPr
                   className="mt-1"
                 />
                 <label htmlFor={`bundle-${product.node.id}`} className="flex-1 cursor-pointer">
-                  <img
-                    src={product.node.images.edges[0]?.node.url}
-                    alt={product.node.images.edges[0]?.node.altText || product.node.title}
-                    className="w-full aspect-square object-cover rounded mb-2"
-                  />
+                  {(() => {
+                    const productImage = getProductImage(
+                      product.node.images.edges,
+                      product.node.productType,
+                      product.node.handle,
+                      product.node.title
+                    );
+                    return (
+                      <img
+                        src={productImage.url}
+                        alt={productImage.altText || product.node.title}
+                        className="w-full aspect-square object-cover rounded mb-2"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement;
+                          target.src = '/images/compression-sock-black-product.jpg';
+                        }}
+                      />
+                    );
+                  })()}
                   <p className="font-semibold text-sm line-clamp-2">{product.node.title}</p>
                   <p className="text-sm text-muted-foreground">
                     ${product.node.priceRange.minVariantPrice.amount}
@@ -145,11 +160,25 @@ export const FrequentlyBoughtTogether = ({ product }: FrequentlyBoughtTogetherPr
                       className="mt-1"
                     />
                     <label htmlFor={`bundle-${relatedProduct.node.id}`} className="flex-1 cursor-pointer">
-                      <img
-                        src={relatedProduct.node.images.edges[0]?.node.url}
-                        alt={relatedProduct.node.images.edges[0]?.node.altText || relatedProduct.node.title}
-                        className="w-full aspect-square object-cover rounded mb-2"
-                      />
+                      {(() => {
+                        const productImage = getProductImage(
+                          relatedProduct.node.images.edges,
+                          relatedProduct.node.productType,
+                          relatedProduct.node.handle,
+                          relatedProduct.node.title
+                        );
+                        return (
+                          <img
+                            src={productImage.url}
+                            alt={productImage.altText || relatedProduct.node.title}
+                            className="w-full aspect-square object-cover rounded mb-2"
+                            onError={(e) => {
+                              const target = e.target as HTMLImageElement;
+                              target.src = '/images/compression-sock-black-product.jpg';
+                            }}
+                          />
+                        );
+                      })()}
                       <p className="font-semibold text-sm line-clamp-2">{relatedProduct.node.title}</p>
                       <p className="text-sm text-muted-foreground">
                         ${relatedProduct.node.priceRange.minVariantPrice.amount}

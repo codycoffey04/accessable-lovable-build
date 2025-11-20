@@ -6,6 +6,7 @@ import { Badge } from '@/components/ui/badge';
 import { useCartStore } from '@/stores/cartStore';
 import { toast } from 'sonner';
 import { Link } from 'react-router-dom';
+import { getProductImage } from '@/lib/productImages';
 
 interface CrossSellSectionProps {
   product: ShopifyProduct;
@@ -85,7 +86,12 @@ export const CrossSellSection = ({ product }: CrossSellSectionProps) => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
           {relatedProducts.map((relatedProduct) => {
             const firstVariant = relatedProduct.node.variants.edges[0];
-            const firstImage = relatedProduct.node.images.edges[0];
+            const productImage = getProductImage(
+              relatedProduct.node.images.edges,
+              relatedProduct.node.productType,
+              relatedProduct.node.handle,
+              relatedProduct.node.title
+            );
             const bundlePrice = (
               parseFloat(product.node.priceRange.minVariantPrice.amount) +
               parseFloat(relatedProduct.node.priceRange.minVariantPrice.amount)
@@ -100,9 +106,14 @@ export const CrossSellSection = ({ product }: CrossSellSectionProps) => {
                       className="flex-shrink-0"
                     >
                       <img
-                        src={firstImage?.node.url}
-                        alt={firstImage?.node.altText || relatedProduct.node.title}
+                        src={productImage.url}
+                        alt={productImage.altText || relatedProduct.node.title}
                         className="w-24 h-24 object-cover rounded"
+                        onError={(e) => {
+                          // Fallback if image fails to load
+                          const target = e.target as HTMLImageElement;
+                          target.src = '/images/compression-sock-black-product.jpg';
+                        }}
                       />
                     </Link>
                     <div className="flex-1">

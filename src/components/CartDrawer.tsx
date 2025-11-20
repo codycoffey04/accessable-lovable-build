@@ -44,6 +44,7 @@ import {
 } from "@/components/ui/sheet";
 import { ShoppingCart, Minus, Plus, Trash2, ExternalLink, Loader2 } from "lucide-react";
 import { useCartStore } from "@/stores/cartStore";
+import { getProductImage } from "@/lib/productImages";
 import { toast } from "sonner";
 
 export const CartDrawer = () => {
@@ -128,13 +129,25 @@ export const CartDrawer = () => {
                   {items.map((item) => (
                     <div key={item.variantId} className="flex gap-4 p-2">
                       <div className="w-16 h-16 bg-secondary/20 rounded-md overflow-hidden flex-shrink-0">
-                        {item.product.node.images?.edges?.[0]?.node && (
-                          <img
-                            src={item.product.node.images.edges[0].node.url}
-                            alt={item.product.node.images.edges[0].node.altText || item.product.node.title}
-                            className="w-full h-full object-cover"
-                          />
-                        )}
+                        {(() => {
+                          const productImage = getProductImage(
+                            item.product.node.images?.edges,
+                            item.product.node.productType,
+                            item.product.node.handle,
+                            item.product.node.title
+                          );
+                          return (
+                            <img
+                              src={productImage.url}
+                              alt={productImage.altText || item.product.node.title}
+                              className="w-full h-full object-cover"
+                              onError={(e) => {
+                                const target = e.target as HTMLImageElement;
+                                target.src = '/images/compression-sock-black-product.jpg';
+                              }}
+                            />
+                          );
+                        })()}
                       </div>
                       
                       <div className="flex-1 min-w-0">

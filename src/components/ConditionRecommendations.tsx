@@ -7,6 +7,7 @@ import { ShoppingCart, Heart, Check } from "lucide-react";
 import { getProducts, ShopifyProduct } from "@/lib/shopify";
 import { useCartStore } from "@/stores/cartStore";
 import { toast } from "sonner";
+import { getProductImage } from "@/lib/productImages";
 
 interface ConditionRecommendationsProps {
   condition: string;
@@ -217,13 +218,25 @@ export const ConditionRecommendations = ({ condition }: ConditionRecommendations
                 <Card key={product.node.id} className="overflow-hidden group">
                   <Link to={`/products/${product.node.handle}`}>
                     <div className="aspect-square overflow-hidden bg-muted">
-                      {product.node.images.edges[0]?.node && (
-                        <img
-                          src={product.node.images.edges[0].node.url}
-                          alt={product.node.images.edges[0].node.altText || product.node.title}
-                          className="object-cover w-full h-full group-hover:scale-105 transition-transform"
-                        />
-                      )}
+                      {(() => {
+                        const productImage = getProductImage(
+                          product.node.images.edges,
+                          product.node.productType,
+                          product.node.handle,
+                          product.node.title
+                        );
+                        return (
+                          <img
+                            src={productImage.url}
+                            alt={productImage.altText || product.node.title}
+                            className="object-cover w-full h-full group-hover:scale-105 transition-transform"
+                            onError={(e) => {
+                              const target = e.target as HTMLImageElement;
+                              target.src = '/images/compression-sock-black-product.jpg';
+                            }}
+                          />
+                        );
+                      })()}
                     </div>
                   </Link>
                   <CardContent className="p-4">
@@ -374,13 +387,25 @@ export const ConditionRecommendations = ({ condition }: ConditionRecommendations
                   <Card key={product.node.id} className="overflow-hidden group">
                     <Link to={`/products/${product.node.handle}`}>
                       <div className="aspect-square overflow-hidden bg-muted">
-                        {product.node.images.edges[0]?.node && (
-                          <img
-                            src={product.node.images.edges[0].node.url}
-                            alt={product.node.images.edges[0].node.altText || product.node.title}
-                            className="object-cover w-full h-full group-hover:scale-105 transition-transform"
-                          />
-                        )}
+                        {(() => {
+                          const productImage = getProductImage(
+                            product.node.images.edges,
+                            product.node.productType,
+                            product.node.handle,
+                            product.node.title
+                          );
+                          return (
+                            <img
+                              src={productImage.url}
+                              alt={productImage.altText || product.node.title}
+                              className="object-cover w-full h-full group-hover:scale-105 transition-transform"
+                              onError={(e) => {
+                                const target = e.target as HTMLImageElement;
+                                target.src = '/images/compression-sock-black-product.jpg';
+                              }}
+                            />
+                          );
+                        })()}
                       </div>
                     </Link>
                     <CardContent className="p-4">

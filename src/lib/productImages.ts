@@ -73,7 +73,7 @@ export function getProductFallbackImage(
 
 /**
  * Get product image with fallback
- * Returns Shopify image if available, otherwise uses fallback
+ * Returns Shopify image if available and valid (not placeholder), otherwise uses fallback
  * Always returns an image (never null)
  */
 export function getProductImage(
@@ -82,18 +82,35 @@ export function getProductImage(
   handle: string | null,
   title: string | null
 ): ProductImage {
-  // If Shopify has images, use the first one
-  if (shopifyImages && shopifyImages.length > 0 && shopifyImages[0]?.node?.url) {
+  console.log('🖼️ getProductImage called:', {
+    hasImages: shopifyImages?.length || 0,
+    firstImageUrl: shopifyImages?.[0]?.node?.url,
+    productType,
+    handle,
+    title
+  });
+
+  // Check if Shopify has valid images (not placeholders)
+  const hasValidImage = shopifyImages && 
+    shopifyImages.length > 0 && 
+    shopifyImages[0]?.node?.url &&
+    !shopifyImages[0].node.url.includes('placeholder.svg');
+
+  // If Shopify has valid images, use the first one
+  if (hasValidImage) {
+    console.log('✅ Using Shopify image:', shopifyImages[0].node.url);
     return shopifyImages[0].node;
   }
   
   // Otherwise use fallback (always returns an image)
-  return getProductFallbackImage(productType, handle, title);
+  const fallback = getProductFallbackImage(productType, handle, title);
+  console.log('🔄 Using fallback image:', fallback.url);
+  return fallback;
 }
 
 /**
  * Get all product images with fallback
- * Returns Shopify images if available, otherwise returns array with fallback image
+ * Returns Shopify images if available and valid (not placeholders), otherwise returns array with fallback image
  */
 export function getProductImages(
   shopifyImages: Array<{ node: ProductImage }> | undefined,
@@ -101,9 +118,19 @@ export function getProductImages(
   handle: string | null,
   title: string | null
 ): Array<{ node: ProductImage }> {
-  // If Shopify has images, use them
-  if (shopifyImages && shopifyImages.length > 0) {
-    return shopifyImages;
+  // Check if Shopify has valid images (not placeholders)
+  const hasValidImages = shopifyImages && 
+    shopifyImages.length > 0 &&
+    shopifyImages.some(img => img.node.url && !img.node.url.includes('placeholder.svg'));
+
+  // If Shopify has valid images, filter out placeholders and use them
+  if (hasValidImages) {
+    const validImages = shopifyImages.filter(img => 
+      img.node.url && !img.node.url.includes('placeholder.svg')
+    );
+    if (validImages.length > 0) {
+      return validImages;
+    }
   }
   
   // Otherwise return array with fallback
