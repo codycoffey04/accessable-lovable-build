@@ -506,33 +506,40 @@ export default function Learn() {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-            {paginatedArticles.map((article) => (
-              <Card key={article.slug} className="overflow-hidden">
-                <img 
-                  src={article.featuredImage || "/images/learn-default.jpg"} 
-                  alt={article.title}
-                  className="aspect-video object-cover w-full"
-                />
-                <CardContent className="p-6">
-                  <Badge variant="outline" className="mb-3">{article.category}</Badge>
-                  <h3 className="text-xl font-semibold mb-2">
-                    <Link to={`/learn/${article.slug}`} className="hover:text-primary transition-colors">
-                      {article.title}
-                    </Link>
-                  </h3>
-                  <p className="text-muted-foreground mb-4 line-clamp-2">{article.excerpt}</p>
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm text-muted-foreground flex items-center gap-1">
-                      <Clock className="h-4 w-4" />
-                      {article.readTime} read
-                    </span>
-                    <Button variant="link" className="p-0" asChild>
-                      <Link to={`/learn/${article.slug}`}>Read Article →</Link>
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+            {paginatedArticles.map((article) => {
+              // Only render if article slug exists in the articles array
+              const validSlugs = ['compression-101', 'mobility-aids', 'travel-tips'];
+              if (!validSlugs.includes(article.slug)) {
+                return null;
+              }
+              return (
+                <Card key={article.slug} className="overflow-hidden">
+                  <img 
+                    src={article.featuredImage || "/images/learn-default.jpg"} 
+                    alt={article.title}
+                    className="aspect-video object-cover w-full"
+                  />
+                  <CardContent className="p-6">
+                    <Badge variant="outline" className="mb-3">{article.category}</Badge>
+                    <h3 className="text-xl font-semibold mb-2">
+                      <Link to={`/learn/${article.slug}`} className="hover:text-primary transition-colors">
+                        {article.title}
+                      </Link>
+                    </h3>
+                    <p className="text-muted-foreground mb-4 line-clamp-2">{article.excerpt}</p>
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm text-muted-foreground flex items-center gap-1">
+                        <Clock className="h-4 w-4" />
+                        {article.readTime} read
+                      </span>
+                      <Button variant="link" className="p-0" asChild>
+                        <Link to={`/learn/${article.slug}`}>Read Article →</Link>
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
 
           {/* Pagination */}
