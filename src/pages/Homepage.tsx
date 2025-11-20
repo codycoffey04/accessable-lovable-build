@@ -87,7 +87,7 @@ const UserTypeModal = ({ open, onClose }: { open: boolean; onClose: () => void }
   );
 };
 
-const ProductCard = ({ product }: { product: ShopifyProduct }) => {
+const ProductCard = ({ product, index }: { product: ShopifyProduct; index: number }) => {
   const addItem = useCartStore(state => state.addItem);
   const variant = product.node.variants.edges[0]?.node;
 
@@ -108,6 +108,14 @@ const ProductCard = ({ product }: { product: ShopifyProduct }) => {
     });
   };
 
+  // Determine fallback image based on index: 0=black, 1=tan, 2=white
+  const getFallbackImage = () => {
+    const indexMod = index % 3;
+    if (indexMod === 0) return '/images/compression-sock-black-product.jpg';
+    if (indexMod === 1) return '/images/compression-sock-tan-product.jpg';
+    return '/images/compression-sock-white-product.jpg';
+  };
+
   return (
     <Card className="overflow-hidden group">
       <Link to={`/products/${product.node.handle}`}>
@@ -119,15 +127,26 @@ const ProductCard = ({ product }: { product: ShopifyProduct }) => {
               product.node.handle,
               product.node.title
             );
+            // If using fallback (Shopify image is placeholder), use color-varied fallback
+            const firstImageUrl = product.node.images.edges?.[0]?.node?.url || '';
+            const isPlaceholder = !firstImageUrl || 
+                                 firstImageUrl.includes('placeholder') || 
+                                 firstImageUrl.includes('no-image') ||
+                                 firstImageUrl.includes('default') ||
+                                 firstImageUrl.endsWith('.svg') ||
+                                 firstImageUrl.length <= 20;
+            
+            const imageUrl = isPlaceholder ? getFallbackImage() : productImage.url;
+            
             return (
               <img
-                src={productImage.url}
+                src={imageUrl}
                 alt={productImage.altText || product.node.title}
                 className="object-cover w-full h-full group-hover:scale-105 transition-transform"
                 onError={(e) => {
                   // Fallback if image fails to load
                   const target = e.target as HTMLImageElement;
-                  target.src = '/images/compression-sock-black-product.jpg';
+                  target.src = getFallbackImage();
                 }}
               />
             );
@@ -337,8 +356,8 @@ export default function Homepage() {
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {products.map((product) => (
-                <ProductCard key={product.node.id} product={product} />
+              {products.map((product, index) => (
+                <ProductCard key={product.node.id} product={product} index={index} />
               ))}
             </div>
           )}
