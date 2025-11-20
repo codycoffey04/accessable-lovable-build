@@ -488,6 +488,35 @@ export default function Learn() {
                 </div>
               </CardContent>
             </Card>
+            
+            {/* Guide 4 */}
+            <Card className="overflow-hidden hover:shadow-lg transition-shadow">
+              <img 
+                src="/images/learn-default.jpg" 
+                alt="Compression After Joint Replacement"
+                className="aspect-video object-cover w-full"
+              />
+              <CardContent className="p-6">
+                <Badge variant="outline" className="mb-3">Condition-Specific</Badge>
+                <h3 className="text-lg font-bold mb-2">
+                  <Link to="/learn/mobility-aids" className="hover:text-primary transition-colors">
+                    Compression After Surgery – What to Expect
+                  </Link>
+                </h3>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Common questions about post-surgical compression use. Covers typical recommendations, duration of wear, and what to do if donning is difficult during recovery.
+                </p>
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-muted-foreground flex items-center gap-1">
+                    <Clock className="h-4 w-4" />
+                    8 min read
+                  </span>
+                  <Button variant="link" className="p-0 h-auto text-sm" asChild>
+                    <Link to="/learn/mobility-aids">Read Guide →</Link>
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
 
