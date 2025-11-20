@@ -34,11 +34,12 @@ export const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between gap-4">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2 min-w-fit" aria-label="AccessAble Home">
+          <Link to="/" className="flex items-center min-w-fit" aria-label="AccessAble Home">
             <img 
               src="/images/logo-main.jpeg" 
               alt="AccessAble" 
-              className="h-10 w-auto"
+              className="h-8 sm:h-10 w-auto max-h-10 object-contain"
+              style={{ maxWidth: '180px' }}
             />
           </Link>
 
