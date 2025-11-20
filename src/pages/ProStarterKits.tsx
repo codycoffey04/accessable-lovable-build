@@ -171,7 +171,7 @@ export default function ProStarterKits() {
                                   <td className="p-3 font-mono text-sm">{item.sku}</td>
                                   <td className="p-3">{item.product}</td>
                                   <td className="p-3 text-sm text-muted-foreground">
-                                    {item.sizes || item.quantity}
+                                    Quantity: {item.quantity}
                                   </td>
                                 </tr>
                               ))}
