@@ -67,10 +67,7 @@ const conditionContent: Record<ConditionType, ConditionContent> = {
       paragraphs: [
         'After joint replacement, vascular procedures, or other surgeries, many healthcare providers recommend graduated compression socks as part of recovery. The challenge: your provider says to wear them daily, but your surgical restrictions make putting them on nearly impossible.',
         'Post-surgical movement restrictions are common. You may not be cleared to bend past 90 degrees. Your hands might not have full strength yet. Balance might be uncertain. These limitations make traditional compression sock donning difficult or impossible without help.',
-        'The daily-life challenge:',
-        'Your doctor recommends compression. Your body says you can\'t bend to reach your feet. Standard compression socks require grip strength and flexibility you don\'t have during recovery. Asking for help every morning feels like losing independence.',
-        'How adaptive design helps:',
-        'Wide-mouth compression socks reduce the flexibility needed to get your foot in. Ergonomic donning aids bring the sock closer to you, reducing how far you need to bend. Pull-tab systems require less grip strength. These features can help you follow your provider\'s compression guidance while respecting your surgical restrictions.'
+        'Wide-mouth Donning Socks reduce the flexibility needed to get your foot in. Integrated pull-tabs require less grip strength than pulling bare compression fabric. The design allows seated donning, respecting your surgical restrictions while following your provider\'s compression guidance.'
       ],
       videoTitle: 'Putting On Compression Socks After Surgery',
       videoLink: '#',
@@ -107,43 +104,43 @@ const conditionContent: Record<ConditionType, ConditionContent> = {
     ],
     howItHelps: {
       whyCompression: 'Many healthcare providers recommend graduated compression socks after joint replacement, vascular procedures, or surgeries that require extended periods of limited mobility. Compression is commonly part of post-surgical protocols. Your provider will specify compression level (often 15-20 or 20-30 mmHg) and duration of wear.',
-      whatAdaptiveFeatures: 'Adaptive compression socks and donning aids are designed to make following your provider\'s compression guidance physically possible when you have movement restrictions.',
+      whatAdaptiveFeatures: 'Donning Socks are compression socks with built-in adaptive features designed to make following your provider\'s compression guidance physically possible when you have movement restrictions.',
       features: [
         {
           feature: 'Wide-mouth opening',
-          description: 'Reduces ankle flexibility needed to get your foot in'
+          description: 'Reduces ankle flexibility needed to get your foot in. 3x wider than standard compression sock openings.'
         },
         {
           feature: 'Integrated pull-tabs',
-          description: 'Gives you something to grip and pull that requires less fine motor control'
+          description: 'Thick fabric loops at the top edge. Easier to grip than slippery compression material. Requires less fine motor control.'
         },
         {
-          feature: 'Donning aid with long handle',
-          description: 'Brings the sock closer to you, reducing how far you need to bend'
+          feature: 'Seated-friendly design',
+          description: 'Put them on while sitting on bed edge or chair. Reduces forward bending required. No standing balance needed.'
         },
         {
-          feature: 'Non-slip surfaces',
-          description: 'Keeps sock stable while you position it, useful when coordination is affected'
+          feature: 'Graduated 20-30 mmHg compression',
+          description: 'Same medical-grade compression as prescription brands. Adaptive features don\'t compromise compression efficacy.'
         }
       ],
-      disclaimer: 'These tools don\'t treat or heal anything. They make it easier to put on compression socks yourself when your body has surgical restrictions.'
+      disclaimer: 'These features don\'t treat or heal anything. They make it easier to put on compression socks yourself when your body has surgical restrictions.'
     },
     practicalTips: [
       {
         title: 'Tip 1: Put socks on before getting out of bed',
-        description: 'Sit on the edge of your bed. Use the donning aid while seated. You have support from the bed and don\'t need to balance on one leg.'
+        description: 'Sit on the edge of your bed. Put them on while seated using the wide opening and pull-tabs. You have support from the bed and don\'t need to balance on one leg.'
       },
       {
-        title: 'Tip 2: Use a low footstool',
-        description: 'If you can\'t reach the floor comfortably, place the donning aid on a low footstool or step. Reduces how far you need to reach.'
+        title: 'Tip 2: Use bed or chair height strategically',
+        description: 'Sit where your feet can comfortably rest flat or nearly flat. Reduces how far you need to reach forward. Chair height matters for limited hip flexion.'
       },
       {
-        title: 'Tip 3: Keep socks near your bed',
-        description: 'Set up your compression socks and donning aid on your nightstand the night before. One less trip across the room in the morning.'
+        title: 'Tip 3: Pre-position the night before',
+        description: 'Set up your Donning Socks on your nightstand the night before. One less trip across the room in the morning when you\'re stiffest.'
       },
       {
         title: 'Tip 4: Practice before surgery (if possible)',
-        description: 'If you know compression will be part of your recovery protocol, practice using the donning aid before surgery. Muscle memory helps when you\'re post-op.'
+        description: 'If you know compression will be part of your recovery protocol, practice using Donning Socks before surgery. Muscle memory helps when you\'re post-op.'
       },
       {
         title: 'Tip 5: Follow your provider\'s timeline',
@@ -156,49 +153,41 @@ const conditionContent: Record<ConditionType, ConditionContent> = {
     ],
     caregiverNotes: [
       {
-        title: 'Know the restrictions',
-        description: 'Understand your family member\'s surgical precautions. Hip precautions? Knee extension limits? Weight-bearing restrictions? These affect how they can safely put on socks.'
+        title: 'Tip 1: Let them do it',
+        description: 'If they can put on Donning Socks independently using the wide opening and pull-tabs, let them. Independence matters for recovery confidence. Offer to hand them the sock or help position their foot—but let them do the actual donning if they\'re able.'
       },
       {
-        title: 'Resist taking over',
-        description: 'If they can do it with adaptive tools, let them. Independence matters for recovery confidence. Offer to help position the donning aid or hand them the sock—but let them do the actual donning if they\'re able.'
+        title: 'Tip 2: Set up for success',
+        description: 'Put clean Donning Socks where they can reach them without bending or twisting. Nightstand height works well. Remove barriers to independence.'
       },
       {
-        title: 'Watch for violations',
+        title: 'Tip 3: Watch for violations',
         description: 'If you see them bending past their restrictions or struggling in unsafe ways, intervene. Offer to help directly rather than watching them risk re-injury.'
       },
       {
-        title: 'Keep tools accessible',
-        description: 'Put the donning aid and clean socks where they can reach them without bending or twisting. Nightstand height works well.'
-      },
-      {
-        title: 'Respect their timeline',
+        title: 'Tip 4: Respect their timeline',
         description: 'Some days are harder than others. If they need help today but wanted to do it themselves yesterday, that\'s normal recovery. Don\'t frame it as regression.'
       }
     ],
     faqs: [
       {
-        question: 'Can I use these products immediately after surgery?',
-        answer: 'Check with your healthcare provider. Most patients can use adaptive compression socks and donning aids as soon as compression is recommended—often within the first few days post-op. Your provider knows your specific situation.'
+        question: 'When can I start using Donning Socks after surgery?',
+        answer: 'Check with your healthcare provider. Most patients can use adaptive compression socks as soon as compression is recommended—often within the first few days post-op. Your provider knows your specific situation and restrictions.'
       },
       {
-        question: 'What if I can\'t reach my feet at all?',
-        answer: 'If you cannot safely reach your feet even with a donning aid, ask for help. Your physical therapist can teach a caregiver safe techniques or suggest positioning strategies. Independence is important, but safety comes first.'
+        question: 'What if I still can\'t reach my feet to put on Donning Socks?',
+        answer: 'If you cannot safely reach your feet even with the wide opening and seated positioning, ask for help. Your physical therapist can teach a caregiver safe techniques or suggest positioning strategies. Independence is important, but safety comes first.'
       },
       {
         question: 'How long will I need compression after surgery?',
-        answer: 'This varies by surgery type and individual recovery. Your surgeon or physical therapist will specify duration—often weeks to months. Follow their guidance.'
+        answer: 'This varies by surgery type and individual recovery. Your surgeon or physical therapist will specify duration—often weeks to months. Follow their guidance for compression level and wear schedule.'
       },
       {
-        question: 'Can I sleep in compression socks?',
-        answer: 'Check with your provider. Compression is typically worn during waking hours and removed at night, but post-surgical protocols vary. Don\'t guess—ask your care team.'
+        question: 'Can I sleep in Donning Socks?',
+        answer: 'Check with your provider. Compression is typically worn during waking hours and removed at night, but post-surgical protocols vary. Don\'t guess—ask your care team about overnight wear.'
       },
       {
-        question: 'What if the compression level prescribed is different from what you sell?',
-        answer: 'We offer 15-20 mmHg and 20-30 mmHg options (the most commonly prescribed levels). If your provider prescribes a different level, follow their guidance. You may need to source that specific level from a medical supply company.'
-      },
-      {
-        question: 'Will these work with my knee brace / walking boot / other equipment?',
+        question: 'Will Donning Socks work with my knee brace / walking boot / other equipment?',
         answer: 'The wide-mouth opening makes it easier to position socks around braces. Many post-surgical patients use compression with orthopedic equipment. If you have specific compatibility questions, contact our team—we\'re happy to help.'
       }
     ]
@@ -211,10 +200,7 @@ const conditionContent: Record<ConditionType, ConditionContent> = {
       paragraphs: [
         'Arthritis, reduced grip strength, hand pain, tremors, stroke recovery, or neurological conditions can make gripping and pulling tight fabric difficult. Compression socks—which are designed to be snug—become nearly impossible to put on with traditional methods.',
         'The daily challenge isn\'t whether compression socks might be helpful for circulation support during long periods of sitting or standing. The challenge is: your hands hurt, and standard compression socks require strength and dexterity your hands don\'t have right now.',
-        'The daily-life friction:',
-        'Your hands don\'t grip like they used to. Tight fabric won\'t stretch. Your fingers don\'t have the strength to pull graduated compression over your heel. You can see the socks. You know how to put on socks. But your hands won\'t cooperate.',
-        'How adaptive design helps:',
-        'Wide-mouth openings reduce the pulling force needed. Integrated pull-tabs give you something substantial to grip (not just slippery fabric). Ergonomic donning aids with wide handles transfer the work from your fingers to your larger arm muscles. These features are designed specifically for hands that hurt.'
+        'Wide-mouth openings reduce the pulling force needed. Integrated pull-tabs give you something substantial to grip instead of slippery fabric. Reinforced fabric loops transfer the work from your finger joints to your larger arm muscles. These features are designed specifically for hands that hurt.'
       ],
       videoTitle: 'Putting On Compression Socks With Arthritis',
       videoLink: '#',
@@ -251,77 +237,73 @@ const conditionContent: Record<ConditionType, ConditionContent> = {
     ],
     howItHelps: {
       whyCompression: 'Many people with arthritis, limited mobility, or circulation concerns use compression socks for comfort during long periods of sitting or standing. Healthcare providers sometimes recommend graduated compression for daily wear. The problem: standard compression socks weren\'t designed for hands with limited strength.',
-      whatAdaptiveFeatures: 'Adaptive compression socks and donning aids transfer the work from your fingers to design features that require less grip strength and fine motor control.',
+      whatAdaptiveFeatures: 'Donning Socks have built-in adaptive features that reduce the grip strength and fine motor control needed for donning compression.',
       features: [
         {
           feature: 'Wide-mouth opening (3x standard width)',
-          description: 'Reduces force needed to stretch the opening over your foot'
+          description: 'Reduces force needed to stretch the opening over your foot. Less gripping and pulling required from your hands.'
         },
         {
           feature: 'Integrated pull-tabs',
-          description: 'Thick, textured loops you can hook your fingers through; easier to grip than bare fabric'
+          description: 'Thick, textured fabric loops you can hook your fingers through. Easier to grip than bare compression fabric. Distributes pulling force across your whole hand, not just fingertips.'
         },
         {
-          feature: 'Ergonomic donning aid handle',
-          description: 'Wide grip surface designed for arthritic hands; uses larger arm muscles instead of finger strength'
+          feature: 'Reinforced loop construction',
+          description: 'Pull-tabs are reinforced to handle the stress of pulling. You use larger arm muscles instead of just finger strength.'
         },
         {
-          feature: 'Non-slip sock surface on donning aid',
-          description: 'Holds sock stable so you don\'t have to grip it with both hands'
+          feature: 'Graduated 20-30 mmHg compression',
+          description: 'Same medical-grade compression as standard socks. Adaptive features don\'t compromise compression efficacy.'
         }
       ],
-      disclaimer: 'These tools don\'t treat arthritis or hand conditions. They make it physically possible to put on compression socks when your hands have limited strength or dexterity.'
+      disclaimer: 'These features don\'t treat arthritis or hand conditions. They make it physically possible to put on compression socks when your hands have limited strength or dexterity.'
     },
     practicalTips: [
       {
-        title: 'Tip 1: Use pull-tabs first, donning aid second',
-        description: 'Try putting the socks on using just the wide opening and pull-tabs. If that works, great—you don\'t need the donning aid every time. If your hands are having a hard day, use the aid.'
+        title: 'Tip 1: Start with the wide opening',
+        description: 'Try putting the socks on using just the wide opening first. Slide your foot in with less resistance. Many users find this sufficient without needing the pull-tabs.'
       },
       {
-        title: 'Tip 2: Put socks on in the morning',
+        title: 'Tip 2: Use pull-tabs for the pull-up phase',
+        description: 'Once your foot is in, grip the pull-tabs to pull the sock up your leg. Hook your fingers through the loops instead of pinching fabric. Use your arm muscles to pull.'
+      },
+      {
+        title: 'Tip 3: Put socks on in the morning',
         description: 'Your hands may be stiffer in the morning, but that\'s also when you typically need to put on socks. Build the routine early so you don\'t forget later.'
       },
       {
-        title: 'Tip 3: Sit down',
-        description: 'Don\'t try to put on compression socks while standing. Sit on your bed or a chair. Use your lap to position the donning aid if needed.'
+        title: 'Tip 4: Sit down',
+        description: 'Don\'t try to put on compression socks while standing. Sit on your bed or a chair. Use your lap for stability if needed.'
       },
       {
-        title: 'Tip 4: Use one hand if needed',
-        description: 'If one hand is stronger, let it do more work. Use your weaker hand to stabilize while your stronger hand pulls the pull-tab or handle.'
+        title: 'Tip 5: Use one hand if needed',
+        description: 'If one hand is stronger, let it do more work. Use your weaker hand to stabilize while your stronger hand pulls the pull-tab.'
       },
       {
-        title: 'Tip 5: Take breaks',
+        title: 'Tip 6: Take breaks',
         description: 'If your hands fatigue, pause. You don\'t have to get both socks on in one continuous effort. Do one foot, rest, then do the other.'
-      },
-      {
-        title: 'Tip 6: Keep tools accessible',
-        description: 'Store your donning aid and clean socks where you can reach them easily—bedside table, bathroom shelf, wherever makes sense for your routine.'
       }
     ],
     faqs: [
       {
-        question: 'Will these work if I have severe arthritis?',
-        answer: 'Many people with severe hand arthritis use our compression socks and donning aids successfully. The wide opening and pull-tabs reduce grip strength needed. If you\'re concerned about whether these will work for your specific hand limitations, contact us—we can discuss your situation.'
+        question: 'Will Donning Socks work with severe arthritis?',
+        answer: 'Many people with severe hand arthritis use Donning Socks successfully. The wide opening and pull-tabs reduce grip strength needed compared to standard compression. If you\'re concerned about whether these will work for your specific hand limitations, contact us—we can discuss your situation.'
       },
       {
         question: 'Can I use these with one hand?',
-        answer: 'The design makes one-handed donning easier than standard compression socks, but it may still require some two-handed coordination depending on your specific limitations. The donning aid can be stabilized with your foot or body while you pull with one hand.'
+        answer: 'The wide opening and pull-tabs make one-handed donning easier than standard compression socks. Some two-handed coordination may still be helpful depending on your specific limitations, but the design reduces the fine motor skills needed.'
       },
       {
         question: 'Do the pull-tabs make the socks look medical or institutional?',
-        answer: 'The pull-tabs are integrated into the sock design and fold down once the sock is on. They\'re functional, not decorative, but they don\'t look clinical.'
+        answer: 'The pull-tabs are integrated into the sock design and fold down once the sock is on. They\'re functional, not decorative, but they don\'t look clinical. Neutral colorways (black, navy, beige) are professional and discreet.'
       },
       {
         question: 'What if my hands swell throughout the day?',
-        answer: 'If morning is your best hand function time, put your compression socks on then. The socks themselves don\'t require grip strength to wear—only to put on.'
-      },
-      {
-        question: 'Are these easier than using a traditional sock aid?',
-        answer: 'Many users find our combination (wide-mouth socks + ergonomic donning aid) easier than trying to use a standard sock aid with standard narrow compression socks. The wide opening makes a significant difference.'
+        answer: 'If morning is your best hand function time, put your Donning Socks on then. The socks themselves don\'t require grip strength to wear—only to put on. Once they\'re on, hand swelling won\'t affect wear comfort.'
       },
       {
         question: 'Can I wash these in the washing machine?',
-        answer: 'Yes. Machine wash cold, gentle cycle. The pull-tabs and wide opening don\'t require special care. Full washing instructions included with purchase.'
+        answer: 'Yes. Machine wash cold, gentle cycle. The pull-tabs and wide opening are part of the sock construction and don\'t require special care. Air dry or tumble dry low to preserve compression elasticity.'
       }
     ]
   },
@@ -333,10 +315,7 @@ const conditionContent: Record<ConditionType, ConditionContent> = {
       paragraphs: [
         'Limited hip flexibility, knee range of motion, back pain, balance concerns, wheelchair use, or chronic mobility challenges can make reaching your feet difficult or impossible. Compression socks require you to bend, balance on one foot, and manipulate tight fabric—all things that may not be physically accessible for you.',
         'The challenge isn\'t whether compression might support comfort during long periods of sitting. The challenge is: your body doesn\'t bend that way anymore, and standard compression socks assume you can reach your feet easily.',
-        'The daily-life friction:',
-        'Bending forward to reach your feet hurts, or isn\'t possible. Standing on one leg while putting on a sock is unstable. Your hip, knee, or back range of motion is limited. Traditional sock donning requires flexibility and balance you don\'t have.',
-        'How adaptive design helps:',
-        'Donning aids with extended handles bring the sock closer to you, reducing how far you need to bend. Wide-mouth openings mean you don\'t have to point your toes or flex your ankle as much. Methods that work while seated eliminate balance requirements. These features are designed for bodies with limited mobility and flexibility.'
+        'Donning Socks with wide-mouth openings reduce how far you need to bend forward to reach your feet. Integrated pull-tabs give you thick fabric loops to grip when you can\'t reach the sock body. The design allows seated donning, eliminating balance requirements. These features are designed for bodies with limited mobility and flexibility.'
       ],
       videoTitle: 'Putting On Compression Socks With Limited Flexibility',
       videoLink: '#',
@@ -373,47 +352,47 @@ const conditionContent: Record<ConditionType, ConditionContent> = {
     ],
     howItHelps: {
       whyCompression: 'Many people who spend extended periods sitting (wheelchair users, desk workers, travelers) or who have limited mobility use compression socks for comfort and support during long wear. Healthcare providers sometimes recommend graduated compression for daily use. The problem: standard compression socks require flexibility and reach many people don\'t have.',
-      whatAdaptiveFeatures: 'Adaptive compression socks and donning aids make it physically possible to put on compression socks when your body has limited flexibility, reach, or balance.',
+      whatAdaptiveFeatures: 'Donning Socks have built-in adaptive features that make it physically possible to put on compression socks when your body has limited flexibility, reach, or balance.',
       features: [
         {
-          feature: 'Extended-handle donning aid',
-          description: 'Brings the sock closer to you; reduces how far you need to bend forward'
-        },
-        {
           feature: 'Wide-mouth opening',
-          description: 'Reduces ankle flexibility needed to slide your foot in'
+          description: 'Reduces ankle flexibility needed to slide your foot in. 3x wider than standard compression openings. Less forward bending required to position the sock.'
         },
         {
-          feature: 'Seated donning methods',
-          description: 'Eliminates need for standing balance'
+          feature: 'Integrated pull-tabs',
+          description: 'Thick fabric loops at the top edge. You can reach these while seated even if you can\'t reach the main sock body. Gives you leverage to pull the sock up your leg.'
         },
         {
-          feature: 'Pull-tabs',
-          description: 'Gives you something to grip and pull when you can\'t reach the sock body'
+          feature: 'Seated-friendly design',
+          description: 'Put them on entirely from seated position—bed edge, chair, or wheelchair. No standing balance required. Reduces forward bend compared to standard compression.'
+        },
+        {
+          feature: 'Graduated 20-30 mmHg compression',
+          description: 'Same medical-grade compression as standard socks. Adaptive features don\'t compromise compression efficacy.'
         }
       ],
-      disclaimer: 'These tools don\'t increase your flexibility or treat mobility limitations. They make it possible to put on compression socks without requiring flexibility or reach you don\'t have.'
+      disclaimer: 'These features don\'t increase your flexibility or treat mobility limitations. They make it possible to put on compression socks without requiring flexibility or reach you don\'t have.'
     },
     practicalTips: [
       {
         title: 'Tip 1: Always sit down',
-        description: 'Don\'t attempt to put on compression socks while standing if balance is uncertain. Sit on your bed, a stable chair, or in your wheelchair.'
+        description: 'Don\'t attempt to put on Donning Socks while standing if balance is uncertain. Sit on your bed, a stable chair, or in your wheelchair. Seated donning is built into the design.'
       },
       {
-        title: 'Tip 2: Use a low footstool',
-        description: 'If you can\'t reach the floor comfortably, place the donning aid on a low footstool or step. Even a few inches of height reduction can make a significant difference.'
+        title: 'Tip 2: Use bed or chair height strategically',
+        description: 'Sit where your feet can rest flat or nearly flat. This reduces how far forward you need to bend. A slightly higher seat height can make a significant difference for limited hip flexion.'
       },
       {
-        title: 'Tip 3: Position the aid before sitting',
-        description: 'Set up the donning aid with the sock loaded while you\'re standing (if you can) or have someone help you position it. Then sit and slide your foot in.'
+        title: 'Tip 3: Grip pull-tabs early',
+        description: 'As soon as your foot is in the wide opening, reach for the pull-tabs. Use these thick fabric loops for the pull-up phase instead of trying to grip the sock body.'
       },
       {
         title: 'Tip 4: Use bed edge for stability',
-        description: 'Sitting on the edge of your bed gives you something to push against. You can use your arms to stabilize yourself while donning.'
+        description: 'Sitting on the edge of your bed gives you something to push against. You can use your arms to stabilize yourself while donning. The bed surface is also easier to reach than the floor.'
       },
       {
-        title: 'Tip 5: Keep tools within reach',
-        description: 'Store your donning aid and clean compression socks where you can access them without excessive bending—bedside table, wheelchair bag, bathroom shelf.'
+        title: 'Tip 5: Keep socks within reach',
+        description: 'Store clean Donning Socks where you can access them without excessive bending—bedside table, wheelchair bag, bathroom shelf at reachable height.'
       },
       {
         title: 'Tip 6: Consider timing',
@@ -422,50 +401,46 @@ const conditionContent: Record<ConditionType, ConditionContent> = {
     ],
     caregiverNotes: [
       {
-        title: 'Understand their range of motion',
-        description: 'Know what movements are difficult or restricted. Don\'t assume they can bend forward just because they could last month. Mobility can change.'
+        title: 'Tip 1: Help with positioning, not donning',
+        description: 'If they need help getting their foot closer to their hands, provide that positioning assistance. But let them grip the pull-tabs and pull the sock up if they\'re able. Positioning help preserves donning independence.'
       },
       {
-        title: 'Help with setup, not donning',
-        description: 'Position the donning aid where they can reach it. Load the sock onto the frame. But let them slide their foot in and pull up if they\'re able. Setup assistance preserves independence.'
+        title: 'Tip 2: Understand their range of motion',
+        description: 'Know what movements are difficult or restricted. Don\'t assume they can bend forward just because they could last month. Mobility can change. Respect current limitations.'
       },
       {
-        title: 'Watch for unsafe workarounds',
+        title: 'Tip 3: Watch for unsafe workarounds',
         description: 'If you see them bending in ways that cause pain or risk, intervene. Offer to help directly rather than watching them struggle unsafely.'
       },
       {
-        title: 'Respect wheelchair positioning',
-        description: 'If they use a wheelchair, understand that reaching their feet from seated position is difficult. Offer to position the aid or help lift their foot to the aid if needed.'
-      },
-      {
-        title: 'Be patient with seated methods',
-        description: 'Seated donning takes longer than standing methods. Don\'t rush them. Let them work at their pace.'
+        title: 'Tip 4: Respect wheelchair positioning',
+        description: 'If they use a wheelchair, understand that reaching their feet from seated position is difficult. Offer to help position their foot closer or stabilize their leg if needed, but let them do the pulling.'
       }
     ],
     faqs: [
       {
-        question: 'Can I use these from a wheelchair?',
-        answer: 'Yes. Many wheelchair users use our extended-handle donning aid successfully. You can position the aid on the floor or a low surface and slide your foot in while seated. Some users find it helpful to have assistance positioning the aid initially.'
+        question: 'Can I use Donning Socks from a wheelchair?',
+        answer: 'Yes. Many wheelchair users use Donning Socks successfully from seated position. The wide opening and pull-tabs reduce the forward bend typically required. Some users find it helpful to elevate their foot slightly (footrest, low stool) to reduce reach distance.'
       },
       {
-        question: 'What if I can\'t reach the floor at all?',
-        answer: 'Use a low footstool, ottoman, or elevated surface. Even raising the donning aid 6-12 inches can make it accessible. If you still can\'t reach, you may need assistance with positioning—but you can still do the actual donning once it\'s positioned.'
+        question: 'What if I can\'t reach my feet at all, even seated?',
+        answer: 'If you cannot reach your feet from seated position, you may need positioning assistance. A caregiver or therapist can help bring your foot closer to your hands, but you can still grip the pull-tabs and pull the sock up yourself once positioned.'
       },
       {
-        question: 'Will these work if I have limited hip flexion?',
-        answer: 'The extended-handle donning aid is specifically designed to reduce hip flexion required. It won\'t eliminate bending entirely, but it significantly reduces how far forward you need to bend.'
+        question: 'Will Donning Socks work with limited hip flexion?',
+        answer: 'The wide opening and pull-tabs reduce hip flexion required compared to standard compression. They won\'t eliminate forward bending entirely, but they significantly reduce how far you need to bend. Seat height matters—higher seats reduce bend angle.'
       },
       {
         question: 'Can I use these with back pain restrictions?',
-        answer: 'Many people with chronic back pain use these tools successfully. The key is reducing forward bending. If you\'re not cleared to bend forward at all, you may need assistance with positioning the aid, but you can still pull the sock up yourself.'
+        answer: 'Many people with chronic back pain use Donning Socks successfully. The key is reducing forward bending. Seated donning with strategic seat height helps. If you\'re not cleared to bend forward at all, you may need positioning assistance, but you can still pull the socks up yourself.'
       },
       {
         question: 'Are these compatible with leg braces or orthotics?',
-        answer: 'The wide-mouth opening makes it easier to position socks around braces and orthotics. Many users with leg braces find this design more accessible than standard compression socks.'
+        answer: 'The wide-mouth opening makes it easier to position socks around braces and orthotics. Many users with leg braces find this design more accessible than standard compression socks. The opening is wide enough to slide over most braces.'
       },
       {
         question: 'What if my balance is unstable?',
-        answer: 'Use seated methods only. Do not attempt to stand on one leg. Sitting on your bed or a chair eliminates balance requirements. If seated reach is still difficult, the extended-handle aid helps.'
+        answer: 'Use seated methods only. Do not attempt to stand on one leg. Sitting on your bed or a chair eliminates balance requirements. The wide opening and pull-tabs are designed for seated donning specifically.'
       }
     ]
   },

@@ -14,61 +14,69 @@ const kits = [
   {
     id: "pt-kit",
     handle: "physical-therapy-kit",
-    name: "Physical Therapy Kit",
+    name: "Physical Therapy Starter Kit",
     price: "Contact for Pricing",
     description: "Ideal for PT clinics and rehabilitation centers",
     includes: [
-      "10 pairs compression socks (assorted sizes: S, M, L, XL)",
-      "5 sock donning aids with ergonomic handles",
-      "Patient care guide (printed)",
-      "Educational posters for waiting room",
-      "Product training materials for staff"
+      "5 pairs Donning Socks (20-30 mmHg, assorted sizes: S, M, L, XL)",
+      "5 pairs Compression Socks (20-30 mmHg, assorted sizes: S, M, L, XL)",
+      "Patient education guide (PDF): 'Using Adaptive Compression at Home'",
+      "Staff training guide (PDF): 'Teaching Independent Compression Donning'",
+      "Product care instructions"
     ],
     skus: [
-      { sku: "CS-001", product: "Compression Socks 15-20mmHg", sizes: "2S, 4M, 2L, 2XL" },
-      { sku: "DA-001", product: "Standard Donning Aid", quantity: "5" }
+      { sku: "DS-2030-S", product: "Donning Sock 20-30 mmHg (S)", quantity: "1" },
+      { sku: "DS-2030-M", product: "Donning Sock 20-30 mmHg (M)", quantity: "2" },
+      { sku: "DS-2030-L", product: "Donning Sock 20-30 mmHg (L)", quantity: "2" },
+      { sku: "CS-2030-M", product: "Compression Sock 20-30 mmHg (M)", quantity: "2" },
+      { sku: "CS-2030-L", product: "Compression Sock 20-30 mmHg (L)", quantity: "3" }
     ],
-    bestFor: "Post-rehab patients, limited dexterity support"
+    bestFor: "Small PT/OT practices introducing adaptive compression to post-rehab patients"
   },
   {
     id: "senior-kit",
     handle: "senior-living-kit",
-    name: "Senior Living Kit",
+    name: "Home Health Agency Kit",
     price: "Contact for Pricing",
-    description: "Perfect for senior living facilities and care homes",
+    description: "Perfect for home health providers managing multiple patients with mobility limitations",
     includes: [
-      "20 pairs compression socks (higher proportion XL/XXL)",
-      "10 sock donning aids",
-      "Staff training guide with video access",
-      "Resident sizing chart (laminated)",
-      "Care & maintenance instructions"
+      "10 pairs Donning Socks (mix of 15-20 and 20-30 mmHg, size-weighted for home health demographics)",
+      "10 pairs Compression Socks (20-30 mmHg, assorted sizes)",
+      "Home health workflow guide (PDF)",
+      "Patient handout template (customizable)",
+      "Staff training video access (online)"
     ],
     skus: [
-      { sku: "CS-001", product: "Compression Socks 15-20mmHg", sizes: "2S, 4M, 6L, 8XL" },
-      { sku: "DA-001", product: "Standard Donning Aid", quantity: "10" }
+      { sku: "DS-1520-M", product: "Donning Sock 15-20 mmHg (M)", quantity: "3" },
+      { sku: "DS-2030-M", product: "Donning Sock 20-30 mmHg (M)", quantity: "3" },
+      { sku: "DS-2030-L", product: "Donning Sock 20-30 mmHg (L)", quantity: "4" },
+      { sku: "CS-2030-L", product: "Compression Sock 20-30 mmHg (L)", quantity: "4" },
+      { sku: "CS-2030-XL", product: "Compression Sock 20-30 mmHg (XL)", quantity: "6" }
     ],
-    bestFor: "Assisted living facilities, nursing homes"
+    bestFor: "Home health providers managing multiple patients with mobility limitations"
   },
   {
     id: "distributor-kit",
     handle: "distributor-starter-kit",
-    name: "Distributor Starter Kit",
+    name: "Facility Rotation Kit",
     price: "Contact for Pricing",
-    description: "Comprehensive kit for medical supply distributors",
+    description: "Comprehensive kit for senior living facilities, skilled nursing, rehab centers",
     includes: [
-      "50 pairs compression socks (full size range)",
-      "20 sock donning aids",
-      "Marketing materials (posters, brochures, product sheets)",
-      "Sample products for demos",
-      "Wholesale pricing guide",
-      "Point-of-sale display stand"
+      "20 pairs Donning Socks (20-30 mmHg, higher proportion XL/XXL)",
+      "10 pairs Compression Socks (20-30 mmHg, full size range)",
+      "Hygiene rotation tracking template (PDF)",
+      "Staff training video access (online)",
+      "Bulk reorder quick-reference card"
     ],
     skus: [
-      { sku: "CS-001", product: "Compression Socks 15-20mmHg", sizes: "10 each S-XXL" },
-      { sku: "CS-002", product: "Compression Socks 20-30mmHg", sizes: "10 each S-XXL" },
-      { sku: "DA-001", product: "Standard Donning Aid", quantity: "20" }
+      { sku: "DS-2030-L", product: "Donning Sock 20-30 mmHg (L)", quantity: "6" },
+      { sku: "DS-2030-XL", product: "Donning Sock 20-30 mmHg (XL)", quantity: "8" },
+      { sku: "DS-2030-XXL", product: "Donning Sock 20-30 mmHg (XXL)", quantity: "6" },
+      { sku: "CS-2030-M", product: "Compression Sock 20-30 mmHg (M)", quantity: "3" },
+      { sku: "CS-2030-L", product: "Compression Sock 20-30 mmHg (L)", quantity: "4" },
+      { sku: "CS-2030-XL", product: "Compression Sock 20-30 mmHg (XL)", quantity: "3" }
     ],
-    bestFor: "Medical supply stores, pharmacies, DME providers"
+    bestFor: "Senior living facilities, skilled nursing, rehab centers with ongoing patient needs"
   }
 ];
 

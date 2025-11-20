@@ -234,7 +234,7 @@ export default function Pro() {
                       <p className="font-semibold mb-2 text-sm">What's Included:</p>
                       <ul className="space-y-1 text-sm text-muted-foreground">
                         <li>• {'{'}{10}{'}'} pairs compression socks (assorted sizes: 2 S, 3 M, 3 L, 2 XL)</li>
-                        <li>• {'{'}{5}{'}'} donning aids</li>
+                        <li>• {'{'}{5}{'}'} pairs Donning Socks</li>
                         <li>• Patient education guides (digital)</li>
                       </ul>
                     </div>
@@ -259,7 +259,7 @@ export default function Pro() {
                       <p className="font-semibold mb-2 text-sm">What's Included:</p>
                       <ul className="space-y-1 text-sm text-muted-foreground">
                         <li>• {'{'}{20}{'}'} pairs compression socks (size-weighted for typical home health population)</li>
-                        <li>• {'{'}{10}{'}'} donning aids</li>
+                        <li>• {'{'}{10}{'}'} pairs Donning Socks</li>
                         <li>• Staff training guide</li>
                       </ul>
                     </div>
@@ -284,7 +284,7 @@ export default function Pro() {
                       <p className="font-semibold mb-2 text-sm">What's Included:</p>
                       <ul className="space-y-1 text-sm text-muted-foreground">
                         <li>• {'{'}{30}{'}'} pairs compression socks (full size range with higher proportion XL/XXL)</li>
-                        <li>• {'{'}{15}{'}'} donning aids</li>
+                        <li>• {'{'}{15}{'}'} pairs Donning Socks</li>
                         <li>• Hygiene rotation guide</li>
                       </ul>
                     </div>
@@ -363,7 +363,7 @@ export default function Pro() {
                     <div>
                       <p className="font-semibold text-foreground mb-1">How adaptive design helps:</p>
                       <p className="text-muted-foreground">
-                        Wide-mouth compression socks and ergonomic donning aids enable more patients to don compression independently or with minimal staff guidance. Staff can instruct rather than physically assist.
+                        Wide-mouth Donning Socks with integrated pull-tabs enable more patients to don compression independently or with minimal staff guidance. Staff can instruct rather than physically assist.
                       </p>
                     </div>
                     <div>
@@ -422,17 +422,14 @@ export default function Pro() {
                   <CardContent className="p-8">
                     <h3 className="text-xl font-bold mb-6">Donning Sock (Bulk Options)</h3>
                     
-                    {/* Standard Donning Sock */}
+                    {/* Donning Sock (Adaptive Compression) */}
                     <div className="mb-6 pb-6 border-b">
-                      <h4 className="font-semibold mb-2">Standard Donning Sock</h4>
-                      <ul className="space-y-1 text-sm text-muted-foreground ml-4 mb-3">
-                        <li>• Wide-grip handle designed for arthritic hands</li>
-                        <li>• Non-slip frame surface</li>
-                        <li>• Lightweight construction</li>
-                        <li>• Works with all compression levels</li>
-                      </ul>
-                      <p className="text-sm">
-                        <strong>Available in bulk:</strong> {'{'}{5}{'}'}, {'{'}{10}{'}'}, {'{'}{25}{'}'}, {'{'}{50}{'}'} unit lots
+                      <h4 className="font-semibold mb-2">Donning Sock (Adaptive Compression)</h4>
+                      <p className="text-sm text-muted-foreground mb-4">
+                        Compression sock with wide-mouth opening and integrated pull-tabs. Designed for independent donning with limited hand strength or flexibility. 20-30 mmHg graduated compression.
+                      </p>
+                      <p className="text-sm text-muted-foreground">
+                        <strong>Available in bulk:</strong> S, M, L, XL, XXL sizes. Mix sizes per order.
                       </p>
                     </div>
                     
@@ -485,7 +482,7 @@ export default function Pro() {
                     <div>
                       <h4 className="font-semibold mb-2">Disposable Hygiene Footies</h4>
                       <ul className="space-y-1 text-sm text-muted-foreground ml-4">
-                        <li>• Single-use barrier for shared donning aids</li>
+                        <li>• Single-use hygiene barrier for trying on compression socks in clinical settings</li>
                         <li>• Reduces cross-contamination in clinical settings</li>
                         <li>• Latex-free, hypoallergenic material</li>
                       </ul>
@@ -508,9 +505,9 @@ export default function Pro() {
                     <AccordionContent>
                       <ul className="space-y-2 text-sm text-muted-foreground">
                         <li>• {'{'}{10}{'}'} pairs compression socks (20-30 mmHg): 2 S, 3 M, 3 L, 2 XL</li>
-                        <li>• {'{'}{5}{'}'} standard donning aids</li>
+                        <li>• {'{'}{5}{'}'} pairs Donning Socks</li>
                         <li>• {'{'}{1}{'}'} patient education guide (PDF): "Using Adaptive Compression at Home"</li>
-                        <li>• {'{'}{1}{'}'} staff training guide (PDF): "Teaching Patients to Don Compression Independently"</li>
+                        <li>• {'{'}{1}{'}'} staff training guide (PDF): "Teaching Independent Compression Donning"</li>
                         <li>• Product care instructions</li>
                       </ul>
                     </AccordionContent>
@@ -521,8 +518,8 @@ export default function Pro() {
                     <AccordionContent>
                       <ul className="space-y-2 text-sm text-muted-foreground">
                         <li>• {'{'}{20}{'}'} pairs compression socks (15-20 and 20-30 mmHg mixed): size distribution based on home health demographics</li>
-                        <li>• {'{'}{10}{'}'} standard donning aids</li>
-                        <li>• {'{'}{2}{'}'} extended-handle donning aids</li>
+                        <li>• {'{'}{10}{'}'} pairs Donning Socks</li>
+                        <li>• {'{'}{5}{'}'} pairs standard Compression Socks</li>
                         <li>• {'{'}{1}{'}'} home health workflow guide (PDF)</li>
                         <li>• {'{'}{1}{'}'} patient handout template (customizable)</li>
                       </ul>
@@ -534,7 +531,8 @@ export default function Pro() {
                     <AccordionContent>
                       <ul className="space-y-2 text-sm text-muted-foreground">
                         <li>• {'{'}{30}{'}'} pairs compression socks (20-30 mmHg): higher proportion XL/XXL</li>
-                        <li>• {'{'}{15}{'}'} standard donning aids</li>
+                        <li>• {'{'}{15}{'}'} pairs Donning Socks</li>
+                        <li>• {'{'}{10}{'}'} pairs standard Compression Socks</li>
                         <li>• {'{'}{1}{'}'} hygiene rotation tracking template (PDF)</li>
                         <li>• {'{'}{1}{'}'} staff training video access (online)</li>
                         <li>• Bulk reorder quick-reference card</li>
@@ -629,7 +627,7 @@ export default function Pro() {
                   </div>
                   <h3 className="font-bold mb-2">Hygiene-Friendly Workflow</h3>
                   <p className="text-sm text-muted-foreground">
-                    Volume ordering supports proper sock rotation schedules. Optional disposable footies for shared donning aids. Reduces cross-contamination risks in clinical settings.
+                    Volume ordering supports proper sock rotation schedules. Optional disposable footies for fitting sessions in clinical settings. Reduces cross-contamination risks when multiple patients try products for sizing.
                   </p>
                 </CardContent>
               </Card>
@@ -992,7 +990,7 @@ export default function Pro() {
                 <AccordionTrigger>What's the minimum order quantity for Pro pricing?</AccordionTrigger>
                 <AccordionContent>
                   <p className="text-muted-foreground">
-                    {'{'}{25}{'}'} units. You can mix compression socks and donning aids to reach the minimum. Starter kits count toward minimum thresholds.
+                    {'{'}{25}{'}'} units. You can mix standard Compression Socks and Donning Socks to reach the minimum. Starter kits count toward minimum thresholds.
                   </p>
                 </AccordionContent>
               </AccordionItem>
@@ -1001,7 +999,7 @@ export default function Pro() {
                 <AccordionTrigger>Can I customize product assortments?</AccordionTrigger>
                 <AccordionContent>
                   <p className="text-muted-foreground">
-                    Yes. For orders of 50+ units, you can specify exact size distributions, compression level mix, and donning aid quantities. Work with your account manager to build custom assortments.
+                    Yes. For orders of 50+ units, you can specify exact size distributions, compression level mix (15-20 or 20-30 mmHg), and ratio of Donning Socks to standard Compression Socks. Work with your account manager to build custom assortments.
                   </p>
                 </AccordionContent>
               </AccordionItem>
@@ -1043,14 +1041,6 @@ export default function Pro() {
                 </AccordionContent>
               </AccordionItem>
               
-              <AccordionItem value="faq-7">
-                <AccordionTrigger>Can donning aids be shared in clinical settings?</AccordionTrigger>
-                <AccordionContent>
-                  <p className="text-muted-foreground">
-                    Use disposable footies (available as add-on) as hygiene barriers if donning aids are shared across patients during therapy sessions. For patient take-home, each patient should have their own donning aid.
-                  </p>
-                </AccordionContent>
-              </AccordionItem>
               
               <AccordionItem value="faq-8">
                 <AccordionTrigger>What's your recommended replacement schedule?</AccordionTrigger>
@@ -1066,7 +1056,7 @@ export default function Pro() {
                 <AccordionTrigger>Are these products FSA/HSA eligible?</AccordionTrigger>
                 <AccordionContent>
                   <p className="text-muted-foreground">
-                    Yes. Compression socks and donning aids qualify for FSA/HSA reimbursement. Provide patients with itemized receipts for submission.
+                    Yes. Both Compression Socks and Donning Socks qualify for FSA/HSA reimbursement. Provide patients with itemized receipts for submission.
                   </p>
                 </AccordionContent>
               </AccordionItem>
@@ -1316,7 +1306,7 @@ export default function Pro() {
                   <CardContent className="p-8">
                     <h3 className="text-2xl font-bold mb-4">Start with a Pre-Built Kit</h3>
                     <p className="text-muted-foreground mb-6">
-                      Get 10–30 pairs of compression socks + donning aids in one coordinated package. Perfect for pilot programs or immediate clinical needs.
+                      Get 10–30 pairs of Compression Socks and Donning Socks in one coordinated package. Perfect for pilot programs or immediate clinical needs.
                     </p>
                     
                     <div className="space-y-3 mb-6">
