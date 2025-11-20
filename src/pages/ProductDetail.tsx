@@ -35,6 +35,7 @@ import { CrossSellSection } from "@/components/CrossSellSection";
 import { FrequentlyBoughtTogether } from "@/components/FrequentlyBoughtTogether";
 import { ReviewsSection } from "@/components/ReviewsSection";
 import { SizingModal } from "@/components/SizingModal";
+import { getProductImages } from "@/lib/productImages";
 import {
   Tooltip,
   TooltipContent,
@@ -490,7 +491,13 @@ export default function ProductDetail() {
     );
   }
 
-  const images = product.node.images.edges;
+  // Get images with fallback
+  const images = getProductImages(
+    product.node.images.edges,
+    product.node.productType,
+    product.node.handle,
+    product.node.title
+  );
   
   // Get product-specific copy or fallback to compression socks
   const productCopy = PRODUCT_COPY_CONFIG[product.node.productType as keyof typeof PRODUCT_COPY_CONFIG] || PRODUCT_COPY_CONFIG['Compression Socks'];
@@ -531,13 +538,11 @@ export default function ProductDetail() {
           {/* Image Gallery */}
           <div className="space-y-4">
             <div className="aspect-square bg-muted rounded-lg overflow-hidden relative group">
-              {images.length > 0 && (
-                <img
-                  src={images[selectedImage]?.node.url}
-                  alt={images[selectedImage]?.node.altText || product.node.title}
-                  className="w-full h-full object-cover"
-                />
-              )}
+              <img
+                src={images[selectedImage]?.node.url}
+                alt={images[selectedImage]?.node.altText || product.node.title}
+                className="w-full h-full object-cover"
+              />
               {images.length > 1 && (
                 <>
                   <Button

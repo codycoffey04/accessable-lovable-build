@@ -24,6 +24,7 @@ import {
   X
 } from "lucide-react";
 import { getProducts, ShopifyProduct } from "@/lib/shopify";
+import { getProductImage } from "@/lib/productImages";
 import { useCartStore } from "@/stores/cartStore";
 import { toast } from "sonner";
 import { ExitIntentModal } from "@/components/ExitIntentModal";
@@ -111,13 +112,21 @@ const ProductCard = ({ product }: { product: ShopifyProduct }) => {
     <Card className="overflow-hidden group">
       <Link to={`/products/${product.node.handle}`}>
         <div className="aspect-square overflow-hidden bg-muted">
-          {product.node.images.edges[0]?.node && (
-            <img
-              src={product.node.images.edges[0].node.url}
-              alt={product.node.images.edges[0].node.altText || product.node.title}
-              className="object-cover w-full h-full group-hover:scale-105 transition-transform"
-            />
-          )}
+          {(() => {
+            const productImage = getProductImage(
+              product.node.images.edges,
+              product.node.productType,
+              product.node.handle,
+              product.node.title
+            );
+            return productImage ? (
+              <img
+                src={productImage.url}
+                alt={productImage.altText || product.node.title}
+                className="object-cover w-full h-full group-hover:scale-105 transition-transform"
+              />
+            ) : null;
+          })()}
         </div>
       </Link>
       <CardContent className="p-4">
