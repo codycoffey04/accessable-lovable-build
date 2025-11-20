@@ -64,6 +64,22 @@ export function getProductFallbackImage(
     };
   }
   
+  // Bundles and kits
+  if (
+    productTypeLower.includes('bundle') ||
+    handleLower.includes('bundle') ||
+    titleLower.includes('bundle') ||
+    titleLower.includes('kit') ||
+    titleLower.includes('independence') ||
+    titleLower.includes('freedom') ||
+    titleLower.includes('starter')
+  ) {
+    return {
+      url: '/images/compression-sock-black-product.jpg',
+      altText: 'AccessAble Product Bundle'
+    };
+  }
+  
   // Default fallback
   return {
     url: '/images/compression-sock-black-product.jpg',
@@ -90,11 +106,18 @@ export function getProductImage(
     title
   });
 
-  // Check if Shopify has valid images (not placeholders)
+  // Check if Shopify has valid images (not placeholders or suspicious URLs)
+  const firstImageUrl = shopifyImages?.[0]?.node?.url || '';
+  const isPlaceholder = firstImageUrl.includes('placeholder') || 
+                        firstImageUrl.includes('no-image') ||
+                        firstImageUrl.includes('default') ||
+                        firstImageUrl.endsWith('.svg'); // SVG files are likely placeholders
+  
   const hasValidImage = shopifyImages && 
     shopifyImages.length > 0 && 
-    shopifyImages[0]?.node?.url &&
-    !shopifyImages[0].node.url.includes('placeholder.svg');
+    firstImageUrl &&
+    firstImageUrl.length > 20 && // Real URLs are longer than placeholder URLs
+    !isPlaceholder;
 
   // If Shopify has valid images, use the first one
   if (hasValidImage) {
@@ -104,7 +127,7 @@ export function getProductImage(
   
   // Otherwise use fallback (always returns an image)
   const fallback = getProductFallbackImage(productType, handle, title);
-  console.log('🔄 Using fallback image:', fallback.url);
+  console.log('🔄 Using fallback image:', fallback.url, 'for product:', title);
   return fallback;
 }
 
@@ -118,16 +141,30 @@ export function getProductImages(
   handle: string | null,
   title: string | null
 ): Array<{ node: ProductImage }> {
-  // Check if Shopify has valid images (not placeholders)
+  // Check if Shopify has valid images (not placeholders or suspicious URLs)
   const hasValidImages = shopifyImages && 
     shopifyImages.length > 0 &&
-    shopifyImages.some(img => img.node.url && !img.node.url.includes('placeholder.svg'));
+    shopifyImages.some(img => {
+      const url = img.node.url || '';
+      return url &&
+        url.length > 20 &&
+        !url.includes('placeholder') &&
+        !url.includes('no-image') &&
+        !url.includes('default') &&
+        !url.endsWith('.svg');
+    });
 
   // If Shopify has valid images, filter out placeholders and use them
   if (hasValidImages) {
-    const validImages = shopifyImages.filter(img => 
-      img.node.url && !img.node.url.includes('placeholder.svg')
-    );
+    const validImages = shopifyImages.filter(img => {
+      const url = img.node.url || '';
+      return url &&
+        url.length > 20 &&
+        !url.includes('placeholder') &&
+        !url.includes('no-image') &&
+        !url.includes('default') &&
+        !url.endsWith('.svg');
+    });
     if (validImages.length > 0) {
       return validImages;
     }
