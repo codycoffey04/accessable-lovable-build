@@ -66,7 +66,7 @@ const articles: Record<string, any> = {
       { type: "video", text: "[VIDEO EMBED PLACEHOLDER - 'Using Donning Socks with Limited Dexterity' - Requires captions, transcript, and audio description]" }
     ],
     relatedProducts: ["donning-sock"],
-    relatedArticles: ["compression-101", "arthritis-mobility"]
+    relatedArticles: ["compression-101", "travel-tips"]
   },
   "travel-tips": {
     title: "Travel Tips for Circulation Health",

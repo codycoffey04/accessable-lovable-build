@@ -28,10 +28,10 @@ const articles = [
     featuredImage: "/images/learn-compression-101.jpg"
   },
   {
-    title: "How to Put On Compression Socks With Limited Hand Strength",
-    slug: "limited-hand-strength",
+    title: "Mobility Aids & Sock Compatibility",
+    slug: "mobility-aids",
     category: "Mobility & Independence",
-    excerpt: "Adaptive techniques for donning compression when your hands don't cooperate. Covers wide-mouth designs, pull-tab methods, and when a donning aid helps most.",
+    excerpt: "Practical guidance for using compression socks with wheelchairs, walkers, and canes. Learn how Donning Socks make independent application easier.",
     readTime: "7 min",
     featuredImage: "/images/learn-mobility-independence.jpg"
   },
@@ -43,30 +43,6 @@ const articles = [
     readTime: "6 min",
     featuredImage: "/images/learn-travel-tips.jpg"
   },
-  {
-    title: "Compression After Joint Replacement",
-    slug: "compression-after-surgery",
-    category: "Condition-Specific",
-    excerpt: "Common questions about post-surgical compression use. Covers typical recommendations, duration of wear, and what to do if donning is difficult during recovery.",
-    readTime: "8 min",
-    featuredImage: "/images/learn-default.jpg"
-  },
-  {
-    title: "Using a Sock Donning Aid (Video Guide)",
-    slug: "how-to-use-donning-aid",
-    category: "How-To Videos",
-    excerpt: "Step-by-step visual demonstration with captions and transcripts. Watch real techniques for using a donning aid to make putting on compression socks easier.",
-    readTime: "4 min",
-    featuredImage: "/images/learn-default.jpg"
-  },
-  {
-    title: "Arthritis and Compression Socks",
-    slug: "arthritis-compression",
-    category: "Condition-Specific",
-    excerpt: "Educational resources for people managing arthritis, post-surgical recovery, and other conditions where compression and adaptive tools may be helpful.",
-    readTime: "7 min",
-    featuredImage: "/images/learn-default.jpg"
-  }
 ];
 
 // Map query parameter values to actual category names
@@ -252,14 +228,14 @@ export default function Learn() {
               <div>
                 <h3 className="font-semibold text-lg mb-2">If you're new to compression socks:</h3>
                 <p className="text-muted-foreground">
-                  Start with <Link to="/learn/compression-101" className="text-primary underline">"Compression 101: What You Need to Know"</Link> to understand compression levels and sizing basics. Then explore <Link to="/learn/how-to-measure" className="text-primary underline">"How to Measure for Compression Socks"</Link> for step-by-step guidance.
+                  Start with <Link to="/learn/compression-101" className="text-primary underline">"Compression 101: What You Need to Know"</Link> to understand compression levels and sizing basics.
                 </p>
               </div>
               
               <div>
                 <h3 className="font-semibold text-lg mb-2">If you've used compression before but struggled to put them on:</h3>
                 <p className="text-muted-foreground">
-                  Check out <Link to="/learn/adaptive-techniques" className="text-primary underline">"Putting On Compression Socks: Adaptive Techniques"</Link> and <Link to="/learn/when-to-use-donning-aid" className="text-primary underline">"When to Use a Donning Aid"</Link> for methods that reduce strain and frustration.
+                  Check out <Link to="/learn/mobility-aids" className="text-primary underline">"Mobility Aids & Sock Compatibility"</Link> for methods that reduce strain and frustration.
                 </p>
               </div>
               
@@ -465,12 +441,12 @@ export default function Learn() {
               <CardContent className="p-6">
                 <Badge variant="outline" className="mb-3">Mobility & Independence</Badge>
                 <h3 className="text-lg font-bold mb-2">
-                  <Link to="/learn/limited-hand-strength" className="hover:text-primary transition-colors">
-                    How to Put On Compression Socks With Limited Hand Strength
+                  <Link to="/learn/mobility-aids" className="hover:text-primary transition-colors">
+                    Mobility Aids & Sock Compatibility
                   </Link>
                 </h3>
                 <p className="text-sm text-muted-foreground mb-4">
-                  Adaptive techniques for donning compression when your hands don't cooperate. Covers wide-mouth designs, pull-tab methods, and when a donning aid helps most.
+                  Practical guidance for using compression socks with wheelchairs, walkers, and canes. Learn how Donning Socks make independent application easier.
                 </p>
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-muted-foreground flex items-center gap-1">
@@ -478,7 +454,7 @@ export default function Learn() {
                     7 min read
                   </span>
                   <Button variant="link" className="p-0 h-auto text-sm" asChild>
-                    <Link to="/learn/limited-hand-strength">Read Guide →</Link>
+                    <Link to="/learn/mobility-aids">Read Guide →</Link>
                   </Button>
                 </div>
               </CardContent>
@@ -487,19 +463,19 @@ export default function Learn() {
             {/* Guide 3 */}
             <Card className="overflow-hidden hover:shadow-lg transition-shadow">
               <img 
-                src="/images/learn-default.jpg" 
-                alt="Measuring for Compression Socks"
+                src="/images/learn-travel-tips.jpg" 
+                alt="Travel Tips for Compression Users"
                 className="aspect-video object-cover w-full"
               />
               <CardContent className="p-6">
-                <Badge variant="outline" className="mb-3">Compression Basics</Badge>
+                <Badge variant="outline" className="mb-3">Lifestyle & Travel</Badge>
                 <h3 className="text-lg font-bold mb-2">
-                  <Link to="/learn/measuring-guide" className="hover:text-primary transition-colors">
-                    Measuring for Compression Socks – Step-by-Step
+                  <Link to="/learn/travel-tips" className="hover:text-primary transition-colors">
+                    Travel Tips for Compression Users
                   </Link>
                 </h3>
                 <p className="text-sm text-muted-foreground mb-4">
-                  Get the right size the first time. This guide walks you through ankle and calf measurements, with visual aids and tips for accuracy.
+                  Making compression work with your daily life—whether you're traveling, working on your feet all day, or managing compression alongside an active routine.
                 </p>
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-muted-foreground flex items-center gap-1">
@@ -507,36 +483,7 @@ export default function Learn() {
                     6 min read
                   </span>
                   <Button variant="link" className="p-0 h-auto text-sm" asChild>
-                    <Link to="/learn/measuring-guide">Read Guide →</Link>
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-            
-            {/* Guide 4 */}
-            <Card className="overflow-hidden hover:shadow-lg transition-shadow">
-              <img 
-                src="/images/learn-default.jpg" 
-                alt="Compression After Joint Replacement"
-                className="aspect-video object-cover w-full"
-              />
-              <CardContent className="p-6">
-                <Badge variant="outline" className="mb-3">Condition-Specific</Badge>
-                <h3 className="text-lg font-bold mb-2">
-                  <Link to="/learn/compression-after-surgery" className="hover:text-primary transition-colors">
-                    Compression After Surgery – What to Expect
-                  </Link>
-                </h3>
-                <p className="text-sm text-muted-foreground mb-4">
-                  Common questions about post-surgical compression use. Covers typical recommendations, duration of wear, and what to do if donning is difficult during recovery.
-                </p>
-                <div className="flex items-center justify-between">
-                  <span className="text-xs text-muted-foreground flex items-center gap-1">
-                    <Clock className="h-4 w-4" />
-                    8 min read
-                  </span>
-                  <Button variant="link" className="p-0 h-auto text-sm" asChild>
-                    <Link to="/learn/compression-after-surgery">Read Guide →</Link>
+                    <Link to="/learn/travel-tips">Read Guide →</Link>
                   </Button>
                 </div>
               </CardContent>

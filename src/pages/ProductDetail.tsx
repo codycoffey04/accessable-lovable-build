@@ -774,7 +774,7 @@ export default function ProductDetail() {
                           <TooltipContent>
                             <p className="text-sm">
                               Unsure? See our{" "}
-                              <Link to="/learn/compression" className="underline font-medium">
+                              <Link to="/learn/compression-101" className="underline font-medium">
                                 Compression Guide
                               </Link>
                             </p>
@@ -1929,9 +1929,9 @@ export default function ProductDetail() {
               <h3 className="font-semibold mb-2">Mobility Aids & Compatibility</h3>
               <p className="text-sm text-muted-foreground">Using compression with wheelchairs and assistive devices</p>
             </Link>
-            <Link to="/learn/how-to-put-on-socks" className="p-6 border rounded-lg hover:border-primary transition-colors">
-              <h3 className="font-semibold mb-2">How to Put On Compression Socks</h3>
-              <p className="text-sm text-muted-foreground">Step-by-step guide with adaptive techniques</p>
+            <Link to="/learn/mobility-aids" className="p-6 border rounded-lg hover:border-primary transition-colors">
+              <h3 className="font-semibold mb-2">Mobility Aids & Compatibility</h3>
+              <p className="text-sm text-muted-foreground">Using compression with wheelchairs and assistive devices</p>
             </Link>
           </div>
         </section>

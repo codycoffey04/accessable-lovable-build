@@ -349,7 +349,7 @@ export default function Collection() {
               Explore our Compression Basics Guide to find the right fit for your needs.
             </p>
             <Button asChild>
-              <Link to="/learn/compression">Learn More</Link>
+              <Link to="/learn/compression-101">Learn More</Link>
             </Button>
           </div>
         )}

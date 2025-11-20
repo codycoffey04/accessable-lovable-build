@@ -140,7 +140,7 @@ export function SizingModal({ productType = 'compression-socks' }: SizingModalPr
                 View Full Size Guide
               </Link>
               <Link 
-                to="/learn/compression" 
+                to="/learn/compression-101" 
                 className="flex items-center gap-2 text-primary hover:underline"
               >
                 <ExternalLink className="h-4 w-4" />
