@@ -58,27 +58,11 @@ const App = () => (
                 </ProtectedRoute>
               } />
               
-              {/* Pro Pages - Protected */}
-              <Route path="/pro" element={
-                <ProtectedRoute requiredRole="pro_user">
-                  <Pro />
-                </ProtectedRoute>
-              } />
-              <Route path="/pro/bulk" element={
-                <ProtectedRoute requiredRole="pro_user">
-                  <ProBulk />
-                </ProtectedRoute>
-              } />
-              <Route path="/pro/starter-kits" element={
-                <ProtectedRoute requiredRole="pro_user">
-                  <ProStarterKits />
-                </ProtectedRoute>
-              } />
-              <Route path="/pro/resources" element={
-                <ProtectedRoute requiredRole="pro_user">
-                  <ProResources />
-                </ProtectedRoute>
-              } />
+              {/* Pro Pages - Public */}
+              <Route path="/pro" element={<Pro />} />
+              <Route path="/pro/bulk" element={<ProBulk />} />
+              <Route path="/pro/starter-kits" element={<ProStarterKits />} />
+              <Route path="/pro/resources" element={<ProResources />} />
               
               <Route path="/contact" element={<Contact />} />
               <Route path="/pages/faq" element={<FAQ />} />

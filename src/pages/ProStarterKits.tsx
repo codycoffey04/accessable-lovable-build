@@ -13,6 +13,7 @@ import { Check, Package } from "lucide-react";
 const kits = [
   {
     id: "pt-kit",
+    handle: "physical-therapy-kit",
     name: "Physical Therapy Kit",
     price: "Contact for Pricing",
     description: "Ideal for PT clinics and rehabilitation centers",
@@ -31,6 +32,7 @@ const kits = [
   },
   {
     id: "senior-kit",
+    handle: "senior-living-kit",
     name: "Senior Living Kit",
     price: "Contact for Pricing",
     description: "Perfect for senior living facilities and care homes",
@@ -49,6 +51,7 @@ const kits = [
   },
   {
     id: "distributor-kit",
+    handle: "distributor-starter-kit",
     name: "Distributor Starter Kit",
     price: "Contact for Pricing",
     description: "Comprehensive kit for medical supply distributors",
@@ -118,9 +121,12 @@ export default function ProStarterKits() {
                     </ul>
                   </div>
 
-                  <div className="mt-auto">
+                  <div className="mt-auto space-y-2">
                     <Button className="w-full h-12" asChild>
-                      <a href="#contact-form">Request This Kit</a>
+                      <Link to={`/products/${kit.handle}`}>View Product</Link>
+                    </Button>
+                    <Button variant="outline" className="w-full" asChild>
+                      <Link to="/pro/bulk">Request Quote</Link>
                     </Button>
                   </div>
                 </CardContent>
@@ -194,8 +200,11 @@ export default function ProStarterKits() {
         {/* Pricing Note */}
         <section className="py-12 bg-muted/40">
           <div className="container mx-auto px-4 text-center">
-            <p className="text-sm text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-sm text-muted-foreground max-w-2xl mx-auto mb-4">
               <strong>Note:</strong> Starter kit pricing includes volume discounts. The same bulk pricing tiers apply: 15% off for 25–49 units, 20% off for 50–99 units, and 25% off for 100+ units with free shipping.
+            </p>
+            <p className="text-sm text-muted-foreground max-w-2xl mx-auto">
+              All starter kits are available for public viewing. <Link to="/pro/login" className="text-primary underline">Login to Pro Portal</Link> for account-specific pricing and bulk ordering.
             </p>
           </div>
         </section>

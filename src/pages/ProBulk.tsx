@@ -148,6 +148,17 @@ export default function ProBulk() {
           </div>
         </section>
 
+        {/* Login Prompt */}
+        <section className="py-8 container mx-auto px-4">
+          <div className="max-w-2xl mx-auto">
+            <div className="p-6 bg-muted/40 rounded-lg border text-center">
+              <p className="text-sm text-muted-foreground mb-4">
+                Have a Pro account? <Link to="/pro/login" className="text-primary underline font-medium">Login to Pro Portal</Link> for account-specific pricing and order history.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* Quote Form */}
         <section id="quote-form" className="py-16 bg-muted/40">
           <div className="container mx-auto px-4">

@@ -24,7 +24,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { Star, Heart, ChevronLeft, ChevronRight, CheckCircle2, Shield, Maximize, Hand, Activity, Ruler, Award, Package, CreditCard, Users, Play, CheckCircle, Feather, Zap } from "lucide-react";
+import { Star, Heart, ChevronLeft, ChevronRight, CheckCircle2, Shield, Maximize, Hand, Activity, Ruler, Award, Package, CreditCard, Users, Play, CheckCircle, Feather, Zap, FileText } from "lucide-react";
 import { getProducts, ShopifyProduct } from "@/lib/shopify";
 import { useCartStore } from "@/stores/cartStore";
 import { toast } from "sonner";
@@ -428,6 +428,99 @@ const PRODUCT_COPY_CONFIG: any = {
       { question: "What's in the digital care guide?", answer: "The care guide includes: washing and drying instructions, sock replacement timeline, donning aid cleaning tips, troubleshooting for common fit issues, and video tutorial links." },
       { question: "Do you offer larger bundles for facilities or multiple users?", answer: "For bulk orders (5+ bundles), see our AccessAble Pro page. We offer volume pricing and custom assortments for clinics, facilities, and medical suppliers." }
     ]
+  },
+  'Pro Starter Kit': {
+    subheadline: "Pre-built kits for clinics and facilities. Curated assortments with everything you need in one order.",
+    keyBenefits: [
+      { icon: Package, text: "Pre-coordinated solutions – No guessing which products work together" },
+      { icon: Users, text: "Clinic-ready – Designed for professional use and patient care" },
+      { icon: Award, text: "Volume discounts – Save 15-25% vs. buying items separately" },
+      { icon: FileText, text: "Training included – Staff guides and educational materials included" },
+      { icon: Shield, text: "Reliable supply – Consistent inventory for patient care continuity" }
+    ],
+    supportingDescription: "Get started with everything your clinic or facility needs in one order. Adaptive compression solutions designed for professional healthcare settings, with training materials and support included.",
+    kits: {
+      'physical-therapy-kit': {
+        name: "Physical Therapy Kit",
+        bestFor: "PT clinics and rehabilitation centers",
+        whatsIncluded: [
+          "10 pairs compression socks (assorted sizes: S, M, L, XL)",
+          "5 sock donning aids with ergonomic handles",
+          "Patient care guide (printed)",
+          "Educational posters for waiting room",
+          "Product training materials for staff"
+        ],
+        skus: [
+          { sku: "CS-001", product: "Compression Socks 15-20mmHg", sizes: "2S, 4M, 2L, 2XL" },
+          { sku: "DA-001", product: "Standard Donning Aid", quantity: "5" }
+        ]
+      },
+      'senior-living-kit': {
+        name: "Senior Living Kit",
+        bestFor: "Senior living facilities and care homes",
+        whatsIncluded: [
+          "20 pairs compression socks (higher proportion XL/XXL)",
+          "10 sock donning aids",
+          "Staff training guide with video access",
+          "Resident sizing chart (laminated)",
+          "Care & maintenance instructions"
+        ],
+        skus: [
+          { sku: "CS-001", product: "Compression Socks 15-20mmHg", sizes: "2S, 4M, 6L, 8XL" },
+          { sku: "DA-001", product: "Standard Donning Aid", quantity: "10" }
+        ]
+      },
+      'distributor-starter-kit': {
+        name: "Distributor Starter Kit",
+        bestFor: "Medical supply stores, pharmacies, DME providers",
+        whatsIncluded: [
+          "50 pairs compression socks (full size range)",
+          "20 sock donning aids",
+          "Marketing materials (posters, brochures, product sheets)",
+          "Sample products for demos",
+          "Wholesale pricing guide",
+          "Point-of-sale display stand"
+        ],
+        skus: [
+          { sku: "CS-001", product: "Compression Socks 15-20mmHg", sizes: "10 each S-XXL" },
+          { sku: "CS-002", product: "Compression Socks 20-30mmHg", sizes: "10 each S-XXL" },
+          { sku: "DA-001", product: "Standard Donning Aid", quantity: "20" }
+        ]
+      }
+    },
+    whyProKits: {
+      title: "Why Choose Pro Starter Kits?",
+      benefits: [
+        {
+          icon: Package,
+          title: "Instant Setup",
+          description: "Everything coordinated in one order. No guessing which products work together. Start using them the day they arrive."
+        },
+        {
+          icon: Users,
+          title: "Professional Support",
+          description: "Training materials and staff guides included. Educational resources help your team support patients effectively."
+        },
+        {
+          icon: Award,
+          title: "Volume Savings",
+          description: "Save 15-25% compared to buying items separately. Better price per unit, plus training materials at no extra cost."
+        },
+        {
+          icon: Shield,
+          title: "Reliable Inventory",
+          description: "Consistent supply for patient care continuity. Pre-configured assortments based on facility type and patient needs."
+        }
+      ]
+    },
+    faqs: [
+      { question: "Can I customize the kit contents?", answer: "Yes. Contact our Pro team to discuss custom assortments tailored to your facility's specific needs. Mix and match products, sizes, and quantities." },
+      { question: "What's the minimum order quantity?", answer: "Starter kits are designed for immediate use. For larger orders, see our bulk ordering page for volume pricing tiers starting at 25+ units." },
+      { question: "Do kits include training materials?", answer: "Yes. All starter kits include staff training guides, patient education materials, and access to video tutorials. Physical Therapy and Senior Living kits include printed materials." },
+      { question: "Can I reorder individual items from the kit?", answer: "Yes. Once you have a Pro account, you can reorder individual products at bulk pricing. Your account manager can help set up recurring orders." },
+      { question: "What payment terms are available?", answer: "Pro accounts can request net-30 payment terms. Contact us to discuss payment options that work for your facility." },
+      { question: "Are kits available for international shipping?", answer: "Currently, Pro kits are available for U.S. shipping. Contact us for international bulk order options." }
+    ]
   }
 };
 
@@ -506,6 +599,12 @@ export default function ProductDetail() {
   const isBundle = product.node.productType === 'Bundle';
   const bundleConfig = isBundle && productCopy.bundles 
     ? productCopy.bundles[product.node.handle as keyof typeof productCopy.bundles]
+    : null;
+  
+  // For Pro Starter Kits, get kit-specific configuration
+  const isProKit = product.node.productType === 'Pro Starter Kit';
+  const proKitConfig = isProKit && productCopy.kits
+    ? productCopy.kits[product.node.handle as keyof typeof productCopy.kits]
     : null;
   
   // Generate schemas

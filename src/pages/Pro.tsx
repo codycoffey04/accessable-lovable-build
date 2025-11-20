@@ -83,6 +83,15 @@ export default function Pro() {
                 </Button>
               </div>
               
+              <div className="mt-8 p-6 bg-muted/40 rounded-lg border max-w-3xl">
+                <p className="text-sm text-muted-foreground mb-4">
+                  Already have a Pro account?
+                </p>
+                <Button variant="outline" asChild>
+                  <Link to="/pro/login">Login to Pro Portal</Link>
+                </Button>
+              </div>
+              
               <Alert className="mt-8 border-amber-500 bg-amber-50 max-w-3xl">
                 <AlertCircle className="h-4 w-4 text-amber-600" />
                 <AlertDescription className="text-amber-900">
