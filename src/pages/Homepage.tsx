@@ -119,13 +119,18 @@ const ProductCard = ({ product }: { product: ShopifyProduct }) => {
               product.node.handle,
               product.node.title
             );
-            return productImage ? (
+            return (
               <img
                 src={productImage.url}
                 alt={productImage.altText || product.node.title}
                 className="object-cover w-full h-full group-hover:scale-105 transition-transform"
+                onError={(e) => {
+                  // Fallback if image fails to load
+                  const target = e.target as HTMLImageElement;
+                  target.src = '/images/compression-sock-black-product.jpg';
+                }}
               />
-            ) : null;
+            );
           })()}
         </div>
       </Link>

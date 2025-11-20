@@ -74,19 +74,20 @@ export function getProductFallbackImage(
 /**
  * Get product image with fallback
  * Returns Shopify image if available, otherwise uses fallback
+ * Always returns an image (never null)
  */
 export function getProductImage(
   shopifyImages: Array<{ node: ProductImage }> | undefined,
   productType: string | null,
   handle: string | null,
   title: string | null
-): ProductImage | null {
+): ProductImage {
   // If Shopify has images, use the first one
   if (shopifyImages && shopifyImages.length > 0 && shopifyImages[0]?.node?.url) {
     return shopifyImages[0].node;
   }
   
-  // Otherwise use fallback
+  // Otherwise use fallback (always returns an image)
   return getProductFallbackImage(productType, handle, title);
 }
 
