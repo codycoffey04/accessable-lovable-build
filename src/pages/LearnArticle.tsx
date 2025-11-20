@@ -188,7 +188,11 @@ export default function LearnArticle() {
             )}
 
             {/* Featured Image */}
-            <div className="aspect-video bg-muted rounded-lg mb-8"></div>
+            <img 
+              src={article.featuredImage || "/images/learn-default.jpg"} 
+              alt={article.title}
+              className="aspect-video object-cover w-full rounded-lg mb-8"
+            />
           </div>
 
           {/* Article Content */}
@@ -279,21 +283,38 @@ export default function LearnArticle() {
             <section className="mb-12">
               <h2 className="text-2xl font-bold mb-6">Based on This Guide, Explore:</h2>
               <div className="grid md:grid-cols-2 gap-6">
-                {article.relatedProducts.map((productSlug: string) => (
-                  <Card key={productSlug}>
-                    <div className="aspect-video bg-muted"></div>
-                    <CardContent className="p-6">
-                      <h3 className="font-semibold mb-2">[Product Name - {productSlug}]</h3>
-                      <p className="text-muted-foreground mb-4">[Product description placeholder]</p>
-                      <div className="flex gap-2">
-                        <Button asChild>
-                          <Link to={`/products/${productSlug}`}>Shop Now</Link>
-                        </Button>
-                        <Button variant="outline">Quick Add</Button>
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
+                {article.relatedProducts.map((productSlug: string) => {
+                  // Determine fallback image based on product slug
+                  const getProductImage = (slug: string) => {
+                    if (slug.includes('compression') || slug.includes('sock')) {
+                      return '/images/compression-sock-black-product.jpg';
+                    }
+                    if (slug.includes('donning')) {
+                      return '/images/compression-sock-lifestyle-detail.jpg';
+                    }
+                    return '/images/compression-sock-black-product.jpg';
+                  };
+                  
+                  return (
+                    <Card key={productSlug}>
+                      <img 
+                        src={getProductImage(productSlug)}
+                        alt={`AccessAble ${productSlug}`}
+                        className="aspect-video object-cover w-full"
+                      />
+                      <CardContent className="p-6">
+                        <h3 className="font-semibold mb-2">[Product Name - {productSlug}]</h3>
+                        <p className="text-muted-foreground mb-4">[Product description placeholder]</p>
+                        <div className="flex gap-2">
+                          <Button asChild>
+                            <Link to={`/products/${productSlug}`}>Shop Now</Link>
+                          </Button>
+                          <Button variant="outline">Quick Add</Button>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  );
+                })}
               </div>
             </section>
           )}
@@ -324,7 +345,11 @@ export default function LearnArticle() {
                   const related = articles[relatedSlug];
                   return (
                     <Card key={relatedSlug}>
-                      <div className="aspect-video bg-muted"></div>
+                      <img 
+                        src={related?.featuredImage || "/images/learn-default.jpg"} 
+                        alt={related?.title || relatedSlug}
+                        className="aspect-video object-cover w-full"
+                      />
                       <CardContent className="p-4">
                         <Badge variant="outline" className="mb-2">{related?.category || "Article"}</Badge>
                         <h3 className="font-semibold mb-2">
