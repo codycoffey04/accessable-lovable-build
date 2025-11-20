@@ -39,7 +39,11 @@ export const Header = () => {
               src="/images/logo-main-optimized.png" 
               alt="AccessAble" 
               className="h-8 sm:h-10 w-auto max-h-10 object-contain"
-              style={{ maxWidth: '180px' }}
+              style={{ 
+                maxWidth: '180px',
+                mixBlendMode: 'multiply',
+                filter: 'contrast(1.1)'
+              }}
             />
           </Link>
 
