@@ -34,8 +34,12 @@ export const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between gap-4">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2 font-bold text-xl min-w-fit">
-            AccessAble
+          <Link to="/" className="flex items-center space-x-2 min-w-fit" aria-label="AccessAble Home">
+            <img 
+              src="/images/logo-main.jpeg" 
+              alt="AccessAble" 
+              className="h-10 w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation */}
