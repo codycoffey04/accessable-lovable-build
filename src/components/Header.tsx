@@ -42,7 +42,7 @@ export const Header = () => {
               style={{ 
                 maxWidth: '180px',
                 mixBlendMode: 'multiply',
-                filter: 'contrast(1.1)'
+                filter: 'contrast(1.15) brightness(0.98)'
               }}
             />
           </Link>
