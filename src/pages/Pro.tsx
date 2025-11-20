@@ -137,7 +137,7 @@ export default function Pro() {
                     </li>
                     <li className="flex gap-2">
                       <Check className="h-5 w-5 text-primary flex-shrink-0" />
-                      <span><strong>Minimum order:</strong> {'{'}{25}{'}'} units (mix of compression socks and donning aids)</span>
+                      <span><strong>Minimum order:</strong> {'{'}{25}{'}'} units (mix of compression socks and Donning Socks)</span>
                     </li>
                     <li className="flex gap-2">
                       <Check className="h-5 w-5 text-primary flex-shrink-0" />
