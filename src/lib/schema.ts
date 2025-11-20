@@ -153,7 +153,7 @@ export const generateBlogSchema = () => ({
     name: 'AccessAble',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://accessable.com/logo.png',
+      url: `${window.location.origin}/images/logo-main.jpeg`,
     },
   },
   blogPost: [], // Can be populated with individual article schemas if needed
