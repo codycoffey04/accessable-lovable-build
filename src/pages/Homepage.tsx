@@ -312,8 +312,8 @@ export default function Homepage() {
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-primary/10 to-secondary/10 py-20 lg:py-32">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div>
+          <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <div className="flex flex-col justify-center">
               <h1 className="text-4xl lg:text-6xl font-bold mb-6">
                 Designed for Independence. Built for Comfort.
               </h1>
@@ -329,11 +329,11 @@ export default function Homepage() {
                 </Button>
               </div>
             </div>
-            <div>
+            <div className="relative w-full aspect-[4/3] md:aspect-square lg:aspect-[4/3] overflow-hidden rounded-lg shadow-lg">
               <img 
                 src="/images/homepage-hero.jpg" 
                 alt="Woman wearing AccessAble compression socks with mobility aid visible" 
-                className="rounded-lg shadow-lg w-full h-auto"
+                className="w-full h-full object-cover object-center"
               />
             </div>
           </div>
