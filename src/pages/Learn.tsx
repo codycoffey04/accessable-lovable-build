@@ -90,10 +90,17 @@ export default function Learn() {
     if (categoryParam && categoryMap[categoryParam]) {
       setSelectedCategory(categoryMap[categoryParam]);
       setCurrentPage(1); // Reset to first page when category changes
+      // Scroll to article grid after filter is applied
+      setTimeout(() => {
+        const articleGrid = document.getElementById('article-grid');
+        if (articleGrid) {
+          articleGrid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
     } else {
       setSelectedCategory(null);
     }
-  }, [searchParams]);
+  }, [searchParams.toString()]);
   
   const breadcrumbSchema = generateBreadcrumbSchema([
     { name: 'Home', url: window.location.origin },
