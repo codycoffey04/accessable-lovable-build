@@ -14,7 +14,7 @@ const kits = [
   {
     id: "pt-kit",
     name: "Physical Therapy Kit",
-    price: "$XXX",
+    price: "Contact for Pricing",
     description: "Ideal for PT clinics and rehabilitation centers",
     includes: [
       "10 pairs compression socks (assorted sizes: S, M, L, XL)",
@@ -32,7 +32,7 @@ const kits = [
   {
     id: "senior-kit",
     name: "Senior Living Kit",
-    price: "$XXX",
+    price: "Contact for Pricing",
     description: "Perfect for senior living facilities and care homes",
     includes: [
       "20 pairs compression socks (higher proportion XL/XXL)",
@@ -50,7 +50,7 @@ const kits = [
   {
     id: "distributor-kit",
     name: "Distributor Starter Kit",
-    price: "$XXX",
+    price: "Contact for Pricing",
     description: "Comprehensive kit for medical supply distributors",
     includes: [
       "50 pairs compression socks (full size range)",

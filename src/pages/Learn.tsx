@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -5,7 +6,16 @@ import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Search, Clock } from "lucide-react";
 import { Schema } from "@/components/Schema";
-import { generateBreadcrumbSchema } from "@/lib/schema";
+import { generateBreadcrumbSchema, generateBlogSchema } from "@/lib/schema";
+import {
+  Pagination,
+  PaginationContent,
+  PaginationItem,
+  PaginationLink,
+  PaginationNext,
+  PaginationPrevious,
+  PaginationEllipsis,
+} from "@/components/ui/pagination";
 
 const articles = [
   {
@@ -54,14 +64,37 @@ const articles = [
 ];
 
 export default function Learn() {
+  const [currentPage, setCurrentPage] = useState(1);
+  const articlesPerPage = 9; // 3 columns × 3 rows
+  
   const breadcrumbSchema = generateBreadcrumbSchema([
     { name: 'Home', url: window.location.origin },
     { name: 'Learn Hub', url: window.location.href }
   ]);
 
+  // Calculate pagination (exclude featured article)
+  const nonFeaturedArticles = articles.filter(a => !a.featured);
+  const totalArticles = nonFeaturedArticles.length;
+  const totalPages = Math.ceil(totalArticles / articlesPerPage);
+  const startIndex = (currentPage - 1) * articlesPerPage;
+  const endIndex = startIndex + articlesPerPage;
+  const paginatedArticles = nonFeaturedArticles.slice(startIndex, endIndex);
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+    // Scroll to top of article grid
+    const articleGrid = document.getElementById('article-grid');
+    if (articleGrid) {
+      articleGrid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
+  const blogSchema = generateBlogSchema();
+
   return (
     <div className="min-h-screen">
       <Schema schema={breadcrumbSchema} />
+      <Schema schema={blogSchema} />
       {/* Breadcrumbs */}
       <nav className="container mx-auto px-4 py-4" aria-label="Breadcrumb">
         <ol className="flex items-center space-x-2 text-sm">
@@ -397,7 +430,7 @@ export default function Learn() {
         </div>
 
         {/* Article Grid Preview Section */}
-        <div className="mb-12">
+        <div id="article-grid" className="mb-12">
           <div className="text-center mb-8">
             <h2 className="text-3xl font-bold mb-2">Recent Guides & Articles</h2>
             <p className="text-muted-foreground">
@@ -405,8 +438,13 @@ export default function Learn() {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {articles.slice(1).map((article) => (
+          {/* Screen reader announcement for page changes */}
+          <div aria-live="polite" aria-atomic="true" className="sr-only">
+            {currentPage > 1 && `Page ${currentPage} loaded. Showing articles ${startIndex + 1} to ${Math.min(endIndex, totalArticles)} of ${totalArticles}.`}
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+            {paginatedArticles.map((article) => (
               <Card key={article.slug} className="overflow-hidden">
                 <div className="aspect-video bg-muted"></div>
                 <CardContent className="p-6">
@@ -430,6 +468,71 @@ export default function Learn() {
               </Card>
             ))}
           </div>
+
+          {/* Pagination */}
+          {totalPages > 1 && (
+            <Pagination className="mt-8">
+              <PaginationContent>
+                <PaginationItem>
+                  <PaginationPrevious 
+                    href="#"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      if (currentPage > 1) handlePageChange(currentPage - 1);
+                    }}
+                    className={currentPage === 1 ? 'pointer-events-none opacity-50' : ''}
+                  />
+                </PaginationItem>
+                
+                {/* Page Numbers */}
+                {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => {
+                  // Show first page, last page, current page, and pages around current
+                  if (
+                    page === 1 ||
+                    page === totalPages ||
+                    (page >= currentPage - 1 && page <= currentPage + 1)
+                  ) {
+                    return (
+                      <PaginationItem key={page}>
+                        <PaginationLink
+                          href="#"
+                          onClick={(e) => {
+                            e.preventDefault();
+                            handlePageChange(page);
+                          }}
+                          isActive={currentPage === page}
+                          aria-label={`Go to page ${page}`}
+                        >
+                          {page}
+                        </PaginationLink>
+                      </PaginationItem>
+                    );
+                  } else if (
+                    page === currentPage - 2 ||
+                    page === currentPage + 2
+                  ) {
+                    return (
+                      <PaginationItem key={page}>
+                        <PaginationEllipsis />
+                      </PaginationItem>
+                    );
+                  }
+                  return null;
+                })}
+                
+                <PaginationItem>
+                  <PaginationNext 
+                    href="#"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      if (currentPage < totalPages) handlePageChange(currentPage + 1);
+                    }}
+                    className={currentPage === totalPages ? 'pointer-events-none opacity-50' : ''}
+                  />
+                </PaginationItem>
+              </PaginationContent>
+            </Pagination>
+          )}
         </div>
 
         {/* Accessibility & Trust Note */}

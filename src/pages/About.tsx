@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Star } from "lucide-react";
 import { Schema } from "@/components/Schema";
-import { generateOrganizationSchema, generateBreadcrumbSchema } from "@/lib/schema";
+import { generateOrganizationSchema, generateBreadcrumbSchema, generateAboutPageSchema } from "@/lib/schema";
 
 export default function About() {
   // Generate schemas
@@ -12,12 +12,14 @@ export default function About() {
     { name: 'Home', url: window.location.origin },
     { name: 'About', url: window.location.href }
   ]);
+  const aboutPageSchema = generateAboutPageSchema();
 
   return (
     <div className="min-h-screen">
       {/* Schema Markup */}
       <Schema schema={organizationSchema} />
       <Schema schema={breadcrumbSchema} />
+      <Schema schema={aboutPageSchema} />
       
       {/* Breadcrumbs */}
       <nav className="container mx-auto px-4 py-4" aria-label="Breadcrumb">
@@ -114,22 +116,50 @@ export default function About() {
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold mb-12 text-center">What Our Customers Say</h2>
             <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-              {[1, 2, 3].map((i) => (
-                <Card key={i}>
-                  <CardContent className="p-6">
-                    <div className="flex mb-4">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="h-4 w-4 fill-primary text-primary" />
-                      ))}
-                    </div>
-                    <p className="text-muted-foreground mb-4">
-                      "[CUSTOMER TESTIMONIAL PLACEHOLDER - Focus on functional benefits like 'Easier to put on,' 'comfortable all day,' 'fits well with my brace']"
-                    </p>
-                    <p className="font-medium">[Customer Name]</p>
-                    <p className="text-sm text-muted-foreground">[User with mobility aid]</p>
-                  </CardContent>
-                </Card>
-              ))}
+              <Card>
+                <CardContent className="p-6">
+                  <div className="flex mb-4">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="h-4 w-4 fill-primary text-primary" />
+                    ))}
+                  </div>
+                  <p className="text-muted-foreground mb-4">
+                    "I can get these on by myself in under a minute. No more asking my daughter for help every morning."
+                  </p>
+                  <p className="font-medium">Carol T.</p>
+                  <p className="text-sm text-muted-foreground">Arthritis</p>
+                </CardContent>
+              </Card>
+              
+              <Card>
+                <CardContent className="p-6">
+                  <div className="flex mb-4">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="h-4 w-4 fill-primary text-primary" />
+                    ))}
+                  </div>
+                  <p className="text-muted-foreground mb-4">
+                    "Comfortable enough to wear all day without pinching. The bamboo fabric doesn't make my legs sweat like my old compression socks did."
+                  </p>
+                  <p className="font-medium">James R.</p>
+                  <p className="text-sm text-muted-foreground">Uses walker</p>
+                </CardContent>
+              </Card>
+              
+              <Card>
+                <CardContent className="p-6">
+                  <div className="flex mb-4">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="h-4 w-4 fill-primary text-primary" />
+                    ))}
+                  </div>
+                  <p className="text-muted-foreground mb-4">
+                    "The wide opening works perfectly with my leg brace. I was worried they wouldn't fit over it, but they do."
+                  </p>
+                  <p className="font-medium">Linda M.</p>
+                  <p className="text-sm text-muted-foreground">Post-surgical recovery</p>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </section>

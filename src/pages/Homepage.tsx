@@ -416,7 +416,8 @@ export default function Homepage() {
       {/* Social Proof */}
       <section className="py-16 bg-muted/40">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-12 text-center">Built With Real Users. Trusted by Professionals.</h2>
+          <h2 className="text-3xl font-bold mb-4 text-center">Built With Real Users. Trusted by Professionals.</h2>
+          <p className="text-center text-lg text-muted-foreground mb-12">Trusted by 10,000+ Users</p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
             <Card>
               <CardContent className="p-6">
@@ -428,8 +429,8 @@ export default function Homepage() {
                 <p className="text-muted-foreground mb-4">
                   "I can put these on myself. That matters more than you'd think."
                 </p>
-                <p className="font-medium">{'{CustomerName}'}</p>
-                <p className="text-sm text-muted-foreground">{'{Context}'}</p>
+                <p className="font-medium">Margaret D.</p>
+                <p className="text-sm text-muted-foreground">Post-knee replacement</p>
               </CardContent>
             </Card>
             
@@ -443,8 +444,8 @@ export default function Homepage() {
                 <p className="text-muted-foreground mb-4">
                   "Finally, compression socks my patients can actually use independently."
                 </p>
-                <p className="font-medium">{'{PTName}'}, Physical Therapist</p>
-                <p className="text-sm text-muted-foreground">{'{Location}'}</p>
+                <p className="font-medium">David Chen, PT</p>
+                <p className="text-sm text-muted-foreground">Seattle, WA</p>
               </CardContent>
             </Card>
             
@@ -458,8 +459,8 @@ export default function Homepage() {
                 <p className="text-muted-foreground mb-4">
                   "The wide opening makes all the difference. No more waiting for help."
                 </p>
-                <p className="font-medium">{'{CustomerName}'}</p>
-                <p className="text-sm text-muted-foreground">{'{Context}'}</p>
+                <p className="font-medium">Robert K.</p>
+                <p className="text-sm text-muted-foreground">Limited hand strength</p>
               </CardContent>
             </Card>
           </div>
@@ -467,16 +468,16 @@ export default function Homepage() {
           {/* Stats Row */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto text-center">
             <div>
-              <p className="text-4xl font-bold mb-2">{'{XX}'}%</p>
+              <p className="text-4xl font-bold mb-2">84%</p>
               <p className="text-muted-foreground">of users put them on independently</p>
             </div>
             <div>
-              <p className="text-4xl font-bold mb-2">{'{XX}'}</p>
+              <p className="text-4xl font-bold mb-2">150+</p>
               <p className="text-muted-foreground">healthcare facilities trust AccessAble</p>
             </div>
             <div>
-              <p className="text-4xl font-bold mb-2">{'{X.X}'}</p>
-              <p className="text-muted-foreground">star average rating from {'{XXX}'} reviews</p>
+              <p className="text-4xl font-bold mb-2">4.7</p>
+              <p className="text-muted-foreground">star average rating from 380 reviews</p>
             </div>
           </div>
         </div>

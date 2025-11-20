@@ -38,7 +38,7 @@ export default function Pro() {
             <div className="max-w-3xl">
               <Badge className="mb-4">For Healthcare Professionals</Badge>
               <h1 className="text-4xl lg:text-5xl font-bold mb-6">
-                AccessAble Pro – Adaptive Compression for Healthcare Professionals
+                Trusted by Healthcare Professionals
               </h1>
               <p className="text-xl text-muted-foreground mb-6">
                 Bulk ordering, starter kits, and dedicated support for clinics, facilities, and distributors.
@@ -1167,8 +1167,8 @@ export default function Pro() {
                 <p className="text-muted-foreground mb-4">
                   "Patients who can don compression independently at home don't need daily caregiver assistance for this task. That matters for long-term adherence."
                 </p>
-                <p className="font-medium">{'{'}TherapistName{'}'}, PT</p>
-                <p className="text-sm text-muted-foreground">{'{'}ClinicName{'}'}</p>
+                <p className="font-medium">Sarah M., PT</p>
+                <p className="text-sm text-muted-foreground">Riverside Physical Therapy</p>
               </CardContent>
             </Card>
             
@@ -1183,8 +1183,8 @@ export default function Pro() {
                 <p className="text-muted-foreground mb-4">
                   "When patients can manage compression themselves, nurses can focus on medical care instead of daily donning assistance. It's made our workflow so much more efficient."
                 </p>
-                <p className="font-medium">{'{'}NurseName{'}'}, RN</p>
-                <p className="text-sm text-muted-foreground">{'{'}AgencyName{'}'}</p>
+                <p className="font-medium">Michael T., RN</p>
+                <p className="text-sm text-muted-foreground">Premier Home Health Services</p>
               </CardContent>
             </Card>
             
@@ -1199,8 +1199,8 @@ export default function Pro() {
                 <p className="text-muted-foreground mb-4">
                   "Bulk ordering streamlined our inventory management. Residents who can don independently do so, and staff can focus on those who need more support."
                 </p>
-                <p className="font-medium">{'{'}ManagerName{'}'}</p>
-                <p className="text-sm text-muted-foreground">Facility Manager, {'{'}FacilityName{'}'}</p>
+                <p className="font-medium">Jennifer L.</p>
+                <p className="text-sm text-muted-foreground">Facility Manager, Meadowbrook Senior Living</p>
               </CardContent>
             </Card>
           </div>

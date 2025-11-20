@@ -141,3 +141,34 @@ export const generateCollectionSchema = (collection: Collection) => ({
   description: collection.description,
   url: collection.url,
 });
+
+export const generateBlogSchema = () => ({
+  '@context': 'https://schema.org',
+  '@type': 'Blog',
+  name: 'AccessAble Learn Hub',
+  description: 'Expert guides for independent living, mobility, compression, and everyday comfort.',
+  url: `${window.location.origin}/learn`,
+  publisher: {
+    '@type': 'Organization',
+    name: 'AccessAble',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://accessable.com/logo.png',
+    },
+  },
+  blogPost: [], // Can be populated with individual article schemas if needed
+});
+
+export const generateAboutPageSchema = () => ({
+  '@context': 'https://schema.org',
+  '@type': 'AboutPage',
+  name: 'About AccessAble',
+  description: 'Purpose-built compression and mobility aids designed for independence, dignity, and real-world use.',
+  url: `${window.location.origin}/about`,
+  mainEntity: {
+    '@type': 'Organization',
+    name: 'AccessAble',
+    url: 'https://accessable.com',
+    logo: 'https://accessable.com/logo.png',
+  },
+});

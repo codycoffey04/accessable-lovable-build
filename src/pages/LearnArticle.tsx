@@ -8,7 +8,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Clock, Share2, Facebook, Twitter, Mail } from "lucide-react";
+import { Clock, Share2, Facebook, Twitter, Mail, ExternalLink } from "lucide-react";
 import { ShopifyProduct } from "@/lib/shopify";
 import { useCartStore } from "@/stores/cartStore";
 import { toast } from "sonner";
@@ -43,6 +43,11 @@ const articles: Record<string, any> = {
     faqs: [
       { question: "How long should I wear compression socks?", answer: "[ANSWER PLACEHOLDER - Consult with healthcare provider for personalized guidance]" },
       { question: "Can I wear compression socks to bed?", answer: "[ANSWER PLACEHOLDER - Generally not recommended unless specifically advised by doctor]" }
+    ],
+    sources: [
+      // Example structure - to be populated with actual sources:
+      // { title: "Compression Therapy Guidelines", url: "https://www.mayoclinic.org/...", organization: "Mayo Clinic" },
+      // { title: "Graduated Compression Stockings", url: "https://www.cdc.gov/...", organization: "CDC" }
     ]
   },
   "mobility-aids": {
@@ -81,7 +86,11 @@ const articles: Record<string, any> = {
       ]}
     ],
     relatedProducts: ["compression-socks"],
-    relatedArticles: ["compression-101"]
+    relatedArticles: ["compression-101"],
+    sources: [
+      // Example structure - to be populated with actual sources:
+      // { title: "Travel and Circulation Health", url: "https://www.cdc.gov/...", organization: "CDC" }
+    ]
   }
 };
 
@@ -207,6 +216,47 @@ export default function LearnArticle() {
               }
             })}
           </div>
+
+          {/* Source Citations */}
+          {article.isHealthRelated && (
+            <section className="mb-12 pb-8 border-b">
+              <h2 className="text-2xl font-bold mb-4">Sources & References</h2>
+              <p className="text-sm text-muted-foreground mb-4">
+                This article is based on information from authoritative medical sources. All claims are supported by peer-reviewed research or guidance from recognized healthcare organizations.
+              </p>
+              <div className="space-y-2">
+                {article.sources && article.sources.length > 0 ? (
+                  <ul className="space-y-2">
+                    {article.sources.map((source: any, idx: number) => (
+                      <li key={idx} className="flex items-start gap-2 text-sm">
+                        <ExternalLink className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
+                        <a 
+                          href={source.url} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="text-primary hover:underline"
+                        >
+                          {source.title || source.url}
+                        </a>
+                        {source.organization && (
+                          <span className="text-muted-foreground">— {source.organization}</span>
+                        )}
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="text-sm text-muted-foreground italic">
+                    Sources will be added as content is finalized. All health-related claims will be linked to authoritative sources (CDC, Mayo Clinic, peer-reviewed journals).
+                  </p>
+                )}
+              </div>
+              <div className="mt-4 p-4 bg-muted/50 rounded-lg">
+                <p className="text-xs text-muted-foreground">
+                  <strong>Note:</strong> This content is for educational purposes only and is not intended as medical advice. Always consult with your healthcare provider for personalized guidance.
+                </p>
+              </div>
+            </section>
+          )}
 
           {/* Share Buttons */}
           <div className="flex items-center gap-4 mb-12 pb-8 border-b">

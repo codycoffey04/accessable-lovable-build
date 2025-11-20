@@ -23,6 +23,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Star, Heart, ChevronLeft, ChevronRight, CheckCircle2, Shield, Maximize, Hand, Activity, Ruler, Award, Package, CreditCard, Users, Play, CheckCircle, Feather, Zap } from "lucide-react";
 import { getProducts, ShopifyProduct } from "@/lib/shopify";
 import { useCartStore } from "@/stores/cartStore";
@@ -33,6 +34,13 @@ import { StickyAddToCart } from "@/components/StickyAddToCart";
 import { CrossSellSection } from "@/components/CrossSellSection";
 import { FrequentlyBoughtTogether } from "@/components/FrequentlyBoughtTogether";
 import { ReviewsSection } from "@/components/ReviewsSection";
+import { SizingModal } from "@/components/SizingModal";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 // Product-specific copy configuration
 const PRODUCT_COPY_CONFIG: any = {
@@ -594,9 +602,16 @@ export default function ProductDetail() {
                   <span className="ml-2 text-sm text-muted-foreground">(500 reviews)</span>
                 </div>
               </div>
-              <p className="text-3xl font-bold">
-                ${parseFloat(selectedVariant?.price.amount || product.node.priceRange.minVariantPrice.amount).toFixed(2)}
-              </p>
+              <div className="flex items-baseline gap-3">
+                <p className="text-3xl font-bold">
+                  ${parseFloat(selectedVariant?.price.amount || product.node.priceRange.minVariantPrice.amount).toFixed(2)}
+                </p>
+                {selectedVariant && selectedVariant.quantityAvailable !== null && selectedVariant.quantityAvailable < 10 && selectedVariant.quantityAvailable > 0 && (
+                  <Badge variant="destructive" className="text-xs">
+                    Only {selectedVariant.quantityAvailable} left
+                  </Badge>
+                )}
+              </div>
             </div>
 
             {/* Key Benefits */}
@@ -612,10 +627,15 @@ export default function ProductDetail() {
               </ul>
             </div>
 
-            {/* Supporting Description */}
-            <p className="text-muted-foreground">
-              {productCopy.supportingDescription}
-            </p>
+            {/* Product Description */}
+            <div className="space-y-3">
+              {product.node.productType === 'Compression Socks' && (
+                <h2 className="text-2xl font-bold">Built for All-Day Comfort and Independence</h2>
+              )}
+              <p className="text-muted-foreground">
+                {productCopy.supportingDescription}
+              </p>
+            </div>
 
             {/* FDA Disclaimer */}
             <div className="p-4 bg-muted/50 rounded-lg border">
@@ -628,30 +648,175 @@ export default function ProductDetail() {
             </div>
 
             {/* Variants/Options */}
-            {product.node.options.map((option) => (
-              <div key={option.name}>
-                <Label className="mb-2 block">{option.name}</Label>
-                <Select
-                  onValueChange={(value) => {
-                    const variant = product.node.variants.edges.find(v =>
-                      v.node.selectedOptions.some(opt => opt.value === value)
-                    );
-                    if (variant) setSelectedVariant(variant.node);
-                  }}
-                >
-                  <SelectTrigger className="w-full h-12">
-                    <SelectValue placeholder={`Select ${option.name}`} />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {option.values.map((value) => (
-                      <SelectItem key={value} value={value}>
-                        {value}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-              </div>
-            ))}
+            <TooltipProvider>
+              {product.node.options.map((option) => {
+                const optionNameLower = option.name.toLowerCase();
+                const isCompressionLevel = optionNameLower.includes('compression') || optionNameLower.includes('level') || optionNameLower.includes('mmhg');
+                const isSize = optionNameLower.includes('size');
+                const isColor = optionNameLower.includes('color') || optionNameLower.includes('colour') || optionNameLower.includes('pattern');
+                
+                // Compression Level Selector (RadioGroup for compression socks)
+                if (isCompressionLevel && product.node.productType === 'Compression Socks') {
+                  return (
+                    <div key={option.name} className="space-y-2">
+                      <div className="flex items-center gap-2">
+                        <Label className="mb-0">{option.name}</Label>
+                        <Tooltip>
+                          <TooltipTrigger asChild>
+                            <Button variant="ghost" size="sm" className="h-6 w-6 p-0">
+                              <span className="text-xs">?</span>
+                            </Button>
+                          </TooltipTrigger>
+                          <TooltipContent>
+                            <p className="text-sm">
+                              Unsure? See our{" "}
+                              <Link to="/learn/compression" className="underline font-medium">
+                                Compression Guide
+                              </Link>
+                            </p>
+                          </TooltipContent>
+                        </Tooltip>
+                      </div>
+                      <RadioGroup
+                        value={selectedVariant?.selectedOptions.find(opt => opt.name === option.name)?.value || ''}
+                        onValueChange={(value) => {
+                          const variant = product.node.variants.edges.find(v =>
+                            v.node.selectedOptions.some(opt => opt.name === option.name && opt.value === value)
+                          );
+                          if (variant) setSelectedVariant(variant.node);
+                        }}
+                        className="flex gap-4"
+                        aria-label={`Select ${option.name}`}
+                      >
+                        {option.values.map((value) => (
+                          <div key={value} className="flex items-center space-x-2">
+                            <RadioGroupItem value={value} id={`${option.name}-${value}`} />
+                            <Label htmlFor={`${option.name}-${value}`} className="cursor-pointer">
+                              {value}
+                            </Label>
+                          </div>
+                        ))}
+                      </RadioGroup>
+                    </div>
+                  );
+                }
+                
+                // Size Selector with "Find Your Size" link
+                if (isSize) {
+                  return (
+                    <div key={option.name} className="space-y-2">
+                      <div className="flex items-center justify-between">
+                        <Label className="mb-0">{option.name}</Label>
+                        {product.node.productType === 'Compression Socks' && (
+                          <SizingModal productType="compression-socks" />
+                        )}
+                      </div>
+                      <Select
+                        value={selectedVariant?.selectedOptions.find(opt => opt.name === option.name)?.value || ''}
+                        onValueChange={(value) => {
+                          const variant = product.node.variants.edges.find(v =>
+                            v.node.selectedOptions.some(opt => opt.name === option.name && opt.value === value)
+                          );
+                          if (variant) setSelectedVariant(variant.node);
+                        }}
+                        aria-label={`Select ${option.name}`}
+                      >
+                        <SelectTrigger className="w-full h-12">
+                          <SelectValue placeholder={`Select ${option.name}`} />
+                        </SelectTrigger>
+                        <SelectContent>
+                          {option.values.map((value) => (
+                            <SelectItem key={value} value={value}>
+                              {value}
+                            </SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
+                    </div>
+                  );
+                }
+                
+                // Color/Pattern Selector (Swatch buttons)
+                if (isColor) {
+                  // Color mapping for swatches
+                  const colorMap: Record<string, string> = {
+                    'black': '#000000',
+                    'navy': '#001f3f',
+                    'charcoal': '#36454f',
+                    'beige': '#f5f5dc',
+                    'gray': '#808080',
+                    'grey': '#808080',
+                    'white': '#ffffff',
+                  };
+                  
+                  return (
+                    <div key={option.name} className="space-y-2">
+                      <Label>{option.name}</Label>
+                      <div className="flex flex-wrap gap-3">
+                        {option.values.map((value) => {
+                          const colorKey = value.toLowerCase().split(' ')[0];
+                          const colorHex = colorMap[colorKey] || '#cccccc';
+                          const isSelected = selectedVariant?.selectedOptions.some(opt => opt.name === option.name && opt.value === value);
+                          
+                          return (
+                            <button
+                              key={value}
+                              type="button"
+                              onClick={() => {
+                                const variant = product.node.variants.edges.find(v =>
+                                  v.node.selectedOptions.some(opt => opt.name === option.name && opt.value === value)
+                                );
+                                if (variant) setSelectedVariant(variant.node);
+                              }}
+                              className={`flex flex-col items-center gap-2 p-2 rounded-lg border-2 transition-colors ${
+                                isSelected ? 'border-primary bg-primary/5' : 'border-muted hover:border-primary/50'
+                              }`}
+                              aria-label={`Select ${value}`}
+                              aria-pressed={isSelected}
+                            >
+                              <div
+                                className="w-12 h-12 rounded-full border-2 border-muted"
+                                style={{ backgroundColor: colorHex }}
+                                aria-hidden="true"
+                              />
+                              <span className="text-xs font-medium">{value}</span>
+                            </button>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  );
+                }
+                
+                // Default Select for other options
+                return (
+                  <div key={option.name}>
+                    <Label className="mb-2 block">{option.name}</Label>
+                    <Select
+                      value={selectedVariant?.selectedOptions.find(opt => opt.name === option.name)?.value || ''}
+                      onValueChange={(value) => {
+                        const variant = product.node.variants.edges.find(v =>
+                          v.node.selectedOptions.some(opt => opt.name === option.name && opt.value === value)
+                        );
+                        if (variant) setSelectedVariant(variant.node);
+                      }}
+                      aria-label={`Select ${option.name}`}
+                    >
+                      <SelectTrigger className="w-full h-12">
+                        <SelectValue placeholder={`Select ${option.name}`} />
+                      </SelectTrigger>
+                      <SelectContent>
+                        {option.values.map((value) => (
+                          <SelectItem key={value} value={value}>
+                            {value}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  </div>
+                );
+              })}
+            </TooltipProvider>
 
             {/* Add to Cart */}
             <div className="space-y-3">
@@ -700,6 +865,147 @@ export default function ProductDetail() {
 
             {/* Accordions */}
             <Accordion type="single" collapsible className="w-full">
+              {/* How to Use - Compression Socks Only */}
+              {product.node.productType === 'Compression Socks' && (
+                <AccordionItem value="how-to-use">
+                  <AccordionTrigger className="text-left">How to Use</AccordionTrigger>
+                  <AccordionContent className="space-y-4">
+                    <div className="space-y-3">
+                      <h4 className="font-semibold">Step-by-Step Instructions:</h4>
+                      <ol className="list-decimal list-inside space-y-2 text-muted-foreground">
+                        <li>Sit comfortably with your leg bent at a 90-degree angle</li>
+                        <li>Gather the sock at the heel, keeping the wide opening accessible</li>
+                        <li>Slide your toes into the opening, then your foot</li>
+                        <li>Use the integrated pull-tabs to guide the sock up your leg</li>
+                        <li>Adjust the sock so it sits smoothly without wrinkles</li>
+                      </ol>
+                    </div>
+                    <div className="bg-muted/50 p-4 rounded-lg">
+                      <div className="flex items-start gap-3">
+                        <Play className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                        <div>
+                          <p className="font-medium mb-1">Video Tutorial</p>
+                          <p className="text-sm text-muted-foreground mb-2">
+                            Watch our step-by-step video guide: "How to Put On Compression Socks"
+                          </p>
+                          <p className="text-xs text-muted-foreground mb-2">
+                            Includes: Captions ✓ | Transcript ✓ | Audio Description ✓
+                          </p>
+                          <Button variant="outline" size="sm" asChild>
+                            <a href="#video-tutorial" target="_blank" rel="noopener noreferrer">
+                              <Play className="h-4 w-4 mr-2" />
+                              Watch Video
+                            </a>
+                          </Button>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="pt-2">
+                      <p className="text-sm text-muted-foreground">
+                        <strong>Make it easier:</strong>{" "}
+                        <Link to="/products/donning-aid" className="text-primary underline">
+                          Use our Sock Donning Aid
+                        </Link>{" "}
+                        for even easier independent donning.
+                      </p>
+                    </div>
+                  </AccordionContent>
+                </AccordionItem>
+              )}
+
+              {/* Sizing & Fit */}
+              {product.node.productType === 'Compression Socks' && (
+                <AccordionItem value="sizing-fit">
+                  <AccordionTrigger className="text-left">Sizing & Fit</AccordionTrigger>
+                  <AccordionContent className="space-y-4">
+                    <div className="overflow-x-auto">
+                      <Table>
+                        <TableHeader>
+                          <TableRow>
+                            <TableHead scope="col">Size</TableHead>
+                            <TableHead scope="col">Calf Circumference</TableHead>
+                            <TableHead scope="col">Ankle Circumference</TableHead>
+                            <TableHead scope="col">Shoe Size (US Women's)</TableHead>
+                          </TableRow>
+                        </TableHeader>
+                        <TableBody>
+                          <TableRow>
+                            <TableCell className="font-medium">S</TableCell>
+                            <TableCell>12-14"</TableCell>
+                            <TableCell>8-9"</TableCell>
+                            <TableCell>5-7</TableCell>
+                          </TableRow>
+                          <TableRow>
+                            <TableCell className="font-medium">M</TableCell>
+                            <TableCell>14-16"</TableCell>
+                            <TableCell>9-10"</TableCell>
+                            <TableCell>7-9</TableCell>
+                          </TableRow>
+                          <TableRow>
+                            <TableCell className="font-medium">L</TableCell>
+                            <TableCell>16-18"</TableCell>
+                            <TableCell>10-11"</TableCell>
+                            <TableCell>9-11</TableCell>
+                          </TableRow>
+                          <TableRow>
+                            <TableCell className="font-medium">XL</TableCell>
+                            <TableCell>18-20"</TableCell>
+                            <TableCell>11-12"</TableCell>
+                            <TableCell>11-13</TableCell>
+                          </TableRow>
+                          <TableRow>
+                            <TableCell className="font-medium">XXL</TableCell>
+                            <TableCell>20-22"</TableCell>
+                            <TableCell>12-13"</TableCell>
+                            <TableCell>13-15</TableCell>
+                          </TableRow>
+                        </TableBody>
+                      </Table>
+                    </div>
+                    <div className="bg-primary/5 p-4 rounded-lg border border-primary/20">
+                      <p className="text-sm font-medium mb-2">30-Day Fit Guarantee</p>
+                      <p className="text-sm text-muted-foreground">
+                        Not the right fit? Free exchanges within 30 days. Contact us and we'll send the correct size before you return the first pair.
+                      </p>
+                    </div>
+                    <div>
+                      <SizingModal productType="compression-socks" />
+                    </div>
+                  </AccordionContent>
+                </AccordionItem>
+              )}
+
+              {/* Shipping & Returns */}
+              <AccordionItem value="shipping-returns">
+                <AccordionTrigger className="text-left">Shipping & Returns</AccordionTrigger>
+                <AccordionContent className="space-y-3">
+                  <div>
+                    <h4 className="font-semibold mb-2">Shipping</h4>
+                    <ul className="space-y-1 text-muted-foreground text-sm">
+                      <li>• Free shipping on orders $50+</li>
+                      <li>• Standard shipping: 5-7 business days</li>
+                      <li>• Expedited options available at checkout (2-day and overnight)</li>
+                      <li>• International shipping available (rates calculated at checkout)</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-2">Returns</h4>
+                    <ul className="space-y-1 text-muted-foreground text-sm">
+                      <li>• 30-day return policy</li>
+                      <li>• Items must be unworn and in original packaging</li>
+                      <li>• Free exchanges for size issues</li>
+                      <li>• Return shipping costs apply (unless defective or wrong item sent)</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <Link to="/policies/shipping-returns" className="text-primary underline text-sm">
+                      View Full Shipping & Returns Policy →
+                    </Link>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+
+              {/* Existing FAQs */}
               {productCopy.faqs ? productCopy.faqs.map((faq: any, index: number) => (
                 <AccordionItem key={index} value={`item-${index}`}>
                   <AccordionTrigger className="text-left">{faq.question}</AccordionTrigger>
