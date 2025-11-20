@@ -44,10 +44,10 @@ export const Footer = () => {
           <div>
             <h3 className="font-semibold text-lg mb-4">Learn</h3>
             <ul className="space-y-2">
-              <li><Link to="/learn/mobility" className="text-muted-foreground hover:text-foreground transition-colors">Mobility Guides</Link></li>
-              <li><Link to="/learn/compression" className="text-muted-foreground hover:text-foreground transition-colors">Compression Basics</Link></li>
-              <li><Link to="/learn/conditions" className="text-muted-foreground hover:text-foreground transition-colors">Condition Pages</Link></li>
-              <li><Link to="/learn/how-to" className="text-muted-foreground hover:text-foreground transition-colors">How-To Videos</Link></li>
+              <li><Link to="/learn/mobility-aids" className="text-muted-foreground hover:text-foreground transition-colors">Mobility Guides</Link></li>
+              <li><Link to="/learn/compression-101" className="text-muted-foreground hover:text-foreground transition-colors">Compression Basics</Link></li>
+              <li><Link to="/learn" className="text-muted-foreground hover:text-foreground transition-colors">Condition Pages</Link></li>
+              <li><Link to="/learn" className="text-muted-foreground hover:text-foreground transition-colors">How-To Videos</Link></li>
             </ul>
           </div>
 
