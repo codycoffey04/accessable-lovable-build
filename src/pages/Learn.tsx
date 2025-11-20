@@ -25,7 +25,7 @@ const articles = [
     excerpt: "Graduated compression, mmHg ratings, sizing basics—everything you need to understand compression socks before you buy or use them. No medical degree required.",
     readTime: "5 min",
     featured: true,
-    featuredImage: "/images/learn-compression-101.jpg"
+    featuredImage: "/images/graduated-compression.png"
   },
   {
     title: "Mobility Aids & Sock Compatibility",
@@ -405,7 +405,7 @@ export default function Learn() {
             {/* Guide 1 */}
             <Card className="overflow-hidden hover:shadow-lg transition-shadow">
               <img 
-                src="/images/learn-compression-101.jpg" 
+                src="/images/graduated-compression.png" 
                 alt="Compression 101 Guide"
                 className="aspect-video object-cover w-full"
               />

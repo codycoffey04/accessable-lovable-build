@@ -22,7 +22,7 @@ const articles: Record<string, any> = {
     readTime: "5 min",
     datePublished: "2024-01-15",
     isHealthRelated: true,
-    featuredImage: "/images/learn-compression-101.jpg",
+    featuredImage: "/images/graduated-compression.png",
     content: [
       { type: "heading", text: "What is Graduated Compression?" },
       { type: "paragraph", text: "Graduated compression technology uses elastic fabric that applies different levels of pressure at different points on your leg. The pressure is strongest at the ankle and gradually decreases up the calf. This pressure gradient is measured in millimeters of mercury (mmHg), the same unit used to measure blood pressure." },
