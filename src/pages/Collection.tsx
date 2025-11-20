@@ -60,10 +60,11 @@ const ProductCard = ({ product }: { product: ShopifyProduct }) => {
   // Transform product title to replace "Donning Aid" with "Donning Sock"
   const getDisplayTitle = (title: string) => {
     // Map common variations of "Donning Aid" to "Donning Sock"
+    // Order matters - most specific patterns first
     if (title.includes('Donning Aid') || title.includes('donning aid')) {
       return title
-        .replace(/Sock Donning Aid/gi, 'Donning Sock')
         .replace(/AccessAble Sock Donning Aid/gi, 'AccessAble Donning Sock')
+        .replace(/Sock Donning Aid/gi, 'Donning Sock')
         .replace(/Donning Aid/gi, 'Donning Sock')
         .replace(/donning aid/gi, 'Donning Sock');
     }
