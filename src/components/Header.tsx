@@ -36,7 +36,7 @@ export const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center min-w-fit" aria-label="AccessAble Home">
             <img 
-              src="/images/logo-transparent.jpeg" 
+              src="/images/logo_converted.png" 
               alt="AccessAble" 
               className="h-8 sm:h-10 w-auto max-h-10 object-contain"
               style={{ 
