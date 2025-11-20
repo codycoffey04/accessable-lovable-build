@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, useSearchParams } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -69,10 +69,31 @@ const articles = [
   }
 ];
 
+// Map query parameter values to actual category names
+const categoryMap: Record<string, string> = {
+  'mobility': 'Mobility & Independence',
+  'compression': 'Compression Basics',
+  'condition-specific': 'Condition-Specific',
+  'videos': 'How-To Videos',
+  'lifestyle': 'Lifestyle & Travel'
+};
+
 export default function Learn() {
+  const [searchParams, setSearchParams] = useSearchParams();
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const articlesPerPage = 9; // 3 columns × 3 rows
+  
+  // Read category from URL query parameter on mount and when it changes
+  useEffect(() => {
+    const categoryParam = searchParams.get('category');
+    if (categoryParam && categoryMap[categoryParam]) {
+      setSelectedCategory(categoryMap[categoryParam]);
+      setCurrentPage(1); // Reset to first page when category changes
+    } else {
+      setSelectedCategory(null);
+    }
+  }, [searchParams]);
   
   const breadcrumbSchema = generateBreadcrumbSchema([
     { name: 'Home', url: window.location.origin },
@@ -103,6 +124,20 @@ export default function Learn() {
   const handleCategoryFilter = (category: string | null) => {
     setSelectedCategory(category);
     setCurrentPage(1); // Reset to first page when filter changes
+    
+    // Update URL query parameter
+    if (category) {
+      // Find the query param key for this category
+      const queryKey = Object.keys(categoryMap).find(key => categoryMap[key] === category);
+      if (queryKey) {
+        setSearchParams({ category: queryKey }, { replace: true });
+      } else {
+        setSearchParams({}, { replace: true });
+      }
+    } else {
+      setSearchParams({}, { replace: true });
+    }
+    
     // Scroll to article grid
     setTimeout(() => {
       const articleGrid = document.getElementById('article-grid');
