@@ -7,6 +7,7 @@ import { useCartStore } from '@/stores/cartStore';
 import { toast } from 'sonner';
 import { Plus } from 'lucide-react';
 import { getProductImage } from '@/lib/productImages';
+import { transformProductTitle } from '@/lib/productTitleTransform';
 
 interface FrequentlyBoughtTogetherProps {
   product: ShopifyProduct;
@@ -123,7 +124,7 @@ export const FrequentlyBoughtTogether = ({ product }: FrequentlyBoughtTogetherPr
                     return (
                       <img
                         src={productImage.url}
-                        alt={productImage.altText || product.node.title}
+                        alt={productImage.altText || transformProductTitle(product.node.title)}
                         className="w-full aspect-square object-cover rounded mb-2"
                         onError={(e) => {
                           const target = e.target as HTMLImageElement;
@@ -132,7 +133,7 @@ export const FrequentlyBoughtTogether = ({ product }: FrequentlyBoughtTogetherPr
                       />
                     );
                   })()}
-                  <p className="font-semibold text-sm line-clamp-2">{product.node.title}</p>
+                  <p className="font-semibold text-sm line-clamp-2">{transformProductTitle(product.node.title)}</p>
                   <p className="text-sm text-muted-foreground">
                     ${product.node.priceRange.minVariantPrice.amount}
                   </p>

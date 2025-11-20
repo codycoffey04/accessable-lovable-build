@@ -8,6 +8,7 @@ import { getProducts, ShopifyProduct } from "@/lib/shopify";
 import { useCartStore } from "@/stores/cartStore";
 import { toast } from "sonner";
 import { getProductImage } from "@/lib/productImages";
+import { transformProductTitle } from "@/lib/productTitleTransform";
 
 interface ConditionRecommendationsProps {
   condition: string;
@@ -192,7 +193,7 @@ export const ConditionRecommendations = ({ condition }: ConditionRecommendations
     });
 
     toast.success('Added to cart', {
-      description: `${product.node.title} has been added to your cart.`
+      description: `${transformProductTitle(product.node.title)} has been added to your cart.`
     });
   };
 
@@ -229,7 +230,7 @@ export const ConditionRecommendations = ({ condition }: ConditionRecommendations
                         return (
                           <img
                             src={productImage.url}
-                            alt={productImage.altText || product.node.title}
+                            alt={productImage.altText || transformProductTitle(product.node.title)}
                             className="object-cover w-full h-full group-hover:scale-105 transition-transform"
                             onError={(e) => {
                               const target = e.target as HTMLImageElement;
@@ -243,7 +244,7 @@ export const ConditionRecommendations = ({ condition }: ConditionRecommendations
                   <CardContent className="p-4">
                     <Link to={`/products/${product.node.handle}`}>
                       <h3 className="font-medium mb-2 hover:text-primary transition-colors line-clamp-2">
-                        {product.node.title}
+                        {transformProductTitle(product.node.title)}
                       </h3>
                     </Link>
                     <div className="flex items-center justify-between mb-3">
@@ -398,7 +399,7 @@ export const ConditionRecommendations = ({ condition }: ConditionRecommendations
                           return (
                             <img
                               src={productImage.url}
-                              alt={productImage.altText || product.node.title}
+                              alt={productImage.altText || transformProductTitle(product.node.title)}
                               className="object-cover w-full h-full group-hover:scale-105 transition-transform"
                               onError={(e) => {
                                 const target = e.target as HTMLImageElement;
@@ -412,7 +413,7 @@ export const ConditionRecommendations = ({ condition }: ConditionRecommendations
                     <CardContent className="p-4">
                       <Link to={`/products/${product.node.handle}`}>
                         <h3 className="font-medium mb-2 hover:text-primary transition-colors line-clamp-2">
-                          {product.node.title}
+                          {transformProductTitle(product.node.title)}
                         </h3>
                       </Link>
                       <div className="flex items-center justify-between mb-3">

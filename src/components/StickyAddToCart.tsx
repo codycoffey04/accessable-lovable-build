@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { useCartStore } from '@/stores/cartStore';
+import { transformProductTitle } from '@/lib/productTitleTransform';
 import { toast } from 'sonner';
 import { ShoppingCart } from 'lucide-react';
 
@@ -85,7 +86,7 @@ export const StickyAddToCart = ({ product, selectedVariant, quantity }: StickyAd
     setTimeout(() => setItemAdded(false), 3000);
 
     toast.success('Added to cart', {
-      description: `${product.node.title} has been added to your cart.`,
+      description: `${transformProductTitle(product.node.title)} has been added to your cart.`,
     });
   };
 
@@ -100,7 +101,7 @@ export const StickyAddToCart = ({ product, selectedVariant, quantity }: StickyAd
       >
         <div className="container flex items-center justify-between gap-4 py-2">
           <div className="flex-1 min-w-0">
-            <p className="font-semibold text-sm truncate">{product.node.title}</p>
+            <p className="font-semibold text-sm truncate">{transformProductTitle(product.node.title)}</p>
             <p className="text-sm text-muted-foreground">
               ${selectedVariant?.node.price.amount}
             </p>

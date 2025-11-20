@@ -25,6 +25,7 @@ import {
 } from "lucide-react";
 import { getProducts, ShopifyProduct } from "@/lib/shopify";
 import { getProductImage } from "@/lib/productImages";
+import { transformProductTitle } from "@/lib/productTitleTransform";
 import { useCartStore } from "@/stores/cartStore";
 import { toast } from "sonner";
 import { ExitIntentModal } from "@/components/ExitIntentModal";
@@ -92,20 +93,7 @@ const ProductCard = ({ product, index }: { product: ShopifyProduct; index: numbe
   const variant = product.node.variants.edges[0]?.node;
 
   // Transform product title to replace "Donning Aid" with "Donning Sock"
-  const getDisplayTitle = (title: string) => {
-    // Map common variations of "Donning Aid" to "Donning Sock"
-    // Order matters - most specific patterns first
-    if (title.includes('Donning Aid') || title.includes('donning aid')) {
-      return title
-        .replace(/AccessAble Sock Donning Aid/gi, 'AccessAble Donning Sock')
-        .replace(/Sock Donning Aid/gi, 'Donning Sock')
-        .replace(/Donning Aid/gi, 'Donning Sock')
-        .replace(/donning aid/gi, 'Donning Sock');
-    }
-    return title;
-  };
-
-  const displayTitle = getDisplayTitle(product.node.title);
+  const displayTitle = transformProductTitle(product.node.title);
 
   const handleAddToCart = () => {
     if (!variant) return;

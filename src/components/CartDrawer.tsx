@@ -45,6 +45,7 @@ import {
 import { ShoppingCart, Minus, Plus, Trash2, ExternalLink, Loader2 } from "lucide-react";
 import { useCartStore } from "@/stores/cartStore";
 import { getProductImage } from "@/lib/productImages";
+import { transformProductTitle } from "@/lib/productTitleTransform";
 import { toast } from "sonner";
 
 export const CartDrawer = () => {
@@ -151,7 +152,7 @@ export const CartDrawer = () => {
                       </div>
                       
                       <div className="flex-1 min-w-0">
-                        <h4 className="font-medium truncate">{item.product.node.title}</h4>
+                        <h4 className="font-medium truncate">{transformProductTitle(item.product.node.title)}</h4>
                         <p className="text-sm text-muted-foreground">
                           {item.selectedOptions.map(option => option.value).join(' • ')}
                         </p>
