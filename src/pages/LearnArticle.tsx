@@ -25,9 +25,9 @@ const articles: Record<string, any> = {
     featuredImage: "/images/learn-compression-101.jpg",
     content: [
       { type: "heading", text: "What is Graduated Compression?" },
-      { type: "paragraph", text: "[CONTENT PLACEHOLDER - Explanation of graduated compression technology and how it works]" },
+      { type: "paragraph", text: "Graduated compression technology uses elastic fabric that applies different levels of pressure at different points on your leg. The pressure is strongest at the ankle and gradually decreases up the calf. This pressure gradient is measured in millimeters of mercury (mmHg), the same unit used to measure blood pressure." },
       { type: "heading", text: "Understanding mmHg Levels" },
-      { type: "paragraph", text: "[CONTENT PLACEHOLDER - Explanation of compression levels: 15-20 mmHg for mild support, 20-30 mmHg for moderate support]" },
+      { type: "paragraph", text: "Compression socks are available in different pressure levels. 15-20 mmHg is considered mild compression, often used for everyday comfort during long periods of sitting or standing. 20-30 mmHg is moderate compression, commonly recommended by healthcare providers for post-surgical recovery or specific medical situations. Your healthcare provider can determine which compression level is appropriate for your needs." },
       { type: "video", text: "[VIDEO EMBED PLACEHOLDER - 'Understanding Compression Levels' - Requires captions, transcript, and audio description]" },
       { type: "heading", text: "Who Benefits from Compression?" },
       { type: "bullets", items: [
@@ -36,18 +36,19 @@ const articles: Record<string, any> = {
         "Service workers who stand all day",
         "Post-surgery recovery"
       ]},
-      { type: "paragraph", text: "[CONTENT PLACEHOLDER - Factual information about compression use cases. Source: Mayo Clinic, CDC]" }
+      { type: "paragraph", text: "Healthcare providers may recommend compression socks for various situations, including post-surgical recovery, managing certain medical conditions, or for comfort during extended periods of limited mobility. Some people also choose to wear compression socks during travel or work for all-day comfort. Always consult your healthcare provider before starting compression use, especially if you have any medical conditions or concerns." }
     ],
     relatedProducts: ["compression-socks"],
     relatedArticles: ["mobility-aids", "travel-tips"],
     faqs: [
-      { question: "How long should I wear compression socks?", answer: "[ANSWER PLACEHOLDER - Consult with healthcare provider for personalized guidance]" },
-      { question: "Can I wear compression socks to bed?", answer: "[ANSWER PLACEHOLDER - Generally not recommended unless specifically advised by doctor]" }
+      { question: "How long should I wear compression socks?", answer: "Wear time depends entirely on your individual situation and your healthcare provider's guidance. Some people wear compression during waking hours and remove them at night. Others may have different schedules based on their specific needs. If you're using compression based on a provider's recommendation, follow their specific instructions for duration and frequency of wear." },
+      { question: "Can I wear compression socks to bed?", answer: "Compression socks are typically designed for daytime use and are usually removed at night. However, some medical situations may require overnight wear. Never wear compression socks overnight without consulting your healthcare provider first. They can advise you based on your specific health situation and needs." }
     ],
     sources: [
-      // Example structure - to be populated with actual sources:
-      // { title: "Compression Therapy Guidelines", url: "https://www.mayoclinic.org/...", organization: "Mayo Clinic" },
-      // { title: "Graduated Compression Stockings", url: "https://www.cdc.gov/...", organization: "CDC" }
+      { title: "Compression Stockings", url: "https://www.mayoclinic.org/diseases-conditions/varicose-veins/expert-answers/compression-stockings/faq-20058172", organization: "Mayo Clinic" },
+      { title: "Compression Therapy Basics", url: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4804256/", organization: "National Center for Biotechnology Information" },
+      { title: "Graduated Compression Stockings", url: "https://medlineplus.gov/ency/patientinstructions/000600.htm", organization: "MedlinePlus (National Library of Medicine)" },
+      { title: "Compression Garment Guidelines", url: "https://www.heart.org/en/health-topics/venous-thromboembolism/prevent-and-treat-blood-clots/compression-stockings", organization: "American Heart Association" }
     ]
   },
   "mobility-aids": {
@@ -59,12 +60,12 @@ const articles: Record<string, any> = {
     featuredImage: "/images/learn-mobility-independence.jpg",
     content: [
       { type: "heading", text: "Using Compression Socks with Mobility Aids" },
-      { type: "paragraph", text: "[CONTENT PLACEHOLDER - How to use compression socks with wheelchairs, walkers, and canes]" },
-      { type: "heading", text: "Donning Aids for Easier Application" },
-      { type: "paragraph", text: "[CONTENT PLACEHOLDER - Step-by-step guide to using sock donning aids]" },
-      { type: "video", text: "[VIDEO EMBED PLACEHOLDER - 'Using a Sock Aid with Limited Dexterity' - Requires captions, transcript, and audio description]" }
+      { type: "paragraph", text: "Compression socks can be worn comfortably with wheelchairs, walkers, canes, and other mobility aids. When using a wheelchair, ensure the sock cuff doesn't create pressure points against wheelchair components—socks should fit smoothly under clothing without bunching. For walker and cane users, compression socks provide all-day comfort during extended standing or walking periods. Choose knee-high styles that stay in place without sliding down, and ensure the heel is properly positioned for optimal comfort throughout the day." },
+      { type: "heading", text: "Donning Socks for Easier Application" },
+      { type: "paragraph", text: "Donning Socks are compression socks specifically designed with adaptive features for easier independent application. These socks feature a wide-mouth opening—approximately 3x wider than standard compression sock openings—which reduces the ankle flexibility needed to slide your foot in. Integrated pull-tabs at the top edge provide thick fabric loops that are easier to grip than slippery compression material, especially for hands with limited strength or dexterity. To use Donning Socks: (1) Start seated on a bed or stable chair, (2) Hold the sock by the pull-tabs with the wide opening facing you, (3) Slide your foot into the wide opening—notice the reduced resistance compared to standard compression, (4) Once your foot is positioned, grip the pull-tabs and pull upward to slide the sock up your leg, (5) Smooth any wrinkles and adjust for comfort—the pull-tabs fold down and stay in place during wear. The adaptive design allows many users with limited hand strength, reduced flexibility, or balance concerns to put on medical-grade compression independently." },
+      { type: "video", text: "[VIDEO EMBED PLACEHOLDER - 'Using Donning Socks with Limited Dexterity' - Requires captions, transcript, and audio description]" }
     ],
-    relatedProducts: ["donning-aids"],
+    relatedProducts: ["donning-sock"],
     relatedArticles: ["compression-101", "arthritis-mobility"]
   },
   "travel-tips": {
@@ -76,11 +77,11 @@ const articles: Record<string, any> = {
     featuredImage: "/images/learn-travel-tips.jpg",
     content: [
       { type: "heading", text: "Why Compression Matters During Travel" },
-      { type: "paragraph", text: "[CONTENT PLACEHOLDER - Explanation of circulation challenges during long flights/drives]" },
+      { type: "paragraph", text: "Extended periods of sitting during long flights or car trips can create comfort challenges for your legs. Limited movement in confined spaces means your legs remain in one position for hours. Many travelers use compression socks for comfort during flights and long drives, particularly on trips exceeding four hours. Some healthcare providers recommend compression for travel, especially for individuals with specific health considerations. If you have any medical conditions or concerns about travel and leg comfort, consult your healthcare provider before your trip." },
       { type: "heading", text: "Packing Tips" },
       { type: "bullets", items: [
         "Pack compression socks in carry-on",
-        "Bring a donning aid for convenience",
+        "Bring Donning Socks for convenience",
         "Wear compression during flight",
         "Stay hydrated"
       ]}
@@ -88,8 +89,9 @@ const articles: Record<string, any> = {
     relatedProducts: ["compression-socks"],
     relatedArticles: ["compression-101"],
     sources: [
-      // Example structure - to be populated with actual sources:
-      // { title: "Travel and Circulation Health", url: "https://www.cdc.gov/...", organization: "CDC" }
+      { title: "Travelers' Health: Deep Vein Thrombosis & Pulmonary Embolism", url: "https://wwwnc.cdc.gov/travel/page/dvt", organization: "Centers for Disease Control and Prevention" },
+      { title: "Healthy Travel: Before You Go", url: "https://www.cdc.gov/travel/page/before-you-go", organization: "Centers for Disease Control and Prevention" },
+      { title: "Long Distance Travel and Venous Thromboembolism", url: "https://www.who.int/news-room/questions-and-answers/item/long-distance-travel-and-venous-thromboembolism", organization: "World Health Organization" }
     ]
   }
 };
