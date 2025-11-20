@@ -40,9 +40,7 @@ export const Header = () => {
               alt="AccessAble" 
               className="h-8 sm:h-10 w-auto max-h-10 object-contain"
               style={{ 
-                maxWidth: '180px',
-                mixBlendMode: 'multiply',
-                filter: 'contrast(1.15) brightness(0.98)'
+                maxWidth: '180px'
               }}
             />
           </Link>
