@@ -84,7 +84,7 @@ export const generateArticleSchema = (article: Article) => ({
     name: 'AccessAble',
     logo: {
       '@type': 'ImageObject',
-      url: `${window.location.origin}/images/logo-main.jpeg`,
+      url: `${window.location.origin}/images/logo-main.png`,
     },
   },
 });
@@ -94,7 +94,7 @@ export const generateOrganizationSchema = () => ({
   '@type': 'Organization',
   name: 'AccessAble',
   url: 'https://accessable.com',
-  logo: `${window.location.origin}/images/logo-main.jpeg`,
+  logo: `${window.location.origin}/images/logo-main.png`,
   sameAs: [
     'https://facebook.com/accessible',
     'https://instagram.com/accessible',
@@ -153,7 +153,7 @@ export const generateBlogSchema = () => ({
     name: 'AccessAble',
     logo: {
       '@type': 'ImageObject',
-      url: `${window.location.origin}/images/logo-main.jpeg`,
+      url: `${window.location.origin}/images/logo-main.png`,
     },
   },
   blogPost: [], // Can be populated with individual article schemas if needed
@@ -169,6 +169,6 @@ export const generateAboutPageSchema = () => ({
     '@type': 'Organization',
     name: 'AccessAble',
     url: 'https://accessable.com',
-    logo: `${window.location.origin}/images/logo-main.jpeg`,
+    logo: `${window.location.origin}/images/logo-main.png`,
   },
 });
