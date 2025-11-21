@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Target, Heart, Award, Users } from "lucide-react";
+import { Target, Heart, Award, Users, CheckCircle } from "lucide-react";
 import { Schema } from "@/components/Schema";
 import { generateOrganizationSchema, generateBreadcrumbSchema, generateAboutPageSchema } from "@/lib/schema";
 
@@ -36,7 +36,7 @@ export default function About() {
           {/* Background Image */}
           <div className="absolute inset-0">
             <img 
-              src="/images/about-hero-background.jpg" 
+              src="/images/about-hero-background-updated.jpg" 
               alt="" 
               className="w-full h-full object-cover"
               aria-hidden="true"
@@ -48,18 +48,64 @@ export default function About() {
           {/* Content Overlay */}
           <div className="relative container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
+              {/* Heading */}
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white">
                 Built from Real Need
               </h1>
-              <p className="text-xl text-white/90 mb-8">
-                Adaptive compression that doesn't require choosing between medical efficacy and independent use.
+              
+              {/* Subheading Paragraph */}
+              <p className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed max-w-3xl mx-auto">
+                After my spinal cord injury, I needed medical-grade compression socks but couldn't put 
+                them on independently. Standard compression requires grip strength I don't have. Adaptive 
+                tools felt clunky and clinical. That gap—between medical efficacy and independent use—is 
+                why AccessAble exists.
               </p>
+              
+              {/* Key Value Props as Bullets */}
+              <div className="max-w-2xl mx-auto text-left space-y-4 mb-8">
+                <div className="flex items-start gap-3">
+                  <CheckCircle className="w-6 h-6 text-white flex-shrink-0 mt-0.5" />
+                  <div>
+                    <p className="font-semibold text-white">Patent-pending adaptive technology</p>
+                    <p className="text-white/90">
+                      Wide-mouth openings (3x standard width) and integrated pull-tabs built into 
+                      medical-grade graduated compression
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-3">
+                  <CheckCircle className="w-6 h-6 text-white flex-shrink-0 mt-0.5" />
+                  <div>
+                    <p className="font-semibold text-white">No separate tools needed</p>
+                    <p className="text-white/90">
+                      Adaptive features built into the sock itself—no plastic frames, no clunky devices
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-3">
+                  <CheckCircle className="w-6 h-6 text-white flex-shrink-0 mt-0.5" />
+                  <div>
+                    <p className="font-semibold text-white">Real-world wear testing</p>
+                    <p className="text-white/90">
+                      Refined with users who have arthritis, limited mobility, post-surgical restrictions, 
+                      and spinal cord injuries
+                    </p>
+                  </div>
+                </div>
+              </div>
+              
+              {/* CTA */}
+              <Button size="lg" className="mt-4 bg-white text-foreground hover:bg-white/90" asChild>
+                <Link to="#story">Read the Full Story</Link>
+              </Button>
             </div>
           </div>
         </section>
 
         {/* Founder Story Section */}
-        <section className="py-16 bg-background">
+        <section id="story" className="py-16 bg-background">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto">
               <h2 className="text-3xl font-bold mb-8 text-center">Why AccessAble Exists</h2>
