@@ -33,72 +33,84 @@ export default function Pro() {
       </nav>
 
       <main id="main-content">
-        <section className="bg-gradient-to-br from-primary/10 to-secondary/10 py-20">
+        <section className="bg-gradient-to-br from-primary/10 to-secondary/10 py-20 lg:py-32">
           <div className="container mx-auto px-4">
-            <div className="max-w-3xl">
-              <Badge className="mb-4">For Healthcare Professionals</Badge>
-              <h1 className="text-4xl lg:text-5xl font-bold mb-6">
-                Professional Adaptive Compression Solutions
-              </h1>
-              <p className="text-xl text-muted-foreground mb-6">
-                Bulk ordering, starter kits, and dedicated support for clinics, facilities, and distributors.
-              </p>
-              <p className="text-lg text-muted-foreground mb-6">
-                Designed for physical therapy clinics, home health agencies, rehabilitation facilities, and medical supply distributors who need reliable adaptive compression solutions for patients with limited mobility or hand strength.
-              </p>
-              
-              <ul className="grid md:grid-cols-2 gap-3 mb-8 text-left max-w-2xl">
-                <li className="flex gap-2 text-base">
-                  <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                  <span>Supports patient independence – Adaptive features reduce reliance on staff for donning</span>
-                </li>
-                <li className="flex gap-2 text-base">
-                  <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                  <span>Simplifies clinical workflows – Pre-built kits and bulk ordering streamline inventory</span>
-                </li>
-                <li className="flex gap-2 text-base">
-                  <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                  <span>Improves hygiene rotation – Volume ordering enables proper sock rotation schedules</span>
-                </li>
-                <li className="flex gap-2 text-base">
-                  <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                  <span>Reduces staff burden – Patients can don compression independently or with minimal assistance</span>
-                </li>
-                <li className="flex gap-2 text-base">
-                  <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                  <span>Clinic-grade durability – Built for repeated use and professional laundering</span>
-                </li>
-                <li className="flex gap-2 text-base">
-                  <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                  <span>Flexible sizing options – Full size range (S–XXL) with wide-calf options</span>
-                </li>
-              </ul>
-              
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="h-12 px-8" asChild>
-                  <a href="#contact-form">Request a Quote</a>
-                </Button>
-                <Button size="lg" variant="outline" className="h-12 px-8" asChild>
-                  <Link to="/pro/starter-kits">Explore Starter Kits</Link>
-                </Button>
-              </div>
-              
-              <div className="mt-8 p-6 bg-muted/40 rounded-lg border max-w-3xl">
-                <p className="text-sm text-muted-foreground mb-4">
-                  Already have a Pro account?
+            <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
+              {/* Left Column - Text Content */}
+              <div className="flex flex-col justify-center">
+                <Badge className="mb-4 w-fit">For Healthcare Professionals</Badge>
+                <h1 className="text-4xl lg:text-5xl font-bold mb-6">
+                  Professional Adaptive Compression Solutions
+                </h1>
+                <p className="text-xl text-muted-foreground mb-6">
+                  Bulk ordering, starter kits, and dedicated support for clinics, facilities, and distributors.
                 </p>
-                <Button variant="outline" asChild>
-                  <Link to="/pro/login">Login to Pro Portal</Link>
-                </Button>
+                <p className="text-lg text-muted-foreground mb-6">
+                  Designed for physical therapy clinics, home health agencies, rehabilitation facilities, and medical supply distributors who need reliable adaptive compression solutions for patients with limited mobility or hand strength.
+                </p>
+                
+                <ul className="grid md:grid-cols-1 gap-3 mb-8 text-left">
+                  <li className="flex gap-2 text-base">
+                    <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                    <span>Supports patient independence – Adaptive features reduce reliance on staff for donning</span>
+                  </li>
+                  <li className="flex gap-2 text-base">
+                    <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                    <span>Simplifies clinical workflows – Pre-built kits and bulk ordering streamline inventory</span>
+                  </li>
+                  <li className="flex gap-2 text-base">
+                    <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                    <span>Improves hygiene rotation – Volume ordering enables proper sock rotation schedules</span>
+                  </li>
+                  <li className="flex gap-2 text-base">
+                    <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                    <span>Reduces staff burden – Patients can don compression independently or with minimal assistance</span>
+                  </li>
+                  <li className="flex gap-2 text-base">
+                    <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                    <span>Clinic-grade durability – Built for repeated use and professional laundering</span>
+                  </li>
+                  <li className="flex gap-2 text-base">
+                    <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                    <span>Flexible sizing options – Full size range (S–XXL) with wide-calf options</span>
+                  </li>
+                </ul>
+                
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Button size="lg" className="h-12 px-8" asChild>
+                    <a href="#contact-form">Request a Quote</a>
+                  </Button>
+                  <Button size="lg" variant="outline" className="h-12 px-8" asChild>
+                    <Link to="/pro/starter-kits">Explore Starter Kits</Link>
+                  </Button>
+                </div>
+                
+                <div className="mt-8 p-6 bg-muted/40 rounded-lg border">
+                  <p className="text-sm text-muted-foreground mb-4">
+                    Already have a Pro account?
+                  </p>
+                  <Button variant="outline" asChild>
+                    <Link to="/pro/login">Login to Pro Portal</Link>
+                  </Button>
+                </div>
+                
+                <Alert className="mt-8 border-amber-500 bg-amber-50">
+                  <AlertCircle className="h-4 w-4 text-amber-600" />
+                  <AlertDescription className="text-amber-900">
+                    These products are not intended to diagnose, treat, cure, or prevent any disease. Healthcare professionals should provide compression guidance based on individual patient needs.{" "}
+                    <Link to="/fda-disclaimer" className="underline font-medium">Full Policy →</Link>
+                  </AlertDescription>
+                </Alert>
               </div>
               
-              <Alert className="mt-8 border-amber-500 bg-amber-50 max-w-3xl">
-                <AlertCircle className="h-4 w-4 text-amber-600" />
-                <AlertDescription className="text-amber-900">
-                  These products are not intended to diagnose, treat, cure, or prevent any disease. Healthcare professionals should provide compression guidance based on individual patient needs.{" "}
-                  <Link to="/fda-disclaimer" className="underline font-medium">Full Policy →</Link>
-                </AlertDescription>
-              </Alert>
+              {/* Right Column - Image */}
+              <div className="relative w-full aspect-[4/3] md:aspect-square lg:aspect-[4/3] overflow-hidden rounded-lg shadow-lg">
+                <img 
+                  src="/images/pro-hero-image.jpg" 
+                  alt="Group of healthcare professionals including doctors, nurses, and physical therapists collaborating" 
+                  className="w-full h-full object-cover object-center"
+                />
+              </div>
             </div>
           </div>
         </section>
