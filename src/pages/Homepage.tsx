@@ -541,7 +541,7 @@ export default function Homepage() {
                   Understanding compression levels, sizing, and when to wear them.
                 </p>
                 <Button variant="link" className="p-0 h-auto" asChild>
-                  <Link to="/learn">{'{X}'} min read →</Link>
+                  <Link to="/learn/compression-101">5 min read →</Link>
                 </Button>
               </CardContent>
             </Card>
@@ -565,7 +565,7 @@ export default function Homepage() {
                   15-20 vs. 20-30 mmHg—what's right for your situation?
                 </p>
                 <Button variant="link" className="p-0 h-auto" asChild>
-                  <Link to="/learn">{'{X}'} min read →</Link>
+                  <Link to="/learn/compression-101">5 min read →</Link>
                 </Button>
               </CardContent>
             </Card>
