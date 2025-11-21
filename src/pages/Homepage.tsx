@@ -324,7 +324,7 @@ export default function Homepage() {
                 Adaptive Compression That Actually Works
               </h1>
               <p className="text-xl text-muted-foreground mb-6">
-                Medical-grade compression socks with patent-pending adaptive features built in. Wide-mouth openings (3x standard width) and integrated pull-tabs make independent donning possible for hands with limited strength or flexibility. No separate tools needed.
+                Medical-grade compression socks with patent-pending adaptive features built in. Wide-mouth openings and integrated pull-tabs make independent donning possible for hands with limited strength or flexibility. No separate tools needed.
               </p>
               <ul className="text-lg text-muted-foreground mb-8 space-y-2 list-disc list-inside">
                 <li>20-30 mmHg graduated compression—same medical efficacy as prescription brands</li>
