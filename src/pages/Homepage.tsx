@@ -615,7 +615,7 @@ export default function Homepage() {
       </section>
 
       {/* Founder Story */}
-      <section className="py-20 bg-white">
+      <section className="py-16 bg-muted/40">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-6">Built from Real Need</h2>
