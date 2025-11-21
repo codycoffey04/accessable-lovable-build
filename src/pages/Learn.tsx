@@ -145,48 +145,57 @@ export default function Learn() {
         </ol>
       </nav>
 
-      <main id="main-content" className="container mx-auto px-4 py-8">
-        {/* Hero Image */}
-        <div className="mb-12">
-          <div className="relative w-full aspect-[2/1] overflow-hidden rounded-lg shadow-lg">
+      <main id="main-content">
+        {/* Hero Section with Background Image */}
+        <section className="relative py-20 lg:py-32 overflow-hidden">
+          {/* Background Image */}
+          <div className="absolute inset-0">
             <img 
-              src="/images/learn-hero-image.jpg" 
-              alt="Person learning about compression socks and mobility in a comfortable, educational setting" 
-              className="w-full h-full object-cover object-center"
+              src="/images/learn-hub-background.jpg" 
+              alt="" 
+              className="w-full h-full object-cover"
+              aria-hidden="true"
             />
-          </div>
-        </div>
-
-        {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl lg:text-5xl font-bold mb-4">Expert Guides for Independent Living</h1>
-          <p className="text-xl text-muted-foreground mb-8">
-            Evidence-based advice for mobility, compression, and everyday comfort.
-          </p>
-          
-          <div className="max-w-4xl mx-auto mb-8">
-            <p className="text-base text-muted-foreground mb-4">
-              Whether you're new to compression socks, managing limited hand strength, or helping someone navigate mobility challenges, these guides are written for you.
-            </p>
-            <p className="text-base text-muted-foreground">
-              We focus on practical solutions for real situations: putting on compression socks when your hands don't cooperate, choosing the right compression level, making daily dressing easier. No medical jargon. No assumptions about what you already know. Just clear guidance based on lived experience and input from physical and occupational therapists.
-            </p>
+            {/* Dark overlay for text readability */}
+            <div className="absolute inset-0 bg-black/40"></div>
           </div>
           
-          {/* Search Bar */}
-          <div className="max-w-2xl mx-auto relative">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
-            <Input
-              type="search"
-              placeholder="Search guides by topic, condition, or question..."
-              className="pl-10 h-12"
-              aria-label="Search guides by topic, condition, or question"
-            />
+          {/* Content Overlay */}
+          <div className="relative container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h1 className="text-4xl lg:text-5xl font-bold mb-4 text-white">Expert Guides for Independent Living</h1>
+              <p className="text-xl text-white/90 mb-8">
+                Evidence-based advice for mobility, compression, and everyday comfort.
+              </p>
+              
+              <div className="max-w-4xl mx-auto mb-8">
+                <p className="text-base text-white/90 mb-4">
+                  Whether you're new to compression socks, managing limited hand strength, or helping someone navigate mobility challenges, these guides are written for you.
+                </p>
+                <p className="text-base text-white/90">
+                  We focus on practical solutions for real situations: putting on compression socks when your hands don't cooperate, choosing the right compression level, making daily dressing easier. No medical jargon. No assumptions about what you already know. Just clear guidance based on lived experience and input from physical and occupational therapists.
+                </p>
+              </div>
+              
+              {/* Search Bar */}
+              <div className="max-w-2xl mx-auto relative">
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground z-10" />
+                <Input
+                  type="search"
+                  placeholder="Search guides by topic, condition, or question..."
+                  className="pl-10 h-12 bg-background/95 backdrop-blur-sm"
+                  aria-label="Search guides by topic, condition, or question"
+                />
+              </div>
+            </div>
           </div>
-        </div>
+        </section>
 
-        {/* Filter Tabs */}
-        <div className="text-center mb-4">
+        {/* Filter Tabs Section */}
+        <div className="container mx-auto px-4 py-8">
+
+          {/* Filter Tabs */}
+          <div className="text-center mb-4">
           <p className="text-sm text-muted-foreground">
             Browse all content or filter by category to find what you need.
           </p>
@@ -773,6 +782,7 @@ export default function Learn() {
             <div className="font-semibold mb-2">Regularly Updated</div>
             <p className="text-xs text-muted-foreground">Content reviewed and refreshed as standards evolve</p>
           </div>
+        </div>
         </div>
       </main>
     </div>
