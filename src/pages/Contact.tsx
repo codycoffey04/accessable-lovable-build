@@ -33,15 +33,35 @@ export default function Contact() {
         </ol>
       </nav>
 
-      <main id="main-content" className="container mx-auto px-4 py-12">
-        <div className="max-w-5xl mx-auto">
-          {/* Header */}
-          <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold mb-4">Get in Touch</h1>
-            <p className="text-xl text-muted-foreground">
-              We're here to help with any questions about our products or services.
-            </p>
+      <main id="main-content">
+        {/* Hero Section */}
+        <section className="relative py-16 lg:py-20 overflow-hidden mb-12">
+          {/* Background Image */}
+          <div className="absolute inset-0">
+            <img 
+              src="/images/contact-hero-image.jpg" 
+              alt="" 
+              className="w-full h-full object-cover"
+              aria-hidden="true"
+            />
+            {/* Dark overlay for text readability */}
+            <div className="absolute inset-0 bg-black/40"></div>
           </div>
+          
+          {/* Content Overlay */}
+          <div className="relative container mx-auto px-4">
+            <div className="max-w-4xl mx-auto text-center">
+              <h1 className="text-4xl lg:text-5xl font-bold mb-4 text-white">Get in Touch</h1>
+              <p className="text-xl text-white/90">
+                We're here to help with any questions about our products or services.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Contact Content */}
+        <div className="container mx-auto px-4 py-12">
+          <div className="max-w-5xl mx-auto">
 
           <div className="grid lg:grid-cols-3 gap-8">
             {/* Contact Info */}
@@ -176,6 +196,7 @@ export default function Contact() {
               </div>
             </div>
           </div>
+        </div>
         </div>
       </main>
     </div>
