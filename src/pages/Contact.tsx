@@ -50,10 +50,13 @@ export default function Contact() {
           
           {/* Content Overlay */}
           <div className="relative container mx-auto px-4">
-            <div className="max-w-4xl mx-auto text-center">
-              <h1 className="text-4xl lg:text-5xl font-bold mb-4 text-white">Get in Touch</h1>
-              <p className="text-xl text-white/90">
-                We're here to help with any questions about our products or services.
+            <div className="max-w-3xl mx-auto text-center">
+              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+                Let's Talk
+              </h1>
+              <p className="text-xl md:text-2xl text-white/90 leading-relaxed">
+                Questions about adaptive compression? Interested in wear testing or healthcare partnerships? 
+                We're here to help.
               </p>
             </div>
           </div>
