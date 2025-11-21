@@ -615,33 +615,27 @@ export default function Homepage() {
       </section>
 
       {/* Founder Story */}
-      <section className="py-16 bg-muted/40">
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-8 items-center">
-              <div>
-                <img 
-                  src="/images/homepage-founder-story.jpg" 
-                  alt="AccessAble product lineup showing compression socks with pull-tabs" 
-                  className="rounded-lg shadow-lg w-full h-auto"
-                />
-              </div>
-              <div className="text-center md:text-left">
-                <h2 className="text-3xl font-bold mb-6">Innovated for Independence</h2>
-                <p className="text-lg text-muted-foreground mb-6">
-                  After years in adaptive equipment design, we saw a persistent gap: compression products were either clinically effective but impossible to use independently, or easy to put on but lacked real medical-grade performance.
-                </p>
-                <p className="text-lg text-muted-foreground mb-6">
-                  AccessAble bridges that gap. Graduated compression technology with adaptive features built in—not added on. Designed with physical therapists. Tested with the people who'll actually wear them.
-                </p>
-                <p className="text-lg font-semibold mb-8">
-                  Independence shouldn't require choosing between efficacy and ease.
-                </p>
-                <Button size="lg" asChild>
-                  <Link to="/about">Our Story →</Link>
-                </Button>
-              </div>
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-3xl font-bold mb-6">Built from Real Need</h2>
+            <div className="space-y-4 text-lg text-muted-foreground">
+              <p>
+                After a spinal cord injury, I needed medical-grade compression socks. My healthcare provider prescribed them. My hands couldn't put them on.
+              </p>
+              <p>
+                Standard compression requires grip strength and flexibility I don't have. Adaptive tools felt clunky and clinical. I needed compression that actually worked for my hands—not devices to wrestle with standard socks.
+              </p>
+              <p>
+                AccessAble exists to solve that gap. Patent-pending adaptive compression technology—wide-mouth openings and integrated pull-tabs built into medical-grade graduated compression. No separate tools. No asking for help.
+              </p>
+              <p className="font-semibold text-foreground">
+                Independence shouldn't require choosing between efficacy and ease.
+              </p>
             </div>
+            <Button variant="outline" size="lg" className="mt-8" asChild>
+              <Link to="/about">Our Story</Link>
+            </Button>
           </div>
         </div>
       </section>
