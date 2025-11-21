@@ -324,13 +324,28 @@ export default function Homepage() {
                 Adaptive Compression That Actually Works
               </h1>
               <p className="text-xl text-muted-foreground mb-6">
-                Medical-grade compression socks with patent-pending adaptive features built in. Wide-mouth openings and integrated pull-tabs make independent donning possible for hands with limited strength or flexibility. No separate tools needed.
+                Medical-grade compression socks with patent-pending adaptive features built in. Wide-mouth openings (3x standard width) and integrated pull-tabs make independent donning possible for hands with limited strength or flexibility. No separate tools needed.
               </p>
-              <ul className="text-lg text-muted-foreground mb-8 space-y-2 list-disc list-inside">
-                <li>20-30 mmHg graduated compression—same medical efficacy as prescription brands</li>
-                <li>Designed for arthritis, limited mobility, post-surgical restrictions, and spinal cord injuries</li>
-                <li>Currently in final wear testing—launching soon</li>
-              </ul>
+              <div className="space-y-3 mb-8 max-w-2xl">
+                <div className="flex items-start gap-3 text-left">
+                  <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                  <span className="text-lg text-muted-foreground">
+                    Available in 8-15 mmHg, 15-20 mmHg, and 20-30 mmHg graduated compression
+                  </span>
+                </div>
+                <div className="flex items-start gap-3 text-left">
+                  <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                  <span className="text-lg text-muted-foreground">
+                    Designed for arthritis, limited mobility, post-surgical restrictions, and spinal cord injuries
+                  </span>
+                </div>
+                <div className="flex items-start gap-3 text-left">
+                  <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                  <span className="text-lg text-muted-foreground">
+                    Currently in final wear testing—launching soon
+                  </span>
+                </div>
+              </div>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button size="lg" className="h-12 px-8" onClick={() => setModalOpen(true)}>
                   Find Your Fit
