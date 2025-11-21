@@ -321,10 +321,13 @@ export default function Homepage() {
           <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div className="flex flex-col justify-center">
               <h1 className="text-4xl lg:text-6xl font-bold mb-6">
-                Designed for Independence. Built for Comfort.
+                Built from Real Need
               </h1>
-              <p className="text-xl text-muted-foreground mb-8">
-                Adaptive compression solutions for active, dignified living.
+              <p className="text-xl text-muted-foreground mb-6">
+                After a spinal cord injury, I needed medical-grade compression but couldn't put standard socks on independently. AccessAble exists to solve that gap. Patent-pending adaptive compression—wide-mouth openings and integrated pull-tabs built into 20-30 mmHg graduated compression. Medical efficacy meets independent use.
+              </p>
+              <p className="text-lg text-muted-foreground mb-8">
+                Standard compression requires grip strength and flexibility you may not have. Adaptive tools feel clunky and clinical. AccessAble builds the solution into the sock itself—no separate devices, no compromise on compression quality.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button size="lg" className="h-12 px-8" onClick={() => setModalOpen(true)}>
