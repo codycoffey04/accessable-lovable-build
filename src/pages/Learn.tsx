@@ -146,6 +146,17 @@ export default function Learn() {
       </nav>
 
       <main id="main-content" className="container mx-auto px-4 py-8">
+        {/* Hero Image */}
+        <div className="mb-12">
+          <div className="relative w-full aspect-[2/1] overflow-hidden rounded-lg shadow-lg">
+            <img 
+              src="/images/learn-hero-image.jpg" 
+              alt="Person learning about compression socks and mobility in a comfortable, educational setting" 
+              className="w-full h-full object-cover object-center"
+            />
+          </div>
+        </div>
+
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl lg:text-5xl font-bold mb-4">Expert Guides for Independent Living</h1>
