@@ -31,19 +31,32 @@ export default function About() {
       </nav>
 
       <main id="main-content">
-        {/* Hero Section */}
-        <section className="py-20 bg-gradient-to-br from-primary/10 to-secondary/10">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Built from Real Need
-            </h1>
-            <p className="text-xl text-muted-foreground mb-8">
-              Adaptive compression that doesn't require choosing between medical efficacy and independent use.
-            </p>
+        {/* Hero Section with Background Image */}
+        <section className="relative py-20 lg:py-32 overflow-hidden">
+          {/* Background Image */}
+          <div className="absolute inset-0">
+            <img 
+              src="/images/about-hero-background.jpg" 
+              alt="" 
+              className="w-full h-full object-cover"
+              aria-hidden="true"
+            />
+            {/* Dark overlay for text readability */}
+            <div className="absolute inset-0 bg-black/40"></div>
           </div>
-        </div>
-      </section>
+          
+          {/* Content Overlay */}
+          <div className="relative container mx-auto px-4">
+            <div className="max-w-4xl mx-auto text-center">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white">
+                Built from Real Need
+              </h1>
+              <p className="text-xl text-white/90 mb-8">
+                Adaptive compression that doesn't require choosing between medical efficacy and independent use.
+              </p>
+            </div>
+          </div>
+        </section>
 
         {/* Founder Story Section */}
         <section className="py-16 bg-background">
