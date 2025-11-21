@@ -21,7 +21,9 @@ import {
   Users,
   Lock,
   Zap,
-  X
+  X,
+  Target,
+  Quote
 } from "lucide-react";
 import { getProducts, ShopifyProduct } from "@/lib/shopify";
 import { getProductImage } from "@/lib/productImages";
@@ -460,71 +462,110 @@ export default function Homepage() {
       </section>
 
       {/* Social Proof */}
-      <section className="py-16 bg-muted/40">
+      <section className="py-20 bg-gradient-to-br from-slate-50 to-blue-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-4 text-center">Built With Real Users. Trusted by Professionals.</h2>
-          <p className="text-center text-lg text-muted-foreground mb-12">Trusted by 10,000+ Users</p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-            <Card>
-              <CardContent className="p-6">
-                <div className="flex mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="h-5 w-5 fill-primary text-primary" />
-                  ))}
-                </div>
-                <p className="text-muted-foreground mb-4">
-                  "I can put these on myself. That matters more than you'd think."
-                </p>
-                <p className="font-medium">Margaret D.</p>
-                <p className="text-sm text-muted-foreground">Post-knee replacement</p>
-              </CardContent>
-            </Card>
-            
-            <Card>
-              <CardContent className="p-6">
-                <div className="flex mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="h-5 w-5 fill-primary text-primary" />
-                  ))}
-                </div>
-                <p className="text-muted-foreground mb-4">
-                  "Finally, compression socks my patients can actually use independently."
-                </p>
-                <p className="font-medium">David Chen, PT</p>
-                <p className="text-sm text-muted-foreground">Seattle, WA</p>
-              </CardContent>
-            </Card>
-            
-            <Card>
-              <CardContent className="p-6">
-                <div className="flex mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="h-5 w-5 fill-primary text-primary" />
-                  ))}
-                </div>
-                <p className="text-muted-foreground mb-4">
-                  "The wide opening makes all the difference. No more waiting for help."
-                </p>
-                <p className="font-medium">Robert K.</p>
-                <p className="text-sm text-muted-foreground">Limited hand strength</p>
-              </CardContent>
-            </Card>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Real-World Tested. Purpose-Built for Independence.
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Adaptive compression refined through real-world wear testing with mobility-challenged users.
+            </p>
           </div>
-          
-          {/* Stats Row */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto text-center">
-            <div>
-              <p className="text-4xl font-bold mb-2">84%</p>
-              <p className="text-muted-foreground">of users put them on independently</p>
+
+          {/* Design Principles Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 max-w-4xl mx-auto">
+            <div className="text-center p-6 bg-white rounded-lg shadow-sm">
+              <div className="w-16 h-16 mx-auto mb-4 bg-primary/10 rounded-full flex items-center justify-center">
+                <Target className="w-8 h-8 text-primary" />
+              </div>
+              <h3 className="font-bold text-lg mb-2">Purpose-Built</h3>
+              <p className="text-muted-foreground text-sm">
+                Designed specifically for limited hand strength and mobility
+              </p>
             </div>
-            <div>
-              <p className="text-4xl font-bold mb-2">150+</p>
-              <p className="text-muted-foreground">healthcare facilities trust AccessAble</p>
+            
+            <div className="text-center p-6 bg-white rounded-lg shadow-sm">
+              <div className="w-16 h-16 mx-auto mb-4 bg-primary/10 rounded-full flex items-center justify-center">
+                <CheckCircle2 className="w-8 h-8 text-primary" />
+              </div>
+              <h3 className="font-bold text-lg mb-2">User-Tested</h3>
+              <p className="text-muted-foreground text-sm">
+                Refined through real-world wear testing
+              </p>
             </div>
-            <div>
-              <p className="text-4xl font-bold mb-2">4.7</p>
-              <p className="text-muted-foreground">star average rating from 380 reviews</p>
+            
+            <div className="text-center p-6 bg-white rounded-lg shadow-sm">
+              <div className="w-16 h-16 mx-auto mb-4 bg-primary/10 rounded-full flex items-center justify-center">
+                <Award className="w-8 h-8 text-primary" />
+              </div>
+              <h3 className="font-bold text-lg mb-2">Patent Pending</h3>
+              <p className="text-muted-foreground text-sm">
+                Innovative adaptive compression technology
+              </p>
             </div>
+          </div>
+
+          {/* Testimonials from Wear Testing */}
+          <div className="mb-6">
+            <p className="text-center text-sm text-muted-foreground mb-8">
+              Feedback from wear testing participants
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <Card className="p-6">
+              <div className="flex items-start gap-4">
+                <Quote className="w-8 h-8 text-primary flex-shrink-0" />
+                <div>
+                  <p className="text-muted-foreground mb-4">
+                    "I can put these on myself. That matters more than you'd think."
+                  </p>
+                  <div className="flex items-center gap-2">
+                    <p className="font-semibold">Margaret D.</p>
+                    <span className="text-xs px-2 py-1 bg-primary/10 text-primary rounded-full">
+                      Beta Tester
+                    </span>
+                  </div>
+                  <p className="text-sm text-muted-foreground">Post-knee replacement</p>
+                </div>
+              </div>
+            </Card>
+            
+            <Card className="p-6">
+              <div className="flex items-start gap-4">
+                <Quote className="w-8 h-8 text-primary flex-shrink-0" />
+                <div>
+                  <p className="text-muted-foreground mb-4">
+                    "Finally, compression socks my patients can actually use independently."
+                  </p>
+                  <div className="flex items-center gap-2">
+                    <p className="font-semibold">David Chen, PT</p>
+                    <span className="text-xs px-2 py-1 bg-green-100 text-green-700 rounded-full">
+                      Clinical Advisor
+                    </span>
+                  </div>
+                  <p className="text-sm text-muted-foreground">Seattle, WA</p>
+                </div>
+              </div>
+            </Card>
+            
+            <Card className="p-6">
+              <div className="flex items-start gap-4">
+                <Quote className="w-8 h-8 text-primary flex-shrink-0" />
+                <div>
+                  <p className="text-muted-foreground mb-4">
+                    "The wide opening makes all the difference. No more waiting for help."
+                  </p>
+                  <div className="flex items-center gap-2">
+                    <p className="font-semibold">Robert K.</p>
+                    <span className="text-xs px-2 py-1 bg-primary/10 text-primary rounded-full">
+                      Beta Tester
+                    </span>
+                  </div>
+                  <p className="text-sm text-muted-foreground">Limited hand strength</p>
+                </div>
+              </div>
+            </Card>
           </div>
         </div>
       </section>
@@ -681,7 +722,7 @@ export default function Homepage() {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <Badge className="mb-4">For Healthcare Professionals</Badge>
-            <h2 className="text-3xl font-bold mb-4">Trusted by Healthcare Professionals</h2>
+            <h2 className="text-3xl font-bold mb-4">Built for Healthcare Professionals</h2>
             <p className="text-lg text-muted-foreground mb-8">
               Bulk ordering, starter kits, and dedicated support for clinics, facilities, and medical supply distributors.
             </p>

@@ -11,7 +11,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Alert, AlertDescription } from "@/components/ui/alert";
-import { Star, Check, AlertCircle, Package, Users, Clock, Shield, Truck, CheckCircle, FileText, Settings } from "lucide-react";
+import { Star, Check, AlertCircle, Package, Users, Clock, Shield, Truck, CheckCircle, FileText, Settings, Award } from "lucide-react";
 
 export default function Pro() {
   const organizationSchema = generateOrganizationSchema();
@@ -38,7 +38,7 @@ export default function Pro() {
             <div className="max-w-3xl">
               <Badge className="mb-4">For Healthcare Professionals</Badge>
               <h1 className="text-4xl lg:text-5xl font-bold mb-6">
-                Trusted by Healthcare Professionals
+                Professional Adaptive Compression Solutions
               </h1>
               <p className="text-xl text-muted-foreground mb-6">
                 Bulk ordering, starter kits, and dedicated support for clinics, facilities, and distributors.
@@ -1141,8 +1141,14 @@ export default function Pro() {
         {/* Social Proof */}
         <section className="py-16 container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Trusted by 500+ Healthcare Facilities</h2>
-            <p className="text-muted-foreground">Physical therapy clinics, home health agencies, and skilled nursing facilities nationwide</p>
+            <h2 className="text-3xl font-bold mb-4">Professional Adaptive Compression</h2>
+            <p className="text-muted-foreground">Bulk ordering and starter kits for physical therapy clinics, home health agencies, and skilled nursing facilities</p>
+          </div>
+          
+          <div className="text-center mb-8">
+            <p className="text-sm text-muted-foreground">
+              Early feedback from healthcare professionals
+            </p>
           </div>
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {/* Testimonial 1 - PT/OT Context */}
@@ -1351,9 +1357,9 @@ export default function Pro() {
               {/* Trust Badges */}
               <div className="grid md:grid-cols-3 lg:grid-cols-6 gap-6 text-center">
                 <div className="bg-background/80 backdrop-blur-sm p-4 rounded-lg border">
-                  <CheckCircle className="h-8 w-8 text-primary mx-auto mb-2" />
-                  <p className="font-semibold text-sm mb-1">Trusted by 500+ Healthcare Facilities</p>
-                  <p className="text-xs text-muted-foreground">Physical therapy clinics, home health agencies nationwide</p>
+                  <Award className="h-8 w-8 text-primary mx-auto mb-2" />
+                  <p className="font-semibold text-sm mb-1">Patent-Pending Technology</p>
+                  <p className="text-xs text-muted-foreground">Innovative adaptive compression design</p>
                 </div>
                 
                 <div className="bg-background/80 backdrop-blur-sm p-4 rounded-lg border">
