@@ -35,7 +35,7 @@ export default function Pro() {
       <main id="main-content">
         <section className="bg-gradient-to-br from-primary/10 to-secondary/10 py-20 lg:py-32">
           <div className="container mx-auto px-4">
-            <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-start">
               {/* Left Column - Text Content */}
               <div className="flex flex-col justify-center">
                 <Badge className="mb-4 w-fit">For Healthcare Professionals</Badge>
@@ -104,11 +104,11 @@ export default function Pro() {
               </div>
               
               {/* Right Column - Image */}
-              <div className="relative w-full aspect-[4/3] md:aspect-square lg:aspect-[4/3] overflow-hidden rounded-lg shadow-lg">
+              <div className="relative w-full aspect-[3/4] md:aspect-[4/5] overflow-hidden rounded-lg shadow-lg">
                 <img 
                   src="/images/pro-hero-image.jpg" 
                   alt="Group of healthcare professionals including doctors, nurses, and physical therapists collaborating" 
-                  className="w-full h-full object-cover object-center"
+                  className="w-full h-full object-cover object-top"
                 />
               </div>
             </div>
